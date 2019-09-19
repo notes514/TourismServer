@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.MemberMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Member">
+    <id column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="member_type" jdbcType="INTEGER" property="memberType" />
+    <result column="member_integral" jdbcType="INTEGER" property="memberIntegral" />
+    <result column="member_discount" jdbcType="DOUBLE" property="memberDiscount" />
+    <result column="member_describe" jdbcType="VARCHAR" property="memberDescribe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    member_id, user_id, member_type, member_integral, member_discount, member_describe
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.MemberExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_member
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_member
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_member
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.MemberExample">
+    delete from tbl_member
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.Member">
+    insert into tbl_member (member_id, user_id, member_type, 
+      member_integral, member_discount, member_describe
+      )
+    values (#{memberId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{memberType,jdbcType=INTEGER}, 
+      #{memberIntegral,jdbcType=INTEGER}, #{memberDiscount,jdbcType=DOUBLE}, #{memberDescribe,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Member">
+    insert into tbl_member
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="memberType != null">
+        member_type,
+      </if>
+      <if test="memberIntegral != null">
+        member_integral,
+      </if>
+      <if test="memberDiscount != null">
+        member_discount,
+      </if>
+      <if test="memberDescribe != null">
+        member_describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="memberId != null">
+        #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="memberType != null">
+        #{memberType,jdbcType=INTEGER},
+      </if>
+      <if test="memberIntegral != null">
+        #{memberIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="memberDiscount != null">
+        #{memberDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="memberDescribe != null">
+        #{memberDescribe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.MemberExample" resultType="java.lang.Long">
+    select count(*) from tbl_member
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_member
+    <set>
+      <if test="record.memberId != null">
+        member_id = #{record.memberId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberType != null">
+        member_type = #{record.memberType,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberIntegral != null">
+        member_integral = #{record.memberIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberDiscount != null">
+        member_discount = #{record.memberDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="record.memberDescribe != null">
+        member_describe = #{record.memberDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_member
+    set member_id = #{record.memberId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      member_type = #{record.memberType,jdbcType=INTEGER},
+      member_integral = #{record.memberIntegral,jdbcType=INTEGER},
+      member_discount = #{record.memberDiscount,jdbcType=DOUBLE},
+      member_describe = #{record.memberDescribe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Member">
+    update tbl_member
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="memberType != null">
+        member_type = #{memberType,jdbcType=INTEGER},
+      </if>
+      <if test="memberIntegral != null">
+        member_integral = #{memberIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="memberDiscount != null">
+        member_discount = #{memberDiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="memberDescribe != null">
+        member_describe = #{memberDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Member">
+    update tbl_member
+    set user_id = #{userId,jdbcType=INTEGER},
+      member_type = #{memberType,jdbcType=INTEGER},
+      member_integral = #{memberIntegral,jdbcType=INTEGER},
+      member_discount = #{memberDiscount,jdbcType=DOUBLE},
+      member_describe = #{memberDescribe,jdbcType=VARCHAR}
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </update>
+</mapper>

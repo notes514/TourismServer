@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.EvaluatetionMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Evaluatetion">
+    <id column="evaluatetion_id" jdbcType="INTEGER" property="evaluatetionId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="scenic_details_id" jdbcType="INTEGER" property="scenicDetailsId" />
+    <result column="order_details_id" jdbcType="INTEGER" property="orderDetailsId" />
+    <result column="evaluatetion_theme" jdbcType="VARCHAR" property="evaluatetionTheme" />
+    <result column="evaluatetion_content" jdbcType="VARCHAR" property="evaluatetionContent" />
+    <result column="evaluatetion_integral" jdbcType="DOUBLE" property="evaluatetionIntegral" />
+    <result column="evaluatetion_time" jdbcType="TIMESTAMP" property="evaluatetionTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    evaluatetion_id, user_id, scenic_details_id, order_details_id, evaluatetion_theme, 
+    evaluatetion_content, evaluatetion_integral, evaluatetion_time
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.EvaluatetionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_evaluatetion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_evaluatetion
+    where evaluatetion_id = #{evaluatetionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_evaluatetion
+    where evaluatetion_id = #{evaluatetionId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.EvaluatetionExample">
+    delete from tbl_evaluatetion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.Evaluatetion">
+    insert into tbl_evaluatetion (evaluatetion_id, user_id, scenic_details_id, 
+      order_details_id, evaluatetion_theme, evaluatetion_content, 
+      evaluatetion_integral, evaluatetion_time
+      )
+    values (#{evaluatetionId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{scenicDetailsId,jdbcType=INTEGER}, 
+      #{orderDetailsId,jdbcType=INTEGER}, #{evaluatetionTheme,jdbcType=VARCHAR}, #{evaluatetionContent,jdbcType=VARCHAR}, 
+      #{evaluatetionIntegral,jdbcType=DOUBLE}, #{evaluatetionTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Evaluatetion">
+    insert into tbl_evaluatetion
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="evaluatetionId != null">
+        evaluatetion_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="scenicDetailsId != null">
+        scenic_details_id,
+      </if>
+      <if test="orderDetailsId != null">
+        order_details_id,
+      </if>
+      <if test="evaluatetionTheme != null">
+        evaluatetion_theme,
+      </if>
+      <if test="evaluatetionContent != null">
+        evaluatetion_content,
+      </if>
+      <if test="evaluatetionIntegral != null">
+        evaluatetion_integral,
+      </if>
+      <if test="evaluatetionTime != null">
+        evaluatetion_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="evaluatetionId != null">
+        #{evaluatetionId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicDetailsId != null">
+        #{scenicDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="orderDetailsId != null">
+        #{orderDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="evaluatetionTheme != null">
+        #{evaluatetionTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatetionContent != null">
+        #{evaluatetionContent,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatetionIntegral != null">
+        #{evaluatetionIntegral,jdbcType=DOUBLE},
+      </if>
+      <if test="evaluatetionTime != null">
+        #{evaluatetionTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.EvaluatetionExample" resultType="java.lang.Long">
+    select count(*) from tbl_evaluatetion
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_evaluatetion
+    <set>
+      <if test="record.evaluatetionId != null">
+        evaluatetion_id = #{record.evaluatetionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicDetailsId != null">
+        scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderDetailsId != null">
+        order_details_id = #{record.orderDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.evaluatetionTheme != null">
+        evaluatetion_theme = #{record.evaluatetionTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="record.evaluatetionContent != null">
+        evaluatetion_content = #{record.evaluatetionContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.evaluatetionIntegral != null">
+        evaluatetion_integral = #{record.evaluatetionIntegral,jdbcType=DOUBLE},
+      </if>
+      <if test="record.evaluatetionTime != null">
+        evaluatetion_time = #{record.evaluatetionTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_evaluatetion
+    set evaluatetion_id = #{record.evaluatetionId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
+      order_details_id = #{record.orderDetailsId,jdbcType=INTEGER},
+      evaluatetion_theme = #{record.evaluatetionTheme,jdbcType=VARCHAR},
+      evaluatetion_content = #{record.evaluatetionContent,jdbcType=VARCHAR},
+      evaluatetion_integral = #{record.evaluatetionIntegral,jdbcType=DOUBLE},
+      evaluatetion_time = #{record.evaluatetionTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Evaluatetion">
+    update tbl_evaluatetion
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicDetailsId != null">
+        scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="orderDetailsId != null">
+        order_details_id = #{orderDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="evaluatetionTheme != null">
+        evaluatetion_theme = #{evaluatetionTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatetionContent != null">
+        evaluatetion_content = #{evaluatetionContent,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatetionIntegral != null">
+        evaluatetion_integral = #{evaluatetionIntegral,jdbcType=DOUBLE},
+      </if>
+      <if test="evaluatetionTime != null">
+        evaluatetion_time = #{evaluatetionTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where evaluatetion_id = #{evaluatetionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Evaluatetion">
+    update tbl_evaluatetion
+    set user_id = #{userId,jdbcType=INTEGER},
+      scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
+      order_details_id = #{orderDetailsId,jdbcType=INTEGER},
+      evaluatetion_theme = #{evaluatetionTheme,jdbcType=VARCHAR},
+      evaluatetion_content = #{evaluatetionContent,jdbcType=VARCHAR},
+      evaluatetion_integral = #{evaluatetionIntegral,jdbcType=DOUBLE},
+      evaluatetion_time = #{evaluatetionTime,jdbcType=TIMESTAMP}
+    where evaluatetion_id = #{evaluatetionId,jdbcType=INTEGER}
+  </update>
+</mapper>

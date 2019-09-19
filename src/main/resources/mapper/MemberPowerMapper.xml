@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.MemberPowerMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.MemberPower">
+    <id column="power_id" jdbcType="INTEGER" property="powerId" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="power_equity" jdbcType="VARCHAR" property="powerEquity" />
+    <result column="power_describe" jdbcType="VARCHAR" property="powerDescribe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    power_id, member_id, power_equity, power_describe
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.MemberPowerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_member_power
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_member_power
+    where power_id = #{powerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_member_power
+    where power_id = #{powerId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.MemberPowerExample">
+    delete from tbl_member_power
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.MemberPower">
+    insert into tbl_member_power (power_id, member_id, power_equity, 
+      power_describe)
+    values (#{powerId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, #{powerEquity,jdbcType=VARCHAR}, 
+      #{powerDescribe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.MemberPower">
+    insert into tbl_member_power
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="powerId != null">
+        power_id,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="powerEquity != null">
+        power_equity,
+      </if>
+      <if test="powerDescribe != null">
+        power_describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="powerId != null">
+        #{powerId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="powerEquity != null">
+        #{powerEquity,jdbcType=VARCHAR},
+      </if>
+      <if test="powerDescribe != null">
+        #{powerDescribe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.MemberPowerExample" resultType="java.lang.Long">
+    select count(*) from tbl_member_power
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_member_power
+    <set>
+      <if test="record.powerId != null">
+        power_id = #{record.powerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberId != null">
+        member_id = #{record.memberId,jdbcType=INTEGER},
+      </if>
+      <if test="record.powerEquity != null">
+        power_equity = #{record.powerEquity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.powerDescribe != null">
+        power_describe = #{record.powerDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_member_power
+    set power_id = #{record.powerId,jdbcType=INTEGER},
+      member_id = #{record.memberId,jdbcType=INTEGER},
+      power_equity = #{record.powerEquity,jdbcType=VARCHAR},
+      power_describe = #{record.powerDescribe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.MemberPower">
+    update tbl_member_power
+    <set>
+      <if test="memberId != null">
+        member_id = #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="powerEquity != null">
+        power_equity = #{powerEquity,jdbcType=VARCHAR},
+      </if>
+      <if test="powerDescribe != null">
+        power_describe = #{powerDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where power_id = #{powerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.MemberPower">
+    update tbl_member_power
+    set member_id = #{memberId,jdbcType=INTEGER},
+      power_equity = #{powerEquity,jdbcType=VARCHAR},
+      power_describe = #{powerDescribe,jdbcType=VARCHAR}
+    where power_id = #{powerId,jdbcType=INTEGER}
+  </update>
+</mapper>
