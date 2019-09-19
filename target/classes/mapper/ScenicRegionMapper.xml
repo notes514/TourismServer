@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.ScenicRegionMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.ScenicRegion">
+    <id column="region_id" jdbcType="INTEGER" property="regionId" />
+    <result column="region_name" jdbcType="VARCHAR" property="regionName" />
+    <result column="region_pic_url" jdbcType="VARCHAR" property="regionPicUrl" />
+    <result column="region_describe" jdbcType="VARCHAR" property="regionDescribe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    region_id, region_name, region_pic_url, region_describe
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.ScenicRegionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_scenic_region
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_scenic_region
+    where region_id = #{regionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_scenic_region
+    where region_id = #{regionId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.ScenicRegionExample">
+    delete from tbl_scenic_region
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.ScenicRegion">
+    insert into tbl_scenic_region (region_id, region_name, region_pic_url, 
+      region_describe)
+    values (#{regionId,jdbcType=INTEGER}, #{regionName,jdbcType=VARCHAR}, #{regionPicUrl,jdbcType=VARCHAR}, 
+      #{regionDescribe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ScenicRegion">
+    insert into tbl_scenic_region
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="regionId != null">
+        region_id,
+      </if>
+      <if test="regionName != null">
+        region_name,
+      </if>
+      <if test="regionPicUrl != null">
+        region_pic_url,
+      </if>
+      <if test="regionDescribe != null">
+        region_describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="regionId != null">
+        #{regionId,jdbcType=INTEGER},
+      </if>
+      <if test="regionName != null">
+        #{regionName,jdbcType=VARCHAR},
+      </if>
+      <if test="regionPicUrl != null">
+        #{regionPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="regionDescribe != null">
+        #{regionDescribe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.ScenicRegionExample" resultType="java.lang.Long">
+    select count(*) from tbl_scenic_region
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_scenic_region
+    <set>
+      <if test="record.regionId != null">
+        region_id = #{record.regionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.regionName != null">
+        region_name = #{record.regionName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regionPicUrl != null">
+        region_pic_url = #{record.regionPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regionDescribe != null">
+        region_describe = #{record.regionDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_scenic_region
+    set region_id = #{record.regionId,jdbcType=INTEGER},
+      region_name = #{record.regionName,jdbcType=VARCHAR},
+      region_pic_url = #{record.regionPicUrl,jdbcType=VARCHAR},
+      region_describe = #{record.regionDescribe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.ScenicRegion">
+    update tbl_scenic_region
+    <set>
+      <if test="regionName != null">
+        region_name = #{regionName,jdbcType=VARCHAR},
+      </if>
+      <if test="regionPicUrl != null">
+        region_pic_url = #{regionPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="regionDescribe != null">
+        region_describe = #{regionDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where region_id = #{regionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ScenicRegion">
+    update tbl_scenic_region
+    set region_name = #{regionName,jdbcType=VARCHAR},
+      region_pic_url = #{regionPicUrl,jdbcType=VARCHAR},
+      region_describe = #{regionDescribe,jdbcType=VARCHAR}
+    where region_id = #{regionId,jdbcType=INTEGER}
+  </update>
+</mapper>

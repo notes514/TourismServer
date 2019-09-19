@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.ScenicSpotMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.ScenicSpot">
+    <id column="scenic_spot_id" jdbcType="INTEGER" property="scenicSpotId" />
+    <result column="region_id" jdbcType="INTEGER" property="regionId" />
+    <result column="scenic_spot_theme" jdbcType="VARCHAR" property="scenicSpotTheme" />
+    <result column="scenic_spot_pic_url" jdbcType="VARCHAR" property="scenicSpotPicUrl" />
+    <result column="scenic_spot_price" jdbcType="DOUBLE" property="scenicSpotPrice" />
+    <result column="travel_mode" jdbcType="INTEGER" property="travelMode" />
+    <result column="start_land" jdbcType="VARCHAR" property="startLand" />
+    <result column="end_land" jdbcType="VARCHAR" property="endLand" />
+    <result column="scenic_spot_state" jdbcType="INTEGER" property="scenicSpotState" />
+    <result column="scenic_spot_describe" jdbcType="VARCHAR" property="scenicSpotDescribe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    scenic_spot_id, region_id, scenic_spot_theme, scenic_spot_pic_url, scenic_spot_price, 
+    travel_mode, start_land, end_land, scenic_spot_state, scenic_spot_describe
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.ScenicSpotExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_scenic_spot
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_scenic_spot
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_scenic_spot
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.ScenicSpotExample">
+    delete from tbl_scenic_spot
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.ScenicSpot">
+    insert into tbl_scenic_spot (scenic_spot_id, region_id, scenic_spot_theme, 
+      scenic_spot_pic_url, scenic_spot_price, travel_mode, 
+      start_land, end_land, scenic_spot_state, 
+      scenic_spot_describe)
+    values (#{scenicSpotId,jdbcType=INTEGER}, #{regionId,jdbcType=INTEGER}, #{scenicSpotTheme,jdbcType=VARCHAR}, 
+      #{scenicSpotPicUrl,jdbcType=VARCHAR}, #{scenicSpotPrice,jdbcType=DOUBLE}, #{travelMode,jdbcType=INTEGER}, 
+      #{startLand,jdbcType=VARCHAR}, #{endLand,jdbcType=VARCHAR}, #{scenicSpotState,jdbcType=INTEGER}, 
+      #{scenicSpotDescribe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ScenicSpot">
+    insert into tbl_scenic_spot
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="scenicSpotId != null">
+        scenic_spot_id,
+      </if>
+      <if test="regionId != null">
+        region_id,
+      </if>
+      <if test="scenicSpotTheme != null">
+        scenic_spot_theme,
+      </if>
+      <if test="scenicSpotPicUrl != null">
+        scenic_spot_pic_url,
+      </if>
+      <if test="scenicSpotPrice != null">
+        scenic_spot_price,
+      </if>
+      <if test="travelMode != null">
+        travel_mode,
+      </if>
+      <if test="startLand != null">
+        start_land,
+      </if>
+      <if test="endLand != null">
+        end_land,
+      </if>
+      <if test="scenicSpotState != null">
+        scenic_spot_state,
+      </if>
+      <if test="scenicSpotDescribe != null">
+        scenic_spot_describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="scenicSpotId != null">
+        #{scenicSpotId,jdbcType=INTEGER},
+      </if>
+      <if test="regionId != null">
+        #{regionId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicSpotTheme != null">
+        #{scenicSpotTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicSpotPicUrl != null">
+        #{scenicSpotPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicSpotPrice != null">
+        #{scenicSpotPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="travelMode != null">
+        #{travelMode,jdbcType=INTEGER},
+      </if>
+      <if test="startLand != null">
+        #{startLand,jdbcType=VARCHAR},
+      </if>
+      <if test="endLand != null">
+        #{endLand,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicSpotState != null">
+        #{scenicSpotState,jdbcType=INTEGER},
+      </if>
+      <if test="scenicSpotDescribe != null">
+        #{scenicSpotDescribe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.ScenicSpotExample" resultType="java.lang.Long">
+    select count(*) from tbl_scenic_spot
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_scenic_spot
+    <set>
+      <if test="record.scenicSpotId != null">
+        scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
+      </if>
+      <if test="record.regionId != null">
+        region_id = #{record.regionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicSpotTheme != null">
+        scenic_spot_theme = #{record.scenicSpotTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scenicSpotPicUrl != null">
+        scenic_spot_pic_url = #{record.scenicSpotPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scenicSpotPrice != null">
+        scenic_spot_price = #{record.scenicSpotPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.travelMode != null">
+        travel_mode = #{record.travelMode,jdbcType=INTEGER},
+      </if>
+      <if test="record.startLand != null">
+        start_land = #{record.startLand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endLand != null">
+        end_land = #{record.endLand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scenicSpotState != null">
+        scenic_spot_state = #{record.scenicSpotState,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicSpotDescribe != null">
+        scenic_spot_describe = #{record.scenicSpotDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_scenic_spot
+    set scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
+      region_id = #{record.regionId,jdbcType=INTEGER},
+      scenic_spot_theme = #{record.scenicSpotTheme,jdbcType=VARCHAR},
+      scenic_spot_pic_url = #{record.scenicSpotPicUrl,jdbcType=VARCHAR},
+      scenic_spot_price = #{record.scenicSpotPrice,jdbcType=DOUBLE},
+      travel_mode = #{record.travelMode,jdbcType=INTEGER},
+      start_land = #{record.startLand,jdbcType=VARCHAR},
+      end_land = #{record.endLand,jdbcType=VARCHAR},
+      scenic_spot_state = #{record.scenicSpotState,jdbcType=INTEGER},
+      scenic_spot_describe = #{record.scenicSpotDescribe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.ScenicSpot">
+    update tbl_scenic_spot
+    <set>
+      <if test="regionId != null">
+        region_id = #{regionId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicSpotTheme != null">
+        scenic_spot_theme = #{scenicSpotTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicSpotPicUrl != null">
+        scenic_spot_pic_url = #{scenicSpotPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicSpotPrice != null">
+        scenic_spot_price = #{scenicSpotPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="travelMode != null">
+        travel_mode = #{travelMode,jdbcType=INTEGER},
+      </if>
+      <if test="startLand != null">
+        start_land = #{startLand,jdbcType=VARCHAR},
+      </if>
+      <if test="endLand != null">
+        end_land = #{endLand,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicSpotState != null">
+        scenic_spot_state = #{scenicSpotState,jdbcType=INTEGER},
+      </if>
+      <if test="scenicSpotDescribe != null">
+        scenic_spot_describe = #{scenicSpotDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ScenicSpot">
+    update tbl_scenic_spot
+    set region_id = #{regionId,jdbcType=INTEGER},
+      scenic_spot_theme = #{scenicSpotTheme,jdbcType=VARCHAR},
+      scenic_spot_pic_url = #{scenicSpotPicUrl,jdbcType=VARCHAR},
+      scenic_spot_price = #{scenicSpotPrice,jdbcType=DOUBLE},
+      travel_mode = #{travelMode,jdbcType=INTEGER},
+      start_land = #{startLand,jdbcType=VARCHAR},
+      end_land = #{endLand,jdbcType=VARCHAR},
+      scenic_spot_state = #{scenicSpotState,jdbcType=INTEGER},
+      scenic_spot_describe = #{scenicSpotDescribe,jdbcType=VARCHAR}
+    where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
+  </update>
+</mapper>

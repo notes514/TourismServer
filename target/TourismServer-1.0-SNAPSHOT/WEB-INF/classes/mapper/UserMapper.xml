@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.User">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_sex" jdbcType="VARCHAR" property="userSex" />
+    <result column="user_age" jdbcType="INTEGER" property="userAge" />
+    <result column="user_tellphone" jdbcType="VARCHAR" property="userTellphone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="user_idcard" jdbcType="VARCHAR" property="userIdcard" />
+    <result column="user_birthday" jdbcType="TIMESTAMP" property="userBirthday" />
+    <result column="nagai_addr" jdbcType="VARCHAR" property="nagaiAddr" />
+    <result column="user_pic_url" jdbcType="VARCHAR" property="userPicUrl" />
+    <result column="user_account_name" jdbcType="VARCHAR" property="userAccountName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_money" jdbcType="DOUBLE" property="userMoney" />
+    <result column="user_time" jdbcType="TIMESTAMP" property="userTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    user_id, user_name, user_sex, user_age, user_tellphone, email, user_idcard, user_birthday, 
+    nagai_addr, user_pic_url, user_account_name, password, user_money, user_time
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.UserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.UserExample">
+    delete from tbl_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.User">
+    insert into tbl_user (user_id, user_name, user_sex, 
+      user_age, user_tellphone, email, 
+      user_idcard, user_birthday, nagai_addr, 
+      user_pic_url, user_account_name, password, 
+      user_money, user_time)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR}, 
+      #{userAge,jdbcType=INTEGER}, #{userTellphone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{userIdcard,jdbcType=VARCHAR}, #{userBirthday,jdbcType=TIMESTAMP}, #{nagaiAddr,jdbcType=VARCHAR}, 
+      #{userPicUrl,jdbcType=VARCHAR}, #{userAccountName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{userMoney,jdbcType=DOUBLE}, #{userTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.User">
+    insert into tbl_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userSex != null">
+        user_sex,
+      </if>
+      <if test="userAge != null">
+        user_age,
+      </if>
+      <if test="userTellphone != null">
+        user_tellphone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="userIdcard != null">
+        user_idcard,
+      </if>
+      <if test="userBirthday != null">
+        user_birthday,
+      </if>
+      <if test="nagaiAddr != null">
+        nagai_addr,
+      </if>
+      <if test="userPicUrl != null">
+        user_pic_url,
+      </if>
+      <if test="userAccountName != null">
+        user_account_name,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="userMoney != null">
+        user_money,
+      </if>
+      <if test="userTime != null">
+        user_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        #{userAge,jdbcType=INTEGER},
+      </if>
+      <if test="userTellphone != null">
+        #{userTellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="userIdcard != null">
+        #{userIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirthday != null">
+        #{userBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nagaiAddr != null">
+        #{nagaiAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="userPicUrl != null">
+        #{userPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userAccountName != null">
+        #{userAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userMoney != null">
+        #{userMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="userTime != null">
+        #{userTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.UserExample" resultType="java.lang.Long">
+    select count(*) from tbl_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_user
+    <set>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userName != null">
+        user_name = #{record.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userSex != null">
+        user_sex = #{record.userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userAge != null">
+        user_age = #{record.userAge,jdbcType=INTEGER},
+      </if>
+      <if test="record.userTellphone != null">
+        user_tellphone = #{record.userTellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userIdcard != null">
+        user_idcard = #{record.userIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userBirthday != null">
+        user_birthday = #{record.userBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.nagaiAddr != null">
+        nagai_addr = #{record.nagaiAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userPicUrl != null">
+        user_pic_url = #{record.userPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userAccountName != null">
+        user_account_name = #{record.userAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userMoney != null">
+        user_money = #{record.userMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.userTime != null">
+        user_time = #{record.userTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_user
+    set user_id = #{record.userId,jdbcType=INTEGER},
+      user_name = #{record.userName,jdbcType=VARCHAR},
+      user_sex = #{record.userSex,jdbcType=VARCHAR},
+      user_age = #{record.userAge,jdbcType=INTEGER},
+      user_tellphone = #{record.userTellphone,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      user_idcard = #{record.userIdcard,jdbcType=VARCHAR},
+      user_birthday = #{record.userBirthday,jdbcType=TIMESTAMP},
+      nagai_addr = #{record.nagaiAddr,jdbcType=VARCHAR},
+      user_pic_url = #{record.userPicUrl,jdbcType=VARCHAR},
+      user_account_name = #{record.userAccountName,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      user_money = #{record.userMoney,jdbcType=DOUBLE},
+      user_time = #{record.userTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.User">
+    update tbl_user
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        user_sex = #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        user_age = #{userAge,jdbcType=INTEGER},
+      </if>
+      <if test="userTellphone != null">
+        user_tellphone = #{userTellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="userIdcard != null">
+        user_idcard = #{userIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirthday != null">
+        user_birthday = #{userBirthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nagaiAddr != null">
+        nagai_addr = #{nagaiAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="userPicUrl != null">
+        user_pic_url = #{userPicUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userAccountName != null">
+        user_account_name = #{userAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userMoney != null">
+        user_money = #{userMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="userTime != null">
+        user_time = #{userTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.User">
+    update tbl_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_sex = #{userSex,jdbcType=VARCHAR},
+      user_age = #{userAge,jdbcType=INTEGER},
+      user_tellphone = #{userTellphone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      user_idcard = #{userIdcard,jdbcType=VARCHAR},
+      user_birthday = #{userBirthday,jdbcType=TIMESTAMP},
+      nagai_addr = #{nagaiAddr,jdbcType=VARCHAR},
+      user_pic_url = #{userPicUrl,jdbcType=VARCHAR},
+      user_account_name = #{userAccountName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      user_money = #{userMoney,jdbcType=DOUBLE},
+      user_time = #{userTime,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.MessagePushMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.MessagePush">
+    <id column="push_id" jdbcType="INTEGER" property="pushId" />
+    <result column="push_content" jdbcType="VARCHAR" property="pushContent" />
+    <result column="push_time" jdbcType="TIMESTAMP" property="pushTime" />
+    <result column="push_describe" jdbcType="VARCHAR" property="pushDescribe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    push_id, push_content, push_time, push_describe
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.MessagePushExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_message_push
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_message_push
+    where push_id = #{pushId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_message_push
+    where push_id = #{pushId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.MessagePushExample">
+    delete from tbl_message_push
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.MessagePush">
+    insert into tbl_message_push (push_id, push_content, push_time, 
+      push_describe)
+    values (#{pushId,jdbcType=INTEGER}, #{pushContent,jdbcType=VARCHAR}, #{pushTime,jdbcType=TIMESTAMP}, 
+      #{pushDescribe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.MessagePush">
+    insert into tbl_message_push
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pushId != null">
+        push_id,
+      </if>
+      <if test="pushContent != null">
+        push_content,
+      </if>
+      <if test="pushTime != null">
+        push_time,
+      </if>
+      <if test="pushDescribe != null">
+        push_describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pushId != null">
+        #{pushId,jdbcType=INTEGER},
+      </if>
+      <if test="pushContent != null">
+        #{pushContent,jdbcType=VARCHAR},
+      </if>
+      <if test="pushTime != null">
+        #{pushTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pushDescribe != null">
+        #{pushDescribe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.MessagePushExample" resultType="java.lang.Long">
+    select count(*) from tbl_message_push
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_message_push
+    <set>
+      <if test="record.pushId != null">
+        push_id = #{record.pushId,jdbcType=INTEGER},
+      </if>
+      <if test="record.pushContent != null">
+        push_content = #{record.pushContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pushTime != null">
+        push_time = #{record.pushTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.pushDescribe != null">
+        push_describe = #{record.pushDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_message_push
+    set push_id = #{record.pushId,jdbcType=INTEGER},
+      push_content = #{record.pushContent,jdbcType=VARCHAR},
+      push_time = #{record.pushTime,jdbcType=TIMESTAMP},
+      push_describe = #{record.pushDescribe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.MessagePush">
+    update tbl_message_push
+    <set>
+      <if test="pushContent != null">
+        push_content = #{pushContent,jdbcType=VARCHAR},
+      </if>
+      <if test="pushTime != null">
+        push_time = #{pushTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pushDescribe != null">
+        push_describe = #{pushDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where push_id = #{pushId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.MessagePush">
+    update tbl_message_push
+    set push_content = #{pushContent,jdbcType=VARCHAR},
+      push_time = #{pushTime,jdbcType=TIMESTAMP},
+      push_describe = #{pushDescribe,jdbcType=VARCHAR}
+    where push_id = #{pushId,jdbcType=INTEGER}
+  </update>
+</mapper>

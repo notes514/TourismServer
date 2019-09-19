@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.UserPayMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.UserPay">
+    <id column="pay_id" jdbcType="INTEGER" property="payId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="pay_situation" jdbcType="VARCHAR" property="paySituation" />
+    <result column="pay_mode" jdbcType="INTEGER" property="payMode" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="discount_money" jdbcType="DOUBLE" property="discountMoney" />
+    <result column="should_money" jdbcType="DOUBLE" property="shouldMoney" />
+    <result column="real_money" jdbcType="DOUBLE" property="realMoney" />
+    <result column="debt_money" jdbcType="DOUBLE" property="debtMoney" />
+    <result column="payment_describe" jdbcType="VARCHAR" property="paymentDescribe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    pay_id, user_id, member_id, order_id, pay_situation, pay_mode, pay_time, discount_money, 
+    should_money, real_money, debt_money, payment_describe
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.UserPayExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_user_pay
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_user_pay
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_user_pay
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.UserPayExample">
+    delete from tbl_user_pay
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.UserPay">
+    insert into tbl_user_pay (pay_id, user_id, member_id, 
+      order_id, pay_situation, pay_mode, 
+      pay_time, discount_money, should_money, 
+      real_money, debt_money, payment_describe
+      )
+    values (#{payId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}, 
+      #{orderId,jdbcType=INTEGER}, #{paySituation,jdbcType=VARCHAR}, #{payMode,jdbcType=INTEGER}, 
+      #{payTime,jdbcType=TIMESTAMP}, #{discountMoney,jdbcType=DOUBLE}, #{shouldMoney,jdbcType=DOUBLE}, 
+      #{realMoney,jdbcType=DOUBLE}, #{debtMoney,jdbcType=DOUBLE}, #{paymentDescribe,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.UserPay">
+    insert into tbl_user_pay
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="payId != null">
+        pay_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="paySituation != null">
+        pay_situation,
+      </if>
+      <if test="payMode != null">
+        pay_mode,
+      </if>
+      <if test="payTime != null">
+        pay_time,
+      </if>
+      <if test="discountMoney != null">
+        discount_money,
+      </if>
+      <if test="shouldMoney != null">
+        should_money,
+      </if>
+      <if test="realMoney != null">
+        real_money,
+      </if>
+      <if test="debtMoney != null">
+        debt_money,
+      </if>
+      <if test="paymentDescribe != null">
+        payment_describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="payId != null">
+        #{payId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="paySituation != null">
+        #{paySituation,jdbcType=VARCHAR},
+      </if>
+      <if test="payMode != null">
+        #{payMode,jdbcType=INTEGER},
+      </if>
+      <if test="payTime != null">
+        #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="discountMoney != null">
+        #{discountMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="shouldMoney != null">
+        #{shouldMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="realMoney != null">
+        #{realMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="debtMoney != null">
+        #{debtMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="paymentDescribe != null">
+        #{paymentDescribe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.UserPayExample" resultType="java.lang.Long">
+    select count(*) from tbl_user_pay
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_user_pay
+    <set>
+      <if test="record.payId != null">
+        pay_id = #{record.payId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberId != null">
+        member_id = #{record.memberId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.paySituation != null">
+        pay_situation = #{record.paySituation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payMode != null">
+        pay_mode = #{record.payMode,jdbcType=INTEGER},
+      </if>
+      <if test="record.payTime != null">
+        pay_time = #{record.payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.discountMoney != null">
+        discount_money = #{record.discountMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.shouldMoney != null">
+        should_money = #{record.shouldMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.realMoney != null">
+        real_money = #{record.realMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.debtMoney != null">
+        debt_money = #{record.debtMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.paymentDescribe != null">
+        payment_describe = #{record.paymentDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_user_pay
+    set pay_id = #{record.payId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      member_id = #{record.memberId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      pay_situation = #{record.paySituation,jdbcType=VARCHAR},
+      pay_mode = #{record.payMode,jdbcType=INTEGER},
+      pay_time = #{record.payTime,jdbcType=TIMESTAMP},
+      discount_money = #{record.discountMoney,jdbcType=DOUBLE},
+      should_money = #{record.shouldMoney,jdbcType=DOUBLE},
+      real_money = #{record.realMoney,jdbcType=DOUBLE},
+      debt_money = #{record.debtMoney,jdbcType=DOUBLE},
+      payment_describe = #{record.paymentDescribe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.UserPay">
+    update tbl_user_pay
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null">
+        member_id = #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="paySituation != null">
+        pay_situation = #{paySituation,jdbcType=VARCHAR},
+      </if>
+      <if test="payMode != null">
+        pay_mode = #{payMode,jdbcType=INTEGER},
+      </if>
+      <if test="payTime != null">
+        pay_time = #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="discountMoney != null">
+        discount_money = #{discountMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="shouldMoney != null">
+        should_money = #{shouldMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="realMoney != null">
+        real_money = #{realMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="debtMoney != null">
+        debt_money = #{debtMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="paymentDescribe != null">
+        payment_describe = #{paymentDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.UserPay">
+    update tbl_user_pay
+    set user_id = #{userId,jdbcType=INTEGER},
+      member_id = #{memberId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      pay_situation = #{paySituation,jdbcType=VARCHAR},
+      pay_mode = #{payMode,jdbcType=INTEGER},
+      pay_time = #{payTime,jdbcType=TIMESTAMP},
+      discount_money = #{discountMoney,jdbcType=DOUBLE},
+      should_money = #{shouldMoney,jdbcType=DOUBLE},
+      real_money = #{realMoney,jdbcType=DOUBLE},
+      debt_money = #{debtMoney,jdbcType=DOUBLE},
+      payment_describe = #{paymentDescribe,jdbcType=VARCHAR}
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </update>
+</mapper>

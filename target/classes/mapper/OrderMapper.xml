@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Order">
+    <id column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="scenic_details_id" jdbcType="INTEGER" property="scenicDetailsId" />
+    <result column="order_consignee" jdbcType="VARCHAR" property="orderConsignee" />
+    <result column="order_money" jdbcType="INTEGER" property="orderMoney" />
+    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
+    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
+    <result column="order_describe" jdbcType="VARCHAR" property="orderDescribe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    order_id, user_id, scenic_details_id, order_consignee, order_money, order_time, order_status, 
+    order_describe
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.OrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_order
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_order
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.OrderExample">
+    delete from tbl_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.Order">
+    insert into tbl_order (order_id, user_id, scenic_details_id, 
+      order_consignee, order_money, order_time, 
+      order_status, order_describe)
+    values (#{orderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{scenicDetailsId,jdbcType=INTEGER}, 
+      #{orderConsignee,jdbcType=VARCHAR}, #{orderMoney,jdbcType=INTEGER}, #{orderTime,jdbcType=TIMESTAMP}, 
+      #{orderStatus,jdbcType=INTEGER}, #{orderDescribe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Order">
+    insert into tbl_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="scenicDetailsId != null">
+        scenic_details_id,
+      </if>
+      <if test="orderConsignee != null">
+        order_consignee,
+      </if>
+      <if test="orderMoney != null">
+        order_money,
+      </if>
+      <if test="orderTime != null">
+        order_time,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="orderDescribe != null">
+        order_describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicDetailsId != null">
+        #{scenicDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="orderConsignee != null">
+        #{orderConsignee,jdbcType=VARCHAR},
+      </if>
+      <if test="orderMoney != null">
+        #{orderMoney,jdbcType=INTEGER},
+      </if>
+      <if test="orderTime != null">
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="orderDescribe != null">
+        #{orderDescribe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.OrderExample" resultType="java.lang.Long">
+    select count(*) from tbl_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_order
+    <set>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.scenicDetailsId != null">
+        scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderConsignee != null">
+        order_consignee = #{record.orderConsignee,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderMoney != null">
+        order_money = #{record.orderMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderTime != null">
+        order_time = #{record.orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.orderStatus != null">
+        order_status = #{record.orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderDescribe != null">
+        order_describe = #{record.orderDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_order
+    set order_id = #{record.orderId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
+      order_consignee = #{record.orderConsignee,jdbcType=VARCHAR},
+      order_money = #{record.orderMoney,jdbcType=INTEGER},
+      order_time = #{record.orderTime,jdbcType=TIMESTAMP},
+      order_status = #{record.orderStatus,jdbcType=INTEGER},
+      order_describe = #{record.orderDescribe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Order">
+    update tbl_order
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="scenicDetailsId != null">
+        scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
+      </if>
+      <if test="orderConsignee != null">
+        order_consignee = #{orderConsignee,jdbcType=VARCHAR},
+      </if>
+      <if test="orderMoney != null">
+        order_money = #{orderMoney,jdbcType=INTEGER},
+      </if>
+      <if test="orderTime != null">
+        order_time = #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="orderDescribe != null">
+        order_describe = #{orderDescribe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Order">
+    update tbl_order
+    set user_id = #{userId,jdbcType=INTEGER},
+      scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
+      order_consignee = #{orderConsignee,jdbcType=VARCHAR},
+      order_money = #{orderMoney,jdbcType=INTEGER},
+      order_time = #{orderTime,jdbcType=TIMESTAMP},
+      order_status = #{orderStatus,jdbcType=INTEGER},
+      order_describe = #{orderDescribe,jdbcType=VARCHAR}
+    where order_id = #{orderId,jdbcType=INTEGER}
+  </update>
+</mapper>
