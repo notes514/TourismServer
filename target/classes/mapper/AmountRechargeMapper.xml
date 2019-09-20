@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.AmountRechargeMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.AmountRecharge">
+    <id column="recharge_id" jdbcType="INTEGER" property="rechargeId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="payment_mode" jdbcType="INTEGER" property="paymentMode" />
+    <result column="commodity_description" jdbcType="VARCHAR" property="commodityDescription" />
+    <result column="recharge_object" jdbcType="VARCHAR" property="rechargeObject" />
+    <result column="face_value" jdbcType="DOUBLE" property="faceValue" />
+    <result column="transaction_object" jdbcType="VARCHAR" property="transactionObject" />
+    <result column="recharge_time" jdbcType="TIMESTAMP" property="rechargeTime" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="bill_classification" jdbcType="VARCHAR" property="billClassification" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    recharge_id, user_id, payment_mode, commodity_description, recharge_object, face_value, 
+    transaction_object, recharge_time, order_number, bill_classification, remark
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.AmountRechargeExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_amount_recharge
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_amount_recharge
+    where recharge_id = #{rechargeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_amount_recharge
+    where recharge_id = #{rechargeId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.AmountRechargeExample">
+    delete from tbl_amount_recharge
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.AmountRecharge">
+    insert into tbl_amount_recharge (recharge_id, user_id, payment_mode, 
+      commodity_description, recharge_object, face_value, 
+      transaction_object, recharge_time, order_number, 
+      bill_classification, remark)
+    values (#{rechargeId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{paymentMode,jdbcType=INTEGER}, 
+      #{commodityDescription,jdbcType=VARCHAR}, #{rechargeObject,jdbcType=VARCHAR}, #{faceValue,jdbcType=DOUBLE}, 
+      #{transactionObject,jdbcType=VARCHAR}, #{rechargeTime,jdbcType=TIMESTAMP}, #{orderNumber,jdbcType=VARCHAR}, 
+      #{billClassification,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.AmountRecharge">
+    insert into tbl_amount_recharge
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rechargeId != null">
+        recharge_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="paymentMode != null">
+        payment_mode,
+      </if>
+      <if test="commodityDescription != null">
+        commodity_description,
+      </if>
+      <if test="rechargeObject != null">
+        recharge_object,
+      </if>
+      <if test="faceValue != null">
+        face_value,
+      </if>
+      <if test="transactionObject != null">
+        transaction_object,
+      </if>
+      <if test="rechargeTime != null">
+        recharge_time,
+      </if>
+      <if test="orderNumber != null">
+        order_number,
+      </if>
+      <if test="billClassification != null">
+        bill_classification,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rechargeId != null">
+        #{rechargeId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="paymentMode != null">
+        #{paymentMode,jdbcType=INTEGER},
+      </if>
+      <if test="commodityDescription != null">
+        #{commodityDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="rechargeObject != null">
+        #{rechargeObject,jdbcType=VARCHAR},
+      </if>
+      <if test="faceValue != null">
+        #{faceValue,jdbcType=DOUBLE},
+      </if>
+      <if test="transactionObject != null">
+        #{transactionObject,jdbcType=VARCHAR},
+      </if>
+      <if test="rechargeTime != null">
+        #{rechargeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="billClassification != null">
+        #{billClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.AmountRechargeExample" resultType="java.lang.Long">
+    select count(*) from tbl_amount_recharge
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_amount_recharge
+    <set>
+      <if test="record.rechargeId != null">
+        recharge_id = #{record.rechargeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.paymentMode != null">
+        payment_mode = #{record.paymentMode,jdbcType=INTEGER},
+      </if>
+      <if test="record.commodityDescription != null">
+        commodity_description = #{record.commodityDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rechargeObject != null">
+        recharge_object = #{record.rechargeObject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.faceValue != null">
+        face_value = #{record.faceValue,jdbcType=DOUBLE},
+      </if>
+      <if test="record.transactionObject != null">
+        transaction_object = #{record.transactionObject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.rechargeTime != null">
+        recharge_time = #{record.rechargeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.orderNumber != null">
+        order_number = #{record.orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.billClassification != null">
+        bill_classification = #{record.billClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_amount_recharge
+    set recharge_id = #{record.rechargeId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      payment_mode = #{record.paymentMode,jdbcType=INTEGER},
+      commodity_description = #{record.commodityDescription,jdbcType=VARCHAR},
+      recharge_object = #{record.rechargeObject,jdbcType=VARCHAR},
+      face_value = #{record.faceValue,jdbcType=DOUBLE},
+      transaction_object = #{record.transactionObject,jdbcType=VARCHAR},
+      recharge_time = #{record.rechargeTime,jdbcType=TIMESTAMP},
+      order_number = #{record.orderNumber,jdbcType=VARCHAR},
+      bill_classification = #{record.billClassification,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.AmountRecharge">
+    update tbl_amount_recharge
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="paymentMode != null">
+        payment_mode = #{paymentMode,jdbcType=INTEGER},
+      </if>
+      <if test="commodityDescription != null">
+        commodity_description = #{commodityDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="rechargeObject != null">
+        recharge_object = #{rechargeObject,jdbcType=VARCHAR},
+      </if>
+      <if test="faceValue != null">
+        face_value = #{faceValue,jdbcType=DOUBLE},
+      </if>
+      <if test="transactionObject != null">
+        transaction_object = #{transactionObject,jdbcType=VARCHAR},
+      </if>
+      <if test="rechargeTime != null">
+        recharge_time = #{rechargeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderNumber != null">
+        order_number = #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="billClassification != null">
+        bill_classification = #{billClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where recharge_id = #{rechargeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.AmountRecharge">
+    update tbl_amount_recharge
+    set user_id = #{userId,jdbcType=INTEGER},
+      payment_mode = #{paymentMode,jdbcType=INTEGER},
+      commodity_description = #{commodityDescription,jdbcType=VARCHAR},
+      recharge_object = #{rechargeObject,jdbcType=VARCHAR},
+      face_value = #{faceValue,jdbcType=DOUBLE},
+      transaction_object = #{transactionObject,jdbcType=VARCHAR},
+      recharge_time = #{rechargeTime,jdbcType=TIMESTAMP},
+      order_number = #{orderNumber,jdbcType=VARCHAR},
+      bill_classification = #{billClassification,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where recharge_id = #{rechargeId,jdbcType=INTEGER}
+  </update>
+</mapper>
