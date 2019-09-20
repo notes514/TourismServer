@@ -96,12 +96,34 @@ public class TourismController {
         example.createCriteria().andUserAccountNameEqualTo(user.getUserAccountName());
         List<User> userList = userMapper.selectByExample(example);
         if (userList.size() > 0) {
-            map.put(RESULT, "该用户名已存在！");
+            map.put(RESULT, "S");
+            map.put(TIPS, "该用户名已被使用！");
             return map;
         } else {
-            map.put(RESULT, "");
+            map.put(RESULT, "F");
+            map.put(TIPS, "");
             return map;
         }
+    }
+
+    /**
+     * 查询用户信息
+     * @param userId 用户编号
+     * @return 返回的结果
+     */
+    @RequestMapping("/queryByUserInformation")
+    public Map<String, Object> queryByUserInformation(int userId) {
+        //向上造型
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该用户！");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, userMapper.selectByPrimaryKey(userId));
+        return map;
     }
 
     /**
