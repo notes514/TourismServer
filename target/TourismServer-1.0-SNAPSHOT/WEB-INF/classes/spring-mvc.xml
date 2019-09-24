@@ -8,16 +8,20 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+       http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
     <!-- 扫描注解，这样com.xjt包下的文件都能被扫描 -->
-    <context:component-scan base-package="com.ncvt.tourism"/>
+    <!--  注：访问扫描controller层，会映射不到静态资源  -->
+    <!--  因为没有配置handlerMapping与handlerAdpater。DefaultAnnotationHandlerMapping通过url映射到controller类上，
+          AnnotationMethodHandlerAdpter通过url映射到controller的方法上。-->
+    <context:component-scan base-package="com.ncvt.tourism.controller"/>
 
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven/>
 
     <!-- 静态资源默认servlet配置 -->
     <mvc:default-servlet-handler/>
+    <mvc:resources location="/images/" mapping="/images/**"/>
 
     <!-- 配置返回视图的路径，以及识别后缀是jsp文件 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

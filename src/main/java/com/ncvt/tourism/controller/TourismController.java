@@ -80,7 +80,7 @@ public class TourismController {
             return map;
         }
         map.put(RESULT, "S");
-        map.put(RESULT, "注册成功！");
+        map.put(TIPS, "注册成功！");
         return map;
     }
 

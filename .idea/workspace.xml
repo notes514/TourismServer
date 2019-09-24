@@ -7,10 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/title.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +96,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -105,11 +111,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/images" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/ncvt/tourism" />
       <recent name="D:\TourismServer\src\main\java\com\ncvt\tourism" />
       <recent name="D:\TourismServer\src\main\webapp\WEB-INF" />
-      <recent name="D:\TourismServer\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -261,7 +267,14 @@
       <workItem from="1568900578936" duration="1010000" />
       <workItem from="1568902390023" duration="256000" />
       <workItem from="1568944324863" duration="5382000" />
-      <workItem from="1568981390638" duration="3792000" />
+      <workItem from="1568981390638" duration="3895000" />
+      <workItem from="1569027739201" duration="1700000" />
+      <workItem from="1569062738722" duration="1538000" />
+      <workItem from="1569201785531" duration="501000" />
+      <workItem from="1569223369262" duration="1202000" />
+      <workItem from="1569226493087" duration="5261000" />
+      <workItem from="1569240509332" duration="329000" />
+      <workItem from="1569290105475" duration="340000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -284,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568949157413</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="查询用户信息">
+      <created>1568993732723</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568993732723</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +327,7 @@
     <MESSAGE value="初始提交" />
     <MESSAGE value="升级pom文件spring，mybatis的版本号" />
     <MESSAGE value="完成基本网络请求的编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成基本网络请求的编写" />
+    <MESSAGE value="查询用户信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="查询用户信息" />
   </component>
 </project>
