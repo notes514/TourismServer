@@ -7,16 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/title.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/guilin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/liuzhou.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/nanning.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,31 +37,89 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="tourismdb@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="tourismdb@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="tourismdb@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="tourismdb: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="TourismServer" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="16" column="66" lean-forward="true" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+              <folding>
+                <element signature="docComment;method#login#0;class#TourismController#0" />
+                <element signature="method#login#0;class#TourismController#0" />
+                <element signature="docComment;method#register#0;class#TourismController#0" />
+                <element signature="method#register#0;class#TourismController#0" />
+                <element signature="docComment;method#qeuryUserAccountName#0;class#TourismController#0" />
+                <element signature="method#qeuryUserAccountName#0;class#TourismController#0" />
+                <element signature="docComment;method#queryByUserInformation#0;class#TourismController#0" />
+                <element signature="method#queryByUserInformation#0;class#TourismController#0" />
+                <element signature="docComment;method#updateUserInformation#0;class#TourismController#0" />
+                <element signature="method#updateUserInformation#0;class#TourismController#0" />
+                <element signature="docComment;method#addedCommonAddress#0;class#TourismController#0" />
+                <element signature="method#addedCommonAddress#0;class#TourismController#0" />
+                <element signature="docComment;method#updateCommonAddress#0;class#TourismController#0" />
+                <element signature="method#updateCommonAddress#0;class#TourismController#0" />
+                <element signature="docComment;method#queryAllCommonAddress#0;class#TourismController#0" />
+                <element signature="method#queryAllCommonAddress#0;class#TourismController#0" />
+                <element signature="docComment;method#accountRecharge#0;class#TourismController#0" />
+                <element signature="method#accountRecharge#0;class#TourismController#0" />
+                <element signature="docComment;method#userMemberHandling#0;class#TourismController#0" />
+                <element signature="method#userMemberHandling#0;class#TourismController#0" />
+                <element signature="docComment;method#addByMembershipInterests#0;class#TourismController#0" />
+                <element signature="method#addByMembershipInterests#0;class#TourismController#0" />
+                <element signature="docComment;method#userAddByCollection#0;class#TourismController#0" />
+                <element signature="method#userAddByCollection#0;class#TourismController#0" />
+                <element signature="docComment;method#queryAllUserCollection#0;class#TourismController#0" />
+                <element signature="method#queryAllUserCollection#0;class#TourismController#0" />
+                <element signature="docComment;method#addScenicRegion#0;class#TourismController#0" />
+                <element signature="method#addScenicRegion#0;class#TourismController#0" />
+                <element signature="docComment;method#addScenicSpot#0;class#TourismController#0" />
+                <element signature="method#addScenicSpot#0;class#TourismController#0" />
+                <element signature="docComment;method#addScenicDetails#0;class#TourismController#0" />
+                <element signature="method#addScenicDetails#0;class#TourismController#0" />
+                <element signature="docComment;method#addScenicPic#0;class#TourismController#0" />
+                <element signature="method#addScenicPic#0;class#TourismController#0" />
+                <element signature="docComment;method#queryAllScenicRegion#0;class#TourismController#0" />
+                <element signature="docComment;method#queryAllScenicSpot#0;class#TourismController#0" />
+                <element signature="e#16157#16158#0" expanded="true" />
+                <element signature="e#16218#16219#0" expanded="true" />
+                <element signature="docComment;method#queryByScenicDetailsAndPic#0;class#TourismController#0" />
+                <element signature="method#queryByScenicDetailsAndPic#0;class#TourismController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,6 +136,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
@@ -90,13 +158,103 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
   <component name="ProjectId" id="1R2wNbUKpxWo5SZpQ3o81j6npCn" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tourism" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tourism" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images/spot" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -110,12 +268,15 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\spot" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\region" />
       <recent name="$PROJECT_DIR$/src/main/webapp/images" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/ncvt/tourism" />
-      <recent name="D:\TourismServer\src\main\java\com\ncvt\tourism" />
-      <recent name="D:\TourismServer\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -275,6 +436,12 @@
       <workItem from="1569226493087" duration="5261000" />
       <workItem from="1569240509332" duration="329000" />
       <workItem from="1569290105475" duration="340000" />
+      <workItem from="1569758298794" duration="1588000" />
+      <workItem from="1570243727960" duration="988000" />
+      <workItem from="1570611004886" duration="4518000" />
+      <workItem from="1570636890781" duration="2202000" />
+      <workItem from="1570639640704" duration="228000" />
+      <workItem from="1570671033793" duration="3807000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -307,6 +474,48 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13331000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26675603" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37252125" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3286119" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3297587" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -316,8 +525,28 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -329,5 +558,101 @@
     <MESSAGE value="完成基本网络请求的编写" />
     <MESSAGE value="查询用户信息" />
     <option name="LAST_COMMIT_MESSAGE" value="查询用户信息" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicSpot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/nanning.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/liuzhou.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/guilin.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="190" column="53" lean-forward="true" selection-start-line="190" selection-start-column="53" selection-end-line="190" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/title.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="16" column="66" lean-forward="true" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+          <folding>
+            <element signature="docComment;method#login#0;class#TourismController#0" />
+            <element signature="method#login#0;class#TourismController#0" />
+            <element signature="docComment;method#register#0;class#TourismController#0" />
+            <element signature="method#register#0;class#TourismController#0" />
+            <element signature="docComment;method#qeuryUserAccountName#0;class#TourismController#0" />
+            <element signature="method#qeuryUserAccountName#0;class#TourismController#0" />
+            <element signature="docComment;method#queryByUserInformation#0;class#TourismController#0" />
+            <element signature="method#queryByUserInformation#0;class#TourismController#0" />
+            <element signature="docComment;method#updateUserInformation#0;class#TourismController#0" />
+            <element signature="method#updateUserInformation#0;class#TourismController#0" />
+            <element signature="docComment;method#addedCommonAddress#0;class#TourismController#0" />
+            <element signature="method#addedCommonAddress#0;class#TourismController#0" />
+            <element signature="docComment;method#updateCommonAddress#0;class#TourismController#0" />
+            <element signature="method#updateCommonAddress#0;class#TourismController#0" />
+            <element signature="docComment;method#queryAllCommonAddress#0;class#TourismController#0" />
+            <element signature="method#queryAllCommonAddress#0;class#TourismController#0" />
+            <element signature="docComment;method#accountRecharge#0;class#TourismController#0" />
+            <element signature="method#accountRecharge#0;class#TourismController#0" />
+            <element signature="docComment;method#userMemberHandling#0;class#TourismController#0" />
+            <element signature="method#userMemberHandling#0;class#TourismController#0" />
+            <element signature="docComment;method#addByMembershipInterests#0;class#TourismController#0" />
+            <element signature="method#addByMembershipInterests#0;class#TourismController#0" />
+            <element signature="docComment;method#userAddByCollection#0;class#TourismController#0" />
+            <element signature="method#userAddByCollection#0;class#TourismController#0" />
+            <element signature="docComment;method#queryAllUserCollection#0;class#TourismController#0" />
+            <element signature="method#queryAllUserCollection#0;class#TourismController#0" />
+            <element signature="docComment;method#addScenicRegion#0;class#TourismController#0" />
+            <element signature="method#addScenicRegion#0;class#TourismController#0" />
+            <element signature="docComment;method#addScenicSpot#0;class#TourismController#0" />
+            <element signature="method#addScenicSpot#0;class#TourismController#0" />
+            <element signature="docComment;method#addScenicDetails#0;class#TourismController#0" />
+            <element signature="method#addScenicDetails#0;class#TourismController#0" />
+            <element signature="docComment;method#addScenicPic#0;class#TourismController#0" />
+            <element signature="method#addScenicPic#0;class#TourismController#0" />
+            <element signature="docComment;method#queryAllScenicRegion#0;class#TourismController#0" />
+            <element signature="docComment;method#queryAllScenicSpot#0;class#TourismController#0" />
+            <element signature="e#16157#16158#0" expanded="true" />
+            <element signature="e#16218#16219#0" expanded="true" />
+            <element signature="docComment;method#queryByScenicDetailsAndPic#0;class#TourismController#0" />
+            <element signature="method#queryByScenicDetailsAndPic#0;class#TourismController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
 </project>
