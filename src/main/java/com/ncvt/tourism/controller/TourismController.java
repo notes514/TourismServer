@@ -536,6 +536,17 @@ public class TourismController {
     }
 
     /**
+     * 查询地区编号对应景区
+     * @return
+     */
+    @RequestMapping("queryScenicByRegionId")
+    public List<ScenicSpot> queryScenicByRegionId(int regionId){
+        ScenicSpotExample pe = new ScenicSpotExample();
+        pe.createCriteria().andRegionIdEqualTo(regionId);
+        return scenicSpotMapper.selectByExample(pe);
+    }
+
+    /**
      * 查询景区信息详情
      * @param travelMode 出游方式
      * @return 返回结果

@@ -742,6 +742,9 @@
     <MESSAGE value="升级pom文件spring，mybatis的版本号" />
     <MESSAGE value="完成基本网络请求的编写" />
     <MESSAGE value="查询用户信息" />
+    <MESSAGE value="静态资源访问，web头文件更改" />
+    <MESSAGE value="静态资源访问，web顶部代码更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="静态资源访问，web顶部代码更改" />
     <MESSAGE value="2019.10.10" />
     <option name="LAST_COMMIT_MESSAGE" value="2019.10.10" />
   </component>
