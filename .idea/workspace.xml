@@ -7,16 +7,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/title.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/aomen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/beihai.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/beijing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/changsha.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/dongguan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/guilin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/hangzhou.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/humen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/liuzhou.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/nanjing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/nanning.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/sanya.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/shanghai.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/shenzhen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/wuxi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/xianggang.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/yueyang.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/zhangjiajie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/35.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +141,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -111,11 +156,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/images" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/ncvt/tourism" />
       <recent name="D:\TourismServer\src\main\java\com\ncvt\tourism" />
-      <recent name="D:\TourismServer\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -274,7 +319,31 @@
       <workItem from="1569223369262" duration="1202000" />
       <workItem from="1569226493087" duration="5261000" />
       <workItem from="1569240509332" duration="329000" />
-      <workItem from="1569290105475" duration="340000" />
+      <workItem from="1569290105475" duration="1258000" />
+      <workItem from="1569312223832" duration="1329000" />
+      <workItem from="1569402779600" duration="777000" />
+      <workItem from="1569407814633" duration="317000" />
+      <workItem from="1569495305053" duration="479000" />
+      <workItem from="1569542773917" duration="712000" />
+      <workItem from="1569633352738" duration="646000" />
+      <workItem from="1569744740733" duration="109000" />
+      <workItem from="1569764494689" duration="447000" />
+      <workItem from="1570279855868" duration="888000" />
+      <workItem from="1570325075689" duration="234000" />
+      <workItem from="1570608882649" duration="579000" />
+      <workItem from="1570666611624" duration="1242000" />
+      <workItem from="1570695227213" duration="1054000" />
+      <workItem from="1570756482177" duration="736000" />
+      <workItem from="1570787027388" duration="1220000" />
+      <workItem from="1570854033987" duration="1802000" />
+      <workItem from="1571030446067" duration="822000" />
+      <workItem from="1571274976022" duration="398000" />
+      <workItem from="1571282782649" duration="335000" />
+      <workItem from="1571295389748" duration="211000" />
+      <workItem from="1571311477391" duration="124000" />
+      <workItem from="1571702253481" duration="633000" />
+      <workItem from="1571729827751" duration="370000" />
+      <workItem from="1571734329110" duration="1443000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -304,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568993732723</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="静态资源访问，web顶部代码更改">
+      <created>1569290960504</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569290960504</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +404,8 @@
     <MESSAGE value="升级pom文件spring，mybatis的版本号" />
     <MESSAGE value="完成基本网络请求的编写" />
     <MESSAGE value="查询用户信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="查询用户信息" />
+    <MESSAGE value="静态资源访问，web头文件更改" />
+    <MESSAGE value="静态资源访问，web顶部代码更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="静态资源访问，web顶部代码更改" />
   </component>
 </project>
