@@ -4,16 +4,15 @@
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.ScenicDetails">
     <id column="scenic_details_id" jdbcType="INTEGER" property="scenicDetailsId" />
     <result column="scenic_spot_id" jdbcType="INTEGER" property="scenicSpotId" />
-    <result column="details_introduce" jdbcType="VARCHAR" property="detailsIntroduce" />
+    <result column="consult_traffic" jdbcType="VARCHAR" property="consultTraffic" />
+    <result column="travel_days" jdbcType="VARCHAR" property="travelDays" />
+    <result column="depart_ arrive" jdbcType="VARCHAR" property="departArrive" />
+    <result column="stay_standard" jdbcType="VARCHAR" property="stayStandard" />
     <result column="contain_scenic" jdbcType="VARCHAR" property="containScenic" />
-    <result column="scenic_selled" jdbcType="INTEGER" property="scenicSelled" />
     <result column="user_score" jdbcType="DOUBLE" property="userScore" />
     <result column="comments_number" jdbcType="INTEGER" property="commentsNumber" />
     <result column="recommend_reasons" jdbcType="VARCHAR" property="recommendReasons" />
-    <result column="departure_time" jdbcType="TIMESTAMP" property="departureTime" />
-    <result column="departure_place" jdbcType="VARCHAR" property="departurePlace" />
-    <result column="place_remark" jdbcType="VARCHAR" property="placeRemark" />
-    <result column="details_describe" jdbcType="VARCHAR" property="detailsDescribe" />
+    <result column="details_introduce" jdbcType="VARCHAR" property="detailsIntroduce" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -74,9 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    scenic_details_id, scenic_spot_id, details_introduce, contain_scenic, scenic_selled, 
-    user_score, comments_number, recommend_reasons, departure_time, departure_place, 
-    place_remark, details_describe
+    scenic_details_id, scenic_spot_id, consult_traffic, travel_days, "depart_ arrive", 
+    stay_standard, contain_scenic, user_score, comments_number, recommend_reasons, details_introduce
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ScenicDetailsExample" resultMap="BaseResultMap">
     select
@@ -109,16 +107,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.ScenicDetails">
-    insert into tbl_scenic_details (scenic_details_id, scenic_spot_id, details_introduce, 
-      contain_scenic, scenic_selled, user_score, 
-      comments_number, recommend_reasons, departure_time, 
-      departure_place, place_remark, details_describe
-      )
-    values (#{scenicDetailsId,jdbcType=INTEGER}, #{scenicSpotId,jdbcType=INTEGER}, #{detailsIntroduce,jdbcType=VARCHAR}, 
-      #{containScenic,jdbcType=VARCHAR}, #{scenicSelled,jdbcType=INTEGER}, #{userScore,jdbcType=DOUBLE}, 
-      #{commentsNumber,jdbcType=INTEGER}, #{recommendReasons,jdbcType=VARCHAR}, #{departureTime,jdbcType=TIMESTAMP}, 
-      #{departurePlace,jdbcType=VARCHAR}, #{placeRemark,jdbcType=VARCHAR}, #{detailsDescribe,jdbcType=VARCHAR}
-      )
+    insert into tbl_scenic_details (scenic_details_id, scenic_spot_id, consult_traffic, 
+      travel_days, "depart_ arrive", stay_standard, 
+      contain_scenic, user_score, comments_number, 
+      recommend_reasons, details_introduce)
+    values (#{scenicDetailsId,jdbcType=INTEGER}, #{scenicSpotId,jdbcType=INTEGER}, #{consultTraffic,jdbcType=VARCHAR}, 
+      #{travelDays,jdbcType=VARCHAR}, #{departArrive,jdbcType=VARCHAR}, #{stayStandard,jdbcType=VARCHAR}, 
+      #{containScenic,jdbcType=VARCHAR}, #{userScore,jdbcType=DOUBLE}, #{commentsNumber,jdbcType=INTEGER}, 
+      #{recommendReasons,jdbcType=VARCHAR}, #{detailsIntroduce,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ScenicDetails">
     insert into tbl_scenic_details
@@ -129,14 +125,20 @@
       <if test="scenicSpotId != null">
         scenic_spot_id,
       </if>
-      <if test="detailsIntroduce != null">
-        details_introduce,
+      <if test="consultTraffic != null">
+        consult_traffic,
+      </if>
+      <if test="travelDays != null">
+        travel_days,
+      </if>
+      <if test="departArrive != null">
+        "depart_ arrive",
+      </if>
+      <if test="stayStandard != null">
+        stay_standard,
       </if>
       <if test="containScenic != null">
         contain_scenic,
-      </if>
-      <if test="scenicSelled != null">
-        scenic_selled,
       </if>
       <if test="userScore != null">
         user_score,
@@ -147,17 +149,8 @@
       <if test="recommendReasons != null">
         recommend_reasons,
       </if>
-      <if test="departureTime != null">
-        departure_time,
-      </if>
-      <if test="departurePlace != null">
-        departure_place,
-      </if>
-      <if test="placeRemark != null">
-        place_remark,
-      </if>
-      <if test="detailsDescribe != null">
-        details_describe,
+      <if test="detailsIntroduce != null">
+        details_introduce,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -167,14 +160,20 @@
       <if test="scenicSpotId != null">
         #{scenicSpotId,jdbcType=INTEGER},
       </if>
-      <if test="detailsIntroduce != null">
-        #{detailsIntroduce,jdbcType=VARCHAR},
+      <if test="consultTraffic != null">
+        #{consultTraffic,jdbcType=VARCHAR},
+      </if>
+      <if test="travelDays != null">
+        #{travelDays,jdbcType=VARCHAR},
+      </if>
+      <if test="departArrive != null">
+        #{departArrive,jdbcType=VARCHAR},
+      </if>
+      <if test="stayStandard != null">
+        #{stayStandard,jdbcType=VARCHAR},
       </if>
       <if test="containScenic != null">
         #{containScenic,jdbcType=VARCHAR},
-      </if>
-      <if test="scenicSelled != null">
-        #{scenicSelled,jdbcType=INTEGER},
       </if>
       <if test="userScore != null">
         #{userScore,jdbcType=DOUBLE},
@@ -185,17 +184,8 @@
       <if test="recommendReasons != null">
         #{recommendReasons,jdbcType=VARCHAR},
       </if>
-      <if test="departureTime != null">
-        #{departureTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="departurePlace != null">
-        #{departurePlace,jdbcType=VARCHAR},
-      </if>
-      <if test="placeRemark != null">
-        #{placeRemark,jdbcType=VARCHAR},
-      </if>
-      <if test="detailsDescribe != null">
-        #{detailsDescribe,jdbcType=VARCHAR},
+      <if test="detailsIntroduce != null">
+        #{detailsIntroduce,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -214,14 +204,20 @@
       <if test="record.scenicSpotId != null">
         scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
       </if>
-      <if test="record.detailsIntroduce != null">
-        details_introduce = #{record.detailsIntroduce,jdbcType=VARCHAR},
+      <if test="record.consultTraffic != null">
+        consult_traffic = #{record.consultTraffic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.travelDays != null">
+        travel_days = #{record.travelDays,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departArrive != null">
+        "depart_ arrive" = #{record.departArrive,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stayStandard != null">
+        stay_standard = #{record.stayStandard,jdbcType=VARCHAR},
       </if>
       <if test="record.containScenic != null">
         contain_scenic = #{record.containScenic,jdbcType=VARCHAR},
-      </if>
-      <if test="record.scenicSelled != null">
-        scenic_selled = #{record.scenicSelled,jdbcType=INTEGER},
       </if>
       <if test="record.userScore != null">
         user_score = #{record.userScore,jdbcType=DOUBLE},
@@ -232,17 +228,8 @@
       <if test="record.recommendReasons != null">
         recommend_reasons = #{record.recommendReasons,jdbcType=VARCHAR},
       </if>
-      <if test="record.departureTime != null">
-        departure_time = #{record.departureTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.departurePlace != null">
-        departure_place = #{record.departurePlace,jdbcType=VARCHAR},
-      </if>
-      <if test="record.placeRemark != null">
-        place_remark = #{record.placeRemark,jdbcType=VARCHAR},
-      </if>
-      <if test="record.detailsDescribe != null">
-        details_describe = #{record.detailsDescribe,jdbcType=VARCHAR},
+      <if test="record.detailsIntroduce != null">
+        details_introduce = #{record.detailsIntroduce,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -253,16 +240,15 @@
     update tbl_scenic_details
     set scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
       scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
-      details_introduce = #{record.detailsIntroduce,jdbcType=VARCHAR},
+      consult_traffic = #{record.consultTraffic,jdbcType=VARCHAR},
+      travel_days = #{record.travelDays,jdbcType=VARCHAR},
+      "depart_ arrive" = #{record.departArrive,jdbcType=VARCHAR},
+      stay_standard = #{record.stayStandard,jdbcType=VARCHAR},
       contain_scenic = #{record.containScenic,jdbcType=VARCHAR},
-      scenic_selled = #{record.scenicSelled,jdbcType=INTEGER},
       user_score = #{record.userScore,jdbcType=DOUBLE},
       comments_number = #{record.commentsNumber,jdbcType=INTEGER},
       recommend_reasons = #{record.recommendReasons,jdbcType=VARCHAR},
-      departure_time = #{record.departureTime,jdbcType=TIMESTAMP},
-      departure_place = #{record.departurePlace,jdbcType=VARCHAR},
-      place_remark = #{record.placeRemark,jdbcType=VARCHAR},
-      details_describe = #{record.detailsDescribe,jdbcType=VARCHAR}
+      details_introduce = #{record.detailsIntroduce,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -273,14 +259,20 @@
       <if test="scenicSpotId != null">
         scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
       </if>
-      <if test="detailsIntroduce != null">
-        details_introduce = #{detailsIntroduce,jdbcType=VARCHAR},
+      <if test="consultTraffic != null">
+        consult_traffic = #{consultTraffic,jdbcType=VARCHAR},
+      </if>
+      <if test="travelDays != null">
+        travel_days = #{travelDays,jdbcType=VARCHAR},
+      </if>
+      <if test="departArrive != null">
+        "depart_ arrive" = #{departArrive,jdbcType=VARCHAR},
+      </if>
+      <if test="stayStandard != null">
+        stay_standard = #{stayStandard,jdbcType=VARCHAR},
       </if>
       <if test="containScenic != null">
         contain_scenic = #{containScenic,jdbcType=VARCHAR},
-      </if>
-      <if test="scenicSelled != null">
-        scenic_selled = #{scenicSelled,jdbcType=INTEGER},
       </if>
       <if test="userScore != null">
         user_score = #{userScore,jdbcType=DOUBLE},
@@ -291,17 +283,8 @@
       <if test="recommendReasons != null">
         recommend_reasons = #{recommendReasons,jdbcType=VARCHAR},
       </if>
-      <if test="departureTime != null">
-        departure_time = #{departureTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="departurePlace != null">
-        departure_place = #{departurePlace,jdbcType=VARCHAR},
-      </if>
-      <if test="placeRemark != null">
-        place_remark = #{placeRemark,jdbcType=VARCHAR},
-      </if>
-      <if test="detailsDescribe != null">
-        details_describe = #{detailsDescribe,jdbcType=VARCHAR},
+      <if test="detailsIntroduce != null">
+        details_introduce = #{detailsIntroduce,jdbcType=VARCHAR},
       </if>
     </set>
     where scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER}
@@ -309,16 +292,15 @@
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ScenicDetails">
     update tbl_scenic_details
     set scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
-      details_introduce = #{detailsIntroduce,jdbcType=VARCHAR},
+      consult_traffic = #{consultTraffic,jdbcType=VARCHAR},
+      travel_days = #{travelDays,jdbcType=VARCHAR},
+      "depart_ arrive" = #{departArrive,jdbcType=VARCHAR},
+      stay_standard = #{stayStandard,jdbcType=VARCHAR},
       contain_scenic = #{containScenic,jdbcType=VARCHAR},
-      scenic_selled = #{scenicSelled,jdbcType=INTEGER},
       user_score = #{userScore,jdbcType=DOUBLE},
       comments_number = #{commentsNumber,jdbcType=INTEGER},
       recommend_reasons = #{recommendReasons,jdbcType=VARCHAR},
-      departure_time = #{departureTime,jdbcType=TIMESTAMP},
-      departure_place = #{departurePlace,jdbcType=VARCHAR},
-      place_remark = #{placeRemark,jdbcType=VARCHAR},
-      details_describe = #{detailsDescribe,jdbcType=VARCHAR}
+      details_introduce = #{detailsIntroduce,jdbcType=VARCHAR}
     where scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.ExhibitsMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Exhibits">
+    <id column="exhibits_id" jdbcType="INTEGER" property="exhibitsId" />
+    <result column="exhibition_area_id" jdbcType="INTEGER" property="exhibitionAreaId" />
+    <result column="exhibits_name" jdbcType="VARCHAR" property="exhibitsName" />
+    <result column="exhibits_video_url" jdbcType="VARCHAR" property="exhibitsVideoUrl" />
+    <result column="exhibits_ information" jdbcType="VARCHAR" property="exhibitsInformation" />
+    <result column="exhibits_ author" jdbcType="VARCHAR" property="exhibitsAuthor" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    exhibits_id, exhibition_area_id, exhibits_name, exhibits_video_url, "exhibits_ information", 
+    "exhibits_ author"
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.ExhibitsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_exhibits
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_exhibits
+    where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_exhibits
+    where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.ExhibitsExample">
+    delete from tbl_exhibits
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.Exhibits">
+    insert into tbl_exhibits (exhibits_id, exhibition_area_id, exhibits_name, 
+      exhibits_video_url, "exhibits_ information", 
+      "exhibits_ author")
+    values (#{exhibitsId,jdbcType=INTEGER}, #{exhibitionAreaId,jdbcType=INTEGER}, #{exhibitsName,jdbcType=VARCHAR}, 
+      #{exhibitsVideoUrl,jdbcType=VARCHAR}, #{exhibitsInformation,jdbcType=VARCHAR}, 
+      #{exhibitsAuthor,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Exhibits">
+    insert into tbl_exhibits
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="exhibitsId != null">
+        exhibits_id,
+      </if>
+      <if test="exhibitionAreaId != null">
+        exhibition_area_id,
+      </if>
+      <if test="exhibitsName != null">
+        exhibits_name,
+      </if>
+      <if test="exhibitsVideoUrl != null">
+        exhibits_video_url,
+      </if>
+      <if test="exhibitsInformation != null">
+        "exhibits_ information",
+      </if>
+      <if test="exhibitsAuthor != null">
+        "exhibits_ author",
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="exhibitsId != null">
+        #{exhibitsId,jdbcType=INTEGER},
+      </if>
+      <if test="exhibitionAreaId != null">
+        #{exhibitionAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="exhibitsName != null">
+        #{exhibitsName,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitsVideoUrl != null">
+        #{exhibitsVideoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitsInformation != null">
+        #{exhibitsInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitsAuthor != null">
+        #{exhibitsAuthor,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.ExhibitsExample" resultType="java.lang.Long">
+    select count(*) from tbl_exhibits
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_exhibits
+    <set>
+      <if test="record.exhibitsId != null">
+        exhibits_id = #{record.exhibitsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.exhibitionAreaId != null">
+        exhibition_area_id = #{record.exhibitionAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="record.exhibitsName != null">
+        exhibits_name = #{record.exhibitsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exhibitsVideoUrl != null">
+        exhibits_video_url = #{record.exhibitsVideoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exhibitsInformation != null">
+        "exhibits_ information" = #{record.exhibitsInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exhibitsAuthor != null">
+        "exhibits_ author" = #{record.exhibitsAuthor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_exhibits
+    set exhibits_id = #{record.exhibitsId,jdbcType=INTEGER},
+      exhibition_area_id = #{record.exhibitionAreaId,jdbcType=INTEGER},
+      exhibits_name = #{record.exhibitsName,jdbcType=VARCHAR},
+      exhibits_video_url = #{record.exhibitsVideoUrl,jdbcType=VARCHAR},
+      "exhibits_ information" = #{record.exhibitsInformation,jdbcType=VARCHAR},
+      "exhibits_ author" = #{record.exhibitsAuthor,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Exhibits">
+    update tbl_exhibits
+    <set>
+      <if test="exhibitionAreaId != null">
+        exhibition_area_id = #{exhibitionAreaId,jdbcType=INTEGER},
+      </if>
+      <if test="exhibitsName != null">
+        exhibits_name = #{exhibitsName,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitsVideoUrl != null">
+        exhibits_video_url = #{exhibitsVideoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitsInformation != null">
+        "exhibits_ information" = #{exhibitsInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitsAuthor != null">
+        "exhibits_ author" = #{exhibitsAuthor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Exhibits">
+    update tbl_exhibits
+    set exhibition_area_id = #{exhibitionAreaId,jdbcType=INTEGER},
+      exhibits_name = #{exhibitsName,jdbcType=VARCHAR},
+      exhibits_video_url = #{exhibitsVideoUrl,jdbcType=VARCHAR},
+      "exhibits_ information" = #{exhibitsInformation,jdbcType=VARCHAR},
+      "exhibits_ author" = #{exhibitsAuthor,jdbcType=VARCHAR}
+    where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
+  </update>
+</mapper>

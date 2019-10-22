@@ -4,8 +4,8 @@
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.OrderDetails">
     <id column="order_details_id" jdbcType="INTEGER" property="orderDetailsId" />
     <result column="order_id" jdbcType="INTEGER" property="orderId" />
-    <result column="order_details_content" jdbcType="VARCHAR" property="orderDetailsContent" />
-    <result column="order_number" jdbcType="INTEGER" property="orderNumber" />
+    <result column="contacts_id" jdbcType="INTEGER" property="contactsId" />
+    <result column="passenger_id" jdbcType="INTEGER" property="passengerId" />
     <result column="order_details_describe" jdbcType="VARCHAR" property="orderDetailsDescribe" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -67,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    order_details_id, order_id, order_details_content, order_number, order_details_describe
+    order_details_id, order_id, contacts_id, passenger_id, order_details_describe
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.OrderDetailsExample" resultMap="BaseResultMap">
     select
@@ -100,10 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.OrderDetails">
-    insert into tbl_order_details (order_details_id, order_id, order_details_content, 
-      order_number, order_details_describe)
-    values (#{orderDetailsId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{orderDetailsContent,jdbcType=VARCHAR}, 
-      #{orderNumber,jdbcType=INTEGER}, #{orderDetailsDescribe,jdbcType=VARCHAR})
+    insert into tbl_order_details (order_details_id, order_id, contacts_id, 
+      passenger_id, order_details_describe)
+    values (#{orderDetailsId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{contactsId,jdbcType=INTEGER}, 
+      #{passengerId,jdbcType=INTEGER}, #{orderDetailsDescribe,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.OrderDetails">
     insert into tbl_order_details
@@ -114,11 +114,11 @@
       <if test="orderId != null">
         order_id,
       </if>
-      <if test="orderDetailsContent != null">
-        order_details_content,
+      <if test="contactsId != null">
+        contacts_id,
       </if>
-      <if test="orderNumber != null">
-        order_number,
+      <if test="passengerId != null">
+        passenger_id,
       </if>
       <if test="orderDetailsDescribe != null">
         order_details_describe,
@@ -131,11 +131,11 @@
       <if test="orderId != null">
         #{orderId,jdbcType=INTEGER},
       </if>
-      <if test="orderDetailsContent != null">
-        #{orderDetailsContent,jdbcType=VARCHAR},
+      <if test="contactsId != null">
+        #{contactsId,jdbcType=INTEGER},
       </if>
-      <if test="orderNumber != null">
-        #{orderNumber,jdbcType=INTEGER},
+      <if test="passengerId != null">
+        #{passengerId,jdbcType=INTEGER},
       </if>
       <if test="orderDetailsDescribe != null">
         #{orderDetailsDescribe,jdbcType=VARCHAR},
@@ -157,11 +157,11 @@
       <if test="record.orderId != null">
         order_id = #{record.orderId,jdbcType=INTEGER},
       </if>
-      <if test="record.orderDetailsContent != null">
-        order_details_content = #{record.orderDetailsContent,jdbcType=VARCHAR},
+      <if test="record.contactsId != null">
+        contacts_id = #{record.contactsId,jdbcType=INTEGER},
       </if>
-      <if test="record.orderNumber != null">
-        order_number = #{record.orderNumber,jdbcType=INTEGER},
+      <if test="record.passengerId != null">
+        passenger_id = #{record.passengerId,jdbcType=INTEGER},
       </if>
       <if test="record.orderDetailsDescribe != null">
         order_details_describe = #{record.orderDetailsDescribe,jdbcType=VARCHAR},
@@ -175,8 +175,8 @@
     update tbl_order_details
     set order_details_id = #{record.orderDetailsId,jdbcType=INTEGER},
       order_id = #{record.orderId,jdbcType=INTEGER},
-      order_details_content = #{record.orderDetailsContent,jdbcType=VARCHAR},
-      order_number = #{record.orderNumber,jdbcType=INTEGER},
+      contacts_id = #{record.contactsId,jdbcType=INTEGER},
+      passenger_id = #{record.passengerId,jdbcType=INTEGER},
       order_details_describe = #{record.orderDetailsDescribe,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -188,11 +188,11 @@
       <if test="orderId != null">
         order_id = #{orderId,jdbcType=INTEGER},
       </if>
-      <if test="orderDetailsContent != null">
-        order_details_content = #{orderDetailsContent,jdbcType=VARCHAR},
+      <if test="contactsId != null">
+        contacts_id = #{contactsId,jdbcType=INTEGER},
       </if>
-      <if test="orderNumber != null">
-        order_number = #{orderNumber,jdbcType=INTEGER},
+      <if test="passengerId != null">
+        passenger_id = #{passengerId,jdbcType=INTEGER},
       </if>
       <if test="orderDetailsDescribe != null">
         order_details_describe = #{orderDetailsDescribe,jdbcType=VARCHAR},
@@ -203,8 +203,8 @@
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.OrderDetails">
     update tbl_order_details
     set order_id = #{orderId,jdbcType=INTEGER},
-      order_details_content = #{orderDetailsContent,jdbcType=VARCHAR},
-      order_number = #{orderNumber,jdbcType=INTEGER},
+      contacts_id = #{contactsId,jdbcType=INTEGER},
+      passenger_id = #{passengerId,jdbcType=INTEGER},
       order_details_describe = #{orderDetailsDescribe,jdbcType=VARCHAR}
     where order_details_id = #{orderDetailsId,jdbcType=INTEGER}
   </update>

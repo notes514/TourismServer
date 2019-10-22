@@ -3,13 +3,16 @@
 <mapper namespace="com.ncvt.tourism.mapper.OrderMapper">
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Order">
     <id column="order_id" jdbcType="INTEGER" property="orderId" />
-    <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="scenic_details_id" jdbcType="INTEGER" property="scenicDetailsId" />
-    <result column="order_consignee" jdbcType="VARCHAR" property="orderConsignee" />
-    <result column="order_money" jdbcType="INTEGER" property="orderMoney" />
-    <result column="order_time" jdbcType="TIMESTAMP" property="orderTime" />
-    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
-    <result column="order_describe" jdbcType="VARCHAR" property="orderDescribe" />
+    <result column="order_content" jdbcType="VARCHAR" property="orderContent" />
+    <result column="order_number" jdbcType="INTEGER" property="orderNumber" />
+    <result column="order_state" jdbcType="INTEGER" property="orderState" />
+    <result column="trip_mode" jdbcType="VARCHAR" property="tripMode" />
+    <result column="depart_date" jdbcType="TIMESTAMP" property="departDate" />
+    <result column="depart_days" jdbcType="VARCHAR" property="departDays" />
+    <result column="tirp_information" jdbcType="VARCHAR" property="tirpInformation" />
+    <result column="order_price" jdbcType="DOUBLE" property="orderPrice" />
+    <result column="order_date" jdbcType="TIMESTAMP" property="orderDate" />
+    <result column="supplier" jdbcType="VARCHAR" property="supplier" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,8 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    order_id, user_id, scenic_details_id, order_consignee, order_money, order_time, order_status, 
-    order_describe
+    order_id, order_content, order_number, order_state, trip_mode, depart_date, depart_days, 
+    tirp_information, order_price, order_date, supplier
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.OrderExample" resultMap="BaseResultMap">
     select
@@ -104,12 +107,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.Order">
-    insert into tbl_order (order_id, user_id, scenic_details_id, 
-      order_consignee, order_money, order_time, 
-      order_status, order_describe)
-    values (#{orderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{scenicDetailsId,jdbcType=INTEGER}, 
-      #{orderConsignee,jdbcType=VARCHAR}, #{orderMoney,jdbcType=INTEGER}, #{orderTime,jdbcType=TIMESTAMP}, 
-      #{orderStatus,jdbcType=INTEGER}, #{orderDescribe,jdbcType=VARCHAR})
+    insert into tbl_order (order_id, order_content, order_number, 
+      order_state, trip_mode, depart_date, 
+      depart_days, tirp_information, order_price, 
+      order_date, supplier)
+    values (#{orderId,jdbcType=INTEGER}, #{orderContent,jdbcType=VARCHAR}, #{orderNumber,jdbcType=INTEGER}, 
+      #{orderState,jdbcType=INTEGER}, #{tripMode,jdbcType=VARCHAR}, #{departDate,jdbcType=TIMESTAMP}, 
+      #{departDays,jdbcType=VARCHAR}, #{tirpInformation,jdbcType=VARCHAR}, #{orderPrice,jdbcType=DOUBLE}, 
+      #{orderDate,jdbcType=TIMESTAMP}, #{supplier,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Order">
     insert into tbl_order
@@ -117,52 +122,70 @@
       <if test="orderId != null">
         order_id,
       </if>
-      <if test="userId != null">
-        user_id,
+      <if test="orderContent != null">
+        order_content,
       </if>
-      <if test="scenicDetailsId != null">
-        scenic_details_id,
+      <if test="orderNumber != null">
+        order_number,
       </if>
-      <if test="orderConsignee != null">
-        order_consignee,
+      <if test="orderState != null">
+        order_state,
       </if>
-      <if test="orderMoney != null">
-        order_money,
+      <if test="tripMode != null">
+        trip_mode,
       </if>
-      <if test="orderTime != null">
-        order_time,
+      <if test="departDate != null">
+        depart_date,
       </if>
-      <if test="orderStatus != null">
-        order_status,
+      <if test="departDays != null">
+        depart_days,
       </if>
-      <if test="orderDescribe != null">
-        order_describe,
+      <if test="tirpInformation != null">
+        tirp_information,
+      </if>
+      <if test="orderPrice != null">
+        order_price,
+      </if>
+      <if test="orderDate != null">
+        order_date,
+      </if>
+      <if test="supplier != null">
+        supplier,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
         #{orderId,jdbcType=INTEGER},
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=INTEGER},
+      <if test="orderContent != null">
+        #{orderContent,jdbcType=VARCHAR},
       </if>
-      <if test="scenicDetailsId != null">
-        #{scenicDetailsId,jdbcType=INTEGER},
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=INTEGER},
       </if>
-      <if test="orderConsignee != null">
-        #{orderConsignee,jdbcType=VARCHAR},
+      <if test="orderState != null">
+        #{orderState,jdbcType=INTEGER},
       </if>
-      <if test="orderMoney != null">
-        #{orderMoney,jdbcType=INTEGER},
+      <if test="tripMode != null">
+        #{tripMode,jdbcType=VARCHAR},
       </if>
-      <if test="orderTime != null">
-        #{orderTime,jdbcType=TIMESTAMP},
+      <if test="departDate != null">
+        #{departDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderStatus != null">
-        #{orderStatus,jdbcType=INTEGER},
+      <if test="departDays != null">
+        #{departDays,jdbcType=VARCHAR},
       </if>
-      <if test="orderDescribe != null">
-        #{orderDescribe,jdbcType=VARCHAR},
+      <if test="tirpInformation != null">
+        #{tirpInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPrice != null">
+        #{orderPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="orderDate != null">
+        #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplier != null">
+        #{supplier,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -178,26 +201,35 @@
       <if test="record.orderId != null">
         order_id = #{record.orderId,jdbcType=INTEGER},
       </if>
-      <if test="record.userId != null">
-        user_id = #{record.userId,jdbcType=INTEGER},
+      <if test="record.orderContent != null">
+        order_content = #{record.orderContent,jdbcType=VARCHAR},
       </if>
-      <if test="record.scenicDetailsId != null">
-        scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
+      <if test="record.orderNumber != null">
+        order_number = #{record.orderNumber,jdbcType=INTEGER},
       </if>
-      <if test="record.orderConsignee != null">
-        order_consignee = #{record.orderConsignee,jdbcType=VARCHAR},
+      <if test="record.orderState != null">
+        order_state = #{record.orderState,jdbcType=INTEGER},
       </if>
-      <if test="record.orderMoney != null">
-        order_money = #{record.orderMoney,jdbcType=INTEGER},
+      <if test="record.tripMode != null">
+        trip_mode = #{record.tripMode,jdbcType=VARCHAR},
       </if>
-      <if test="record.orderTime != null">
-        order_time = #{record.orderTime,jdbcType=TIMESTAMP},
+      <if test="record.departDate != null">
+        depart_date = #{record.departDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.orderStatus != null">
-        order_status = #{record.orderStatus,jdbcType=INTEGER},
+      <if test="record.departDays != null">
+        depart_days = #{record.departDays,jdbcType=VARCHAR},
       </if>
-      <if test="record.orderDescribe != null">
-        order_describe = #{record.orderDescribe,jdbcType=VARCHAR},
+      <if test="record.tirpInformation != null">
+        tirp_information = #{record.tirpInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderPrice != null">
+        order_price = #{record.orderPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.orderDate != null">
+        order_date = #{record.orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.supplier != null">
+        supplier = #{record.supplier,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -207,13 +239,16 @@
   <update id="updateByExample" parameterType="map">
     update tbl_order
     set order_id = #{record.orderId,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=INTEGER},
-      scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
-      order_consignee = #{record.orderConsignee,jdbcType=VARCHAR},
-      order_money = #{record.orderMoney,jdbcType=INTEGER},
-      order_time = #{record.orderTime,jdbcType=TIMESTAMP},
-      order_status = #{record.orderStatus,jdbcType=INTEGER},
-      order_describe = #{record.orderDescribe,jdbcType=VARCHAR}
+      order_content = #{record.orderContent,jdbcType=VARCHAR},
+      order_number = #{record.orderNumber,jdbcType=INTEGER},
+      order_state = #{record.orderState,jdbcType=INTEGER},
+      trip_mode = #{record.tripMode,jdbcType=VARCHAR},
+      depart_date = #{record.departDate,jdbcType=TIMESTAMP},
+      depart_days = #{record.departDays,jdbcType=VARCHAR},
+      tirp_information = #{record.tirpInformation,jdbcType=VARCHAR},
+      order_price = #{record.orderPrice,jdbcType=DOUBLE},
+      order_date = #{record.orderDate,jdbcType=TIMESTAMP},
+      supplier = #{record.supplier,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -221,39 +256,51 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Order">
     update tbl_order
     <set>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=INTEGER},
+      <if test="orderContent != null">
+        order_content = #{orderContent,jdbcType=VARCHAR},
       </if>
-      <if test="scenicDetailsId != null">
-        scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
+      <if test="orderNumber != null">
+        order_number = #{orderNumber,jdbcType=INTEGER},
       </if>
-      <if test="orderConsignee != null">
-        order_consignee = #{orderConsignee,jdbcType=VARCHAR},
+      <if test="orderState != null">
+        order_state = #{orderState,jdbcType=INTEGER},
       </if>
-      <if test="orderMoney != null">
-        order_money = #{orderMoney,jdbcType=INTEGER},
+      <if test="tripMode != null">
+        trip_mode = #{tripMode,jdbcType=VARCHAR},
       </if>
-      <if test="orderTime != null">
-        order_time = #{orderTime,jdbcType=TIMESTAMP},
+      <if test="departDate != null">
+        depart_date = #{departDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderStatus != null">
-        order_status = #{orderStatus,jdbcType=INTEGER},
+      <if test="departDays != null">
+        depart_days = #{departDays,jdbcType=VARCHAR},
       </if>
-      <if test="orderDescribe != null">
-        order_describe = #{orderDescribe,jdbcType=VARCHAR},
+      <if test="tirpInformation != null">
+        tirp_information = #{tirpInformation,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPrice != null">
+        order_price = #{orderPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="orderDate != null">
+        order_date = #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="supplier != null">
+        supplier = #{supplier,jdbcType=VARCHAR},
       </if>
     </set>
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Order">
     update tbl_order
-    set user_id = #{userId,jdbcType=INTEGER},
-      scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
-      order_consignee = #{orderConsignee,jdbcType=VARCHAR},
-      order_money = #{orderMoney,jdbcType=INTEGER},
-      order_time = #{orderTime,jdbcType=TIMESTAMP},
-      order_status = #{orderStatus,jdbcType=INTEGER},
-      order_describe = #{orderDescribe,jdbcType=VARCHAR}
+    set order_content = #{orderContent,jdbcType=VARCHAR},
+      order_number = #{orderNumber,jdbcType=INTEGER},
+      order_state = #{orderState,jdbcType=INTEGER},
+      trip_mode = #{tripMode,jdbcType=VARCHAR},
+      depart_date = #{departDate,jdbcType=TIMESTAMP},
+      depart_days = #{departDays,jdbcType=VARCHAR},
+      tirp_information = #{tirpInformation,jdbcType=VARCHAR},
+      order_price = #{orderPrice,jdbcType=DOUBLE},
+      order_date = #{orderDate,jdbcType=TIMESTAMP},
+      supplier = #{supplier,jdbcType=VARCHAR}
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>
 </mapper>

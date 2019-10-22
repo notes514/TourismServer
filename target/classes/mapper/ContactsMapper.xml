@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncvt.tourism.mapper.ContactsMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Contacts">
+    <id column="contacts_id" jdbcType="INTEGER" property="contactsId" />
+    <result column="contacts_name" jdbcType="VARCHAR" property="contactsName" />
+    <result column="cell_phone_number" jdbcType="VARCHAR" property="cellPhoneNumber" />
+    <result column="qq_number" jdbcType="VARCHAR" property="qqNumber" />
+    <result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    contacts_id, contacts_name, cell_phone_number, qq_number, wechat_number, remarks
+  </sql>
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.ContactsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_contacts
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_contacts
+    where contacts_id = #{contactsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tbl_contacts
+    where contacts_id = #{contactsId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.ContactsExample">
+    delete from tbl_contacts
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ncvt.tourism.model.Contacts">
+    insert into tbl_contacts (contacts_id, contacts_name, cell_phone_number, 
+      qq_number, wechat_number, remarks
+      )
+    values (#{contactsId,jdbcType=INTEGER}, #{contactsName,jdbcType=VARCHAR}, #{cellPhoneNumber,jdbcType=VARCHAR}, 
+      #{qqNumber,jdbcType=VARCHAR}, #{wechatNumber,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Contacts">
+    insert into tbl_contacts
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="contactsId != null">
+        contacts_id,
+      </if>
+      <if test="contactsName != null">
+        contacts_name,
+      </if>
+      <if test="cellPhoneNumber != null">
+        cell_phone_number,
+      </if>
+      <if test="qqNumber != null">
+        qq_number,
+      </if>
+      <if test="wechatNumber != null">
+        wechat_number,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="contactsId != null">
+        #{contactsId,jdbcType=INTEGER},
+      </if>
+      <if test="contactsName != null">
+        #{contactsName,jdbcType=VARCHAR},
+      </if>
+      <if test="cellPhoneNumber != null">
+        #{cellPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNumber != null">
+        #{wechatNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.ContactsExample" resultType="java.lang.Long">
+    select count(*) from tbl_contacts
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tbl_contacts
+    <set>
+      <if test="record.contactsId != null">
+        contacts_id = #{record.contactsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.contactsName != null">
+        contacts_name = #{record.contactsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cellPhoneNumber != null">
+        cell_phone_number = #{record.cellPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qqNumber != null">
+        qq_number = #{record.qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wechatNumber != null">
+        wechat_number = #{record.wechatNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remarks != null">
+        remarks = #{record.remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tbl_contacts
+    set contacts_id = #{record.contactsId,jdbcType=INTEGER},
+      contacts_name = #{record.contactsName,jdbcType=VARCHAR},
+      cell_phone_number = #{record.cellPhoneNumber,jdbcType=VARCHAR},
+      qq_number = #{record.qqNumber,jdbcType=VARCHAR},
+      wechat_number = #{record.wechatNumber,jdbcType=VARCHAR},
+      remarks = #{record.remarks,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Contacts">
+    update tbl_contacts
+    <set>
+      <if test="contactsName != null">
+        contacts_name = #{contactsName,jdbcType=VARCHAR},
+      </if>
+      <if test="cellPhoneNumber != null">
+        cell_phone_number = #{cellPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="qqNumber != null">
+        qq_number = #{qqNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNumber != null">
+        wechat_number = #{wechatNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where contacts_id = #{contactsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Contacts">
+    update tbl_contacts
+    set contacts_name = #{contactsName,jdbcType=VARCHAR},
+      cell_phone_number = #{cellPhoneNumber,jdbcType=VARCHAR},
+      qq_number = #{qqNumber,jdbcType=VARCHAR},
+      wechat_number = #{wechatNumber,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where contacts_id = #{contactsId,jdbcType=INTEGER}
+  </update>
+</mapper>

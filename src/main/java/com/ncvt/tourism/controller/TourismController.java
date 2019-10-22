@@ -43,14 +43,15 @@ public class TourismController {
      * @return 返回结果
      */
     @RequestMapping("/login")
-    public Map<String, String> login(@RequestBody User user) {
-        Map<String, String> map = new HashMap<>();
+    public Map<String, Object> login(@RequestBody User user) {
+        Map<String, Object> map = new HashMap<>();
         UserExample example = new UserExample();
         example.createCriteria().andUserAccountNameEqualTo(user.getUserAccountName()).andPasswordEqualTo(user.getPassword());
         List<User> userList = userMapper.selectByExample(example);
         if (userList.size() > 0) {
             map.put(RESULT, "S");
             map.put(TIPS, "登录成功！");
+            map.put(ONE_DATA,userList.get(0));
             return map;
         } else {
             map.put(RESULT, "F");
@@ -531,6 +532,27 @@ public class TourismController {
         map.put(RESULT, "S");
         map.put(ONE_DATA, scenicDetailsMapper.selectByPrimaryKey(scenicSpotId));
         map.put(TWO_DATA, scenicPicMapper.selectByPrimaryKey(details.getScenicDetailsId()));
+        return map;
+    }
+
+    /**
+     * 查询景区信息详情
+     * @param travelMode 出游方式
+     * @return 返回结果
+     */
+    @RequestMapping("queryByTravelMode")
+    public Map<String, Object> queryByTravelMode(int travelMode) {
+        Map<String, Object> map = new HashMap<>();
+        ScenicSpotExample scenicSpotExample = new ScenicSpotExample();
+        scenicSpotExample.createCriteria().andTravelModeEqualTo(travelMode);
+        List<ScenicSpot> scenicSpots = scenicSpotMapper.selectByExample(scenicSpotExample);
+        if (scenicSpots == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该详情内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA,scenicSpots);
         return map;
     }
 
