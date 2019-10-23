@@ -365,142 +365,202 @@ public class ExhibitsExample {
         }
 
         public Criteria andExhibitsInformationIsNull() {
-            addCriterion("\"exhibits_ information\" is null");
+            addCriterion("exhibits_information is null");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationIsNotNull() {
-            addCriterion("\"exhibits_ information\" is not null");
+            addCriterion("exhibits_information is not null");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationEqualTo(String value) {
-            addCriterion("\"exhibits_ information\" =", value, "exhibitsInformation");
+            addCriterion("exhibits_information =", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationNotEqualTo(String value) {
-            addCriterion("\"exhibits_ information\" <>", value, "exhibitsInformation");
+            addCriterion("exhibits_information <>", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationGreaterThan(String value) {
-            addCriterion("\"exhibits_ information\" >", value, "exhibitsInformation");
+            addCriterion("exhibits_information >", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationGreaterThanOrEqualTo(String value) {
-            addCriterion("\"exhibits_ information\" >=", value, "exhibitsInformation");
+            addCriterion("exhibits_information >=", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationLessThan(String value) {
-            addCriterion("\"exhibits_ information\" <", value, "exhibitsInformation");
+            addCriterion("exhibits_information <", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationLessThanOrEqualTo(String value) {
-            addCriterion("\"exhibits_ information\" <=", value, "exhibitsInformation");
+            addCriterion("exhibits_information <=", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationLike(String value) {
-            addCriterion("\"exhibits_ information\" like", value, "exhibitsInformation");
+            addCriterion("exhibits_information like", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationNotLike(String value) {
-            addCriterion("\"exhibits_ information\" not like", value, "exhibitsInformation");
+            addCriterion("exhibits_information not like", value, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationIn(List<String> values) {
-            addCriterion("\"exhibits_ information\" in", values, "exhibitsInformation");
+            addCriterion("exhibits_information in", values, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationNotIn(List<String> values) {
-            addCriterion("\"exhibits_ information\" not in", values, "exhibitsInformation");
+            addCriterion("exhibits_information not in", values, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationBetween(String value1, String value2) {
-            addCriterion("\"exhibits_ information\" between", value1, value2, "exhibitsInformation");
+            addCriterion("exhibits_information between", value1, value2, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsInformationNotBetween(String value1, String value2) {
-            addCriterion("\"exhibits_ information\" not between", value1, value2, "exhibitsInformation");
+            addCriterion("exhibits_information not between", value1, value2, "exhibitsInformation");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorIsNull() {
-            addCriterion("\"exhibits_ author\" is null");
+            addCriterion("exhibits_author is null");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorIsNotNull() {
-            addCriterion("\"exhibits_ author\" is not null");
+            addCriterion("exhibits_author is not null");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorEqualTo(String value) {
-            addCriterion("\"exhibits_ author\" =", value, "exhibitsAuthor");
+            addCriterion("exhibits_author =", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorNotEqualTo(String value) {
-            addCriterion("\"exhibits_ author\" <>", value, "exhibitsAuthor");
+            addCriterion("exhibits_author <>", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorGreaterThan(String value) {
-            addCriterion("\"exhibits_ author\" >", value, "exhibitsAuthor");
+            addCriterion("exhibits_author >", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorGreaterThanOrEqualTo(String value) {
-            addCriterion("\"exhibits_ author\" >=", value, "exhibitsAuthor");
+            addCriterion("exhibits_author >=", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorLessThan(String value) {
-            addCriterion("\"exhibits_ author\" <", value, "exhibitsAuthor");
+            addCriterion("exhibits_author <", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorLessThanOrEqualTo(String value) {
-            addCriterion("\"exhibits_ author\" <=", value, "exhibitsAuthor");
+            addCriterion("exhibits_author <=", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorLike(String value) {
-            addCriterion("\"exhibits_ author\" like", value, "exhibitsAuthor");
+            addCriterion("exhibits_author like", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorNotLike(String value) {
-            addCriterion("\"exhibits_ author\" not like", value, "exhibitsAuthor");
+            addCriterion("exhibits_author not like", value, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorIn(List<String> values) {
-            addCriterion("\"exhibits_ author\" in", values, "exhibitsAuthor");
+            addCriterion("exhibits_author in", values, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorNotIn(List<String> values) {
-            addCriterion("\"exhibits_ author\" not in", values, "exhibitsAuthor");
+            addCriterion("exhibits_author not in", values, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorBetween(String value1, String value2) {
-            addCriterion("\"exhibits_ author\" between", value1, value2, "exhibitsAuthor");
+            addCriterion("exhibits_author between", value1, value2, "exhibitsAuthor");
             return (Criteria) this;
         }
 
         public Criteria andExhibitsAuthorNotBetween(String value1, String value2) {
-            addCriterion("\"exhibits_ author\" not between", value1, value2, "exhibitsAuthor");
+            addCriterion("exhibits_author not between", value1, value2, "exhibitsAuthor");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsIsNull() {
+            addCriterion("exhibits_praise_points is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsIsNotNull() {
+            addCriterion("exhibits_praise_points is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsEqualTo(Integer value) {
+            addCriterion("exhibits_praise_points =", value, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsNotEqualTo(Integer value) {
+            addCriterion("exhibits_praise_points <>", value, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsGreaterThan(Integer value) {
+            addCriterion("exhibits_praise_points >", value, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("exhibits_praise_points >=", value, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsLessThan(Integer value) {
+            addCriterion("exhibits_praise_points <", value, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsLessThanOrEqualTo(Integer value) {
+            addCriterion("exhibits_praise_points <=", value, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsIn(List<Integer> values) {
+            addCriterion("exhibits_praise_points in", values, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsNotIn(List<Integer> values) {
+            addCriterion("exhibits_praise_points not in", values, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsBetween(Integer value1, Integer value2) {
+            addCriterion("exhibits_praise_points between", value1, value2, "exhibitsPraisePoints");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitsPraisePointsNotBetween(Integer value1, Integer value2) {
+            addCriterion("exhibits_praise_points not between", value1, value2, "exhibitsPraisePoints");
             return (Criteria) this;
         }
     }

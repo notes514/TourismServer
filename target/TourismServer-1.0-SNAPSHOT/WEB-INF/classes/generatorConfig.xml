@@ -68,6 +68,7 @@
         <table tableName="tbl_exhibition_area" domainObjectName="ExhibitionArea"/>
         <table tableName="tbl_exhibits" domainObjectName="Exhibits"/>
         <table tableName="tbl_exhibits_pic" domainObjectName="ExhibitsPic"/>
+        <table tableName="tbl_exhibits_comment" domainObjectName="ExhibitsComment"/>
         <table tableName="tbl_contacts" domainObjectName="Contacts"/>
         <table tableName="tbl_passenger" domainObjectName="Passenger"/>
     </context>
