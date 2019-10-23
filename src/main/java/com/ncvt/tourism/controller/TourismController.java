@@ -36,6 +36,14 @@ public class TourismController {
     private ScenicDetailsMapper scenicDetailsMapper;
     @Autowired
     private ScenicPicMapper scenicPicMapper;
+    @Autowired
+    private ExhibitionAreaMapper exhibitionAreaMapper;
+    @Autowired
+    private ExhibitsMapper exhibitsMapper;
+    @Autowired
+    private ExhibitsPicMapper exhibitsPicMapper;
+    @Autowired
+    private ExhibitsCommentMapper exhibitsCommentMapper;
 
     /**
      * 用户进行登录
@@ -547,7 +555,7 @@ public class TourismController {
     }
 
     /**
-     * 查询景区信息详情
+     * 查询出游方式对应景区
      * @param travelMode 出游方式
      * @return 返回结果
      */
@@ -566,5 +574,177 @@ public class TourismController {
         map.put(ONE_DATA,scenicSpots);
         return map;
     }
+
+    /**
+     * 查询所有展区
+     * @return 返回结果
+     */
+    @RequestMapping("queryAllExhibitionArea")
+    public List<ExhibitionArea> queryAllExhibitionArea() {
+        return exhibitionAreaMapper.selectByExample(null);
+    }
+
+    /**
+     * 查询展品信息详情
+     * @param exhibitsId 展品编号
+     * @return 返回结果
+     */
+    @RequestMapping("queryExhibitsDetails")
+    public Map<String, Object> queryExhibitsDetails(int exhibitsId) {
+        Map<String, Object> map = new HashMap<>();
+        Exhibits exhibits = exhibitsMapper.selectByPrimaryKey(exhibitsId);
+        if (exhibits == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该详情内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, exhibitsMapper.selectByPrimaryKey(exhibitsId));
+        map.put(TWO_DATA, exhibitsPicMapper.selectByPrimaryKey(exhibits.getExhibitsId()));
+        return map;
+    }
+
+    /**
+     * 查找所有展品
+     * @return 返回结果
+     */
+    @RequestMapping("queryAllExhibits")
+    public List<Exhibits> queryAllExhibits() {
+        return exhibitsMapper.selectByExample(null);
+    }
+
+    /**
+     * 查找展区下的所有展品
+     * @param exhibitionAreaId 展区编号
+     * @return 返回结果
+     */
+    @RequestMapping("queryByExhibitionArea")
+    public Map<String, Object> queryByExhibitionArea(int exhibitionAreaId) {
+        Map<String, Object> map = new HashMap<>();
+        ExhibitsExample exhibitsExample = new ExhibitsExample();
+        exhibitsExample.createCriteria().andExhibitionAreaIdEqualTo(exhibitionAreaId);
+        List<Exhibits> exhibits = exhibitsMapper.selectByExample(exhibitsExample);
+        if (exhibits == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该详情内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA,exhibits);
+        return map;
+    }
+
+    /**
+     * 查找展品评论
+     * @param exhibitsId 展品编号
+     * @return 返回结果
+     */
+    @RequestMapping("queryExhibitsComment")
+    public Map<String, Object> queryExhibitsComment(int exhibitsId) {
+        Map<String, Object> map = new HashMap<>();
+        ExhibitsCommentExample exhibitsCommentExample = new ExhibitsCommentExample();
+        exhibitsCommentExample.createCriteria().andExhibitsIdEqualTo(exhibitsId);
+        List<ExhibitsComment> exhibitsComments = exhibitsCommentMapper.selectByExample(exhibitsCommentExample);
+        if (exhibitsComments == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该详情内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA,exhibitsComments);
+        return map;
+    }
+
+    /**
+     * 发送评论
+     * @param exhibitsComment 展品评论
+     * @return 返回结果
+     */
+    @RequestMapping("sendExhibitsComment")
+    public Map<String, Object> sendExhibitsComment(@RequestBody ExhibitsComment exhibitsComment) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            exhibitsComment.setCommentPraisePoints(0);
+            exhibitsCommentMapper.insertSelective(exhibitsComment);
+            exhibitsCommentMapper.updateByPrimaryKeySelective(exhibitsComment);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "发送失败！");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "发送成功！");
+        return map;
+    }
+
+    /**
+     * 点赞展品
+     * @param exhibitsId 展品编号
+     * @return 返回结果
+     */
+    @RequestMapping("/praiseTheExhibits")
+    public Map<String, Object> praiseTheExhibits(int exhibitsId) {
+        Map<String, Object> map = new HashMap<>();
+        if (exhibitsMapper.selectByPrimaryKey(exhibitsId) == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "找不到该展品！");
+            return map;
+        }
+        try {
+            Exhibits exhibits = exhibitsMapper.selectByPrimaryKey(exhibitsId);
+            int current = exhibits.getExhibitsPraisePoints();
+            exhibits.setExhibitsPraisePoints(current+1);
+            exhibitsMapper.updateByPrimaryKeySelective(exhibits);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "点赞失败！");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "点赞成功！");
+        return map;
+    }
+
+
+    //以下是测试添加数据方法
+
+    @RequestMapping("/addExhibits")
+    public Map<String, Object> addScenicSpot(@RequestBody Exhibits exhibits) {
+        Map<String, Object> map = new HashMap<>();
+        try { //异常处理（捕获异常）
+            //插入数据
+            exhibitsMapper.insertSelective(exhibits);
+            //更新数据
+            exhibitsMapper.updateByPrimaryKeySelective(exhibits);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "添加失败!");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "添加成功!");
+        return map;
+    }
+
+    @RequestMapping("addExhibitionArea")
+    public Map<String, Object> addExhibitionArea(@RequestBody ExhibitionArea exhibitionArea){
+        Map<String, Object> map = new HashMap<>();
+        try { //异常处理（捕获异常）
+            //插入数据
+            exhibitionAreaMapper.insertSelective(exhibitionArea);
+            //更新数据
+//            exhibitsMapper.updateByPrimaryKey(exhibits);
+            exhibitionAreaMapper.updateByPrimaryKeySelective(exhibitionArea);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "添加失败!");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "添加成功!");
+        return map;
+    }
+
+
 
 }
