@@ -46,6 +46,8 @@ public class TourismController {
     private ExhibitsCommentMapper exhibitsCommentMapper;
     @Autowired
     private FabulousDetailsMapper fabulousDetailsMapper;
+    @Autowired
+    private ExhibitsCommentMapper ecmMapper;
 
     /**
      * 用户进行登录
@@ -782,6 +784,13 @@ public class TourismController {
         return map;
     }
 
-
+    /**
+     * 查询全部展评评论
+     * @return
+     */
+    @RequestMapping("queryAllExhibitsComments")
+    public List<ExhibitsComment> queryAllExhibitsComments() {
+        return ecmMapper.selectByExample(null);
+    }
 
 }

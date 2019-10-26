@@ -98,7 +98,8 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="TourismServer" />
@@ -258,7 +259,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ShopServer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images/banner" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -854,5 +855,7 @@
         </state>
       </provider>
     </entry>
+    <MESSAGE value="jackson-annotations,jackson-core,jackson-databind jar包升至2.10.0.pr2" />
+    <option name="LAST_COMMIT_MESSAGE" value="jackson-annotations,jackson-core,jackson-databind jar包升至2.10.0.pr2" />
   </component>
 </project>
