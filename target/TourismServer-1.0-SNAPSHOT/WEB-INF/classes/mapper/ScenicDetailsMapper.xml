@@ -6,7 +6,7 @@
     <result column="scenic_spot_id" jdbcType="INTEGER" property="scenicSpotId" />
     <result column="consult_traffic" jdbcType="VARCHAR" property="consultTraffic" />
     <result column="travel_days" jdbcType="VARCHAR" property="travelDays" />
-    <result column="depart_ arrive" jdbcType="VARCHAR" property="departArrive" />
+    <result column="depart_arrive" jdbcType="VARCHAR" property="departArrive" />
     <result column="stay_standard" jdbcType="VARCHAR" property="stayStandard" />
     <result column="contain_scenic" jdbcType="VARCHAR" property="containScenic" />
     <result column="user_score" jdbcType="DOUBLE" property="userScore" />
@@ -73,8 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    scenic_details_id, scenic_spot_id, consult_traffic, travel_days, "depart_ arrive", 
-    stay_standard, contain_scenic, user_score, comments_number, recommend_reasons, details_introduce
+    scenic_details_id, scenic_spot_id, consult_traffic, travel_days, depart_arrive, stay_standard, 
+    contain_scenic, user_score, comments_number, recommend_reasons, details_introduce
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ScenicDetailsExample" resultMap="BaseResultMap">
     select
@@ -108,7 +108,7 @@
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.ScenicDetails">
     insert into tbl_scenic_details (scenic_details_id, scenic_spot_id, consult_traffic, 
-      travel_days, "depart_ arrive", stay_standard, 
+      travel_days, depart_arrive, stay_standard, 
       contain_scenic, user_score, comments_number, 
       recommend_reasons, details_introduce)
     values (#{scenicDetailsId,jdbcType=INTEGER}, #{scenicSpotId,jdbcType=INTEGER}, #{consultTraffic,jdbcType=VARCHAR}, 
@@ -132,7 +132,7 @@
         travel_days,
       </if>
       <if test="departArrive != null">
-        "depart_ arrive",
+        depart_arrive,
       </if>
       <if test="stayStandard != null">
         stay_standard,
@@ -211,7 +211,7 @@
         travel_days = #{record.travelDays,jdbcType=VARCHAR},
       </if>
       <if test="record.departArrive != null">
-        "depart_ arrive" = #{record.departArrive,jdbcType=VARCHAR},
+        depart_arrive = #{record.departArrive,jdbcType=VARCHAR},
       </if>
       <if test="record.stayStandard != null">
         stay_standard = #{record.stayStandard,jdbcType=VARCHAR},
@@ -242,7 +242,7 @@
       scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
       consult_traffic = #{record.consultTraffic,jdbcType=VARCHAR},
       travel_days = #{record.travelDays,jdbcType=VARCHAR},
-      "depart_ arrive" = #{record.departArrive,jdbcType=VARCHAR},
+      depart_arrive = #{record.departArrive,jdbcType=VARCHAR},
       stay_standard = #{record.stayStandard,jdbcType=VARCHAR},
       contain_scenic = #{record.containScenic,jdbcType=VARCHAR},
       user_score = #{record.userScore,jdbcType=DOUBLE},
@@ -266,7 +266,7 @@
         travel_days = #{travelDays,jdbcType=VARCHAR},
       </if>
       <if test="departArrive != null">
-        "depart_ arrive" = #{departArrive,jdbcType=VARCHAR},
+        depart_arrive = #{departArrive,jdbcType=VARCHAR},
       </if>
       <if test="stayStandard != null">
         stay_standard = #{stayStandard,jdbcType=VARCHAR},
@@ -294,7 +294,7 @@
     set scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
       consult_traffic = #{consultTraffic,jdbcType=VARCHAR},
       travel_days = #{travelDays,jdbcType=VARCHAR},
-      "depart_ arrive" = #{departArrive,jdbcType=VARCHAR},
+      depart_arrive = #{departArrive,jdbcType=VARCHAR},
       stay_standard = #{stayStandard,jdbcType=VARCHAR},
       contain_scenic = #{containScenic,jdbcType=VARCHAR},
       user_score = #{userScore,jdbcType=DOUBLE},

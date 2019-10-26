@@ -164,63 +164,63 @@ public class ScenicPicExample {
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdIsNull() {
-            addCriterion("scenic_details_id is null");
+        public Criteria andScenicSpotIdIsNull() {
+            addCriterion("scenic_spot_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdIsNotNull() {
-            addCriterion("scenic_details_id is not null");
+        public Criteria andScenicSpotIdIsNotNull() {
+            addCriterion("scenic_spot_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdEqualTo(Integer value) {
-            addCriterion("scenic_details_id =", value, "scenicDetailsId");
+        public Criteria andScenicSpotIdEqualTo(Integer value) {
+            addCriterion("scenic_spot_id =", value, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdNotEqualTo(Integer value) {
-            addCriterion("scenic_details_id <>", value, "scenicDetailsId");
+        public Criteria andScenicSpotIdNotEqualTo(Integer value) {
+            addCriterion("scenic_spot_id <>", value, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdGreaterThan(Integer value) {
-            addCriterion("scenic_details_id >", value, "scenicDetailsId");
+        public Criteria andScenicSpotIdGreaterThan(Integer value) {
+            addCriterion("scenic_spot_id >", value, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("scenic_details_id >=", value, "scenicDetailsId");
+        public Criteria andScenicSpotIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("scenic_spot_id >=", value, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdLessThan(Integer value) {
-            addCriterion("scenic_details_id <", value, "scenicDetailsId");
+        public Criteria andScenicSpotIdLessThan(Integer value) {
+            addCriterion("scenic_spot_id <", value, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdLessThanOrEqualTo(Integer value) {
-            addCriterion("scenic_details_id <=", value, "scenicDetailsId");
+        public Criteria andScenicSpotIdLessThanOrEqualTo(Integer value) {
+            addCriterion("scenic_spot_id <=", value, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdIn(List<Integer> values) {
-            addCriterion("scenic_details_id in", values, "scenicDetailsId");
+        public Criteria andScenicSpotIdIn(List<Integer> values) {
+            addCriterion("scenic_spot_id in", values, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdNotIn(List<Integer> values) {
-            addCriterion("scenic_details_id not in", values, "scenicDetailsId");
+        public Criteria andScenicSpotIdNotIn(List<Integer> values) {
+            addCriterion("scenic_spot_id not in", values, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdBetween(Integer value1, Integer value2) {
-            addCriterion("scenic_details_id between", value1, value2, "scenicDetailsId");
+        public Criteria andScenicSpotIdBetween(Integer value1, Integer value2) {
+            addCriterion("scenic_spot_id between", value1, value2, "scenicSpotId");
             return (Criteria) this;
         }
 
-        public Criteria andScenicDetailsIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("scenic_details_id not between", value1, value2, "scenicDetailsId");
+        public Criteria andScenicSpotIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("scenic_spot_id not between", value1, value2, "scenicSpotId");
             return (Criteria) this;
         }
 

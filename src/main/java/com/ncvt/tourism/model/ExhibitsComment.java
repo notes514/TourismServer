@@ -3,6 +3,8 @@ package com.ncvt.tourism.model;
 public class ExhibitsComment {
     private Integer exhibitsCommentId;
 
+    private Integer userId;
+
     private Integer exhibitsId;
 
     private String exhibitsCommentContent;
@@ -15,6 +17,14 @@ public class ExhibitsComment {
 
     public void setExhibitsCommentId(Integer exhibitsCommentId) {
         this.exhibitsCommentId = exhibitsCommentId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Integer getExhibitsId() {

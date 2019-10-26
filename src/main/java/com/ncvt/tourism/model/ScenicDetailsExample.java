@@ -365,72 +365,72 @@ public class ScenicDetailsExample {
         }
 
         public Criteria andDepartArriveIsNull() {
-            addCriterion("\"depart_ arrive\" is null");
+            addCriterion("depart_arrive is null");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveIsNotNull() {
-            addCriterion("\"depart_ arrive\" is not null");
+            addCriterion("depart_arrive is not null");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveEqualTo(String value) {
-            addCriterion("\"depart_ arrive\" =", value, "departArrive");
+            addCriterion("depart_arrive =", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveNotEqualTo(String value) {
-            addCriterion("\"depart_ arrive\" <>", value, "departArrive");
+            addCriterion("depart_arrive <>", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveGreaterThan(String value) {
-            addCriterion("\"depart_ arrive\" >", value, "departArrive");
+            addCriterion("depart_arrive >", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveGreaterThanOrEqualTo(String value) {
-            addCriterion("\"depart_ arrive\" >=", value, "departArrive");
+            addCriterion("depart_arrive >=", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveLessThan(String value) {
-            addCriterion("\"depart_ arrive\" <", value, "departArrive");
+            addCriterion("depart_arrive <", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveLessThanOrEqualTo(String value) {
-            addCriterion("\"depart_ arrive\" <=", value, "departArrive");
+            addCriterion("depart_arrive <=", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveLike(String value) {
-            addCriterion("\"depart_ arrive\" like", value, "departArrive");
+            addCriterion("depart_arrive like", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveNotLike(String value) {
-            addCriterion("\"depart_ arrive\" not like", value, "departArrive");
+            addCriterion("depart_arrive not like", value, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveIn(List<String> values) {
-            addCriterion("\"depart_ arrive\" in", values, "departArrive");
+            addCriterion("depart_arrive in", values, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveNotIn(List<String> values) {
-            addCriterion("\"depart_ arrive\" not in", values, "departArrive");
+            addCriterion("depart_arrive not in", values, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveBetween(String value1, String value2) {
-            addCriterion("\"depart_ arrive\" between", value1, value2, "departArrive");
+            addCriterion("depart_arrive between", value1, value2, "departArrive");
             return (Criteria) this;
         }
 
         public Criteria andDepartArriveNotBetween(String value1, String value2) {
-            addCriterion("\"depart_ arrive\" not between", value1, value2, "departArrive");
+            addCriterion("depart_arrive not between", value1, value2, "departArrive");
             return (Criteria) this;
         }
 

@@ -7,51 +7,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/ExhibitsCommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsCommentExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsCommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/mapper/ExhibitsCommentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsComment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ExhibitsCommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.10.0.pr2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.10.0.pr2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.10.0.pr2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/mapper/ExhibitsCommentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsComment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criterion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$GeneratedCriteria.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ExhibitsCommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/FabulousDetailsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/FabulousDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/FabulousDetailsExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/FabulousDetailsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/mapper/FabulousDetailsMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/FabulousDetails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/FabulousDetailsExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/FabulousDetailsExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/FabulousDetailsExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/FabulousDetailsExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/FabulousDetailsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/mapper/FabulousDetailsMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/FabulousDetails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/FabulousDetailsExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/FabulousDetailsExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/FabulousDetailsExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/FabulousDetailsExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/FabulousDetailsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/Exhibits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/Exhibits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsCommentExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsCommentExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicDetailsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicDetailsExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicPic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicPic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicPicExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicPicExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsCommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ScenicDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ScenicDetailsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ScenicPicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ScenicPicMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/Exhibits.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/Exhibits.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsComment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsCommentExample$GeneratedCriteria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsExample$Criteria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsExample$Criterion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitsExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicDetailsExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicDetailsExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicPic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicPic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicPicExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicPicExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicPicExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicPicExample$GeneratedCriteria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ExhibitsCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ExhibitsCommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ExhibitsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ExhibitsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ScenicDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ScenicDetailsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ScenicPicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ScenicPicMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/Exhibits.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/Exhibits.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsComment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsCommentExample$GeneratedCriteria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsExample$Criteria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsExample$Criterion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitsExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicDetailsExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicDetailsExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicPic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicPic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicPicExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicPicExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicPicExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicPicExample$GeneratedCriteria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ExhibitsCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ExhibitsCommentMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/ExhibitsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ExhibitsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ScenicDetailsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ScenicDetailsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ScenicPicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ScenicPicMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,77 +104,68 @@
     <favorites_list name="TourismServer" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="709" selection-start-line="709" selection-end-line="709" />
+            <state>
+              <caret line="686" column="29" lean-forward="true" selection-start-line="686" selection-start-column="29" selection-end-line="686" selection-end-column="29" />
               <folding>
-                <element signature="e#1598#1667#0" />
-                <element signature="e#1598#2356#0" />
-                <element signature="e#2362#2425#0" />
-                <element signature="e#3111#3180#0" />
-                <element signature="e#3111#3812#0" />
-                <element signature="e#3818#3890#0" />
-                <element signature="e#3818#4385#0" />
-                <element signature="e#4391#4456#0" />
-                <element signature="e#4391#5104#0" />
-                <element signature="e#5110#5184#0" />
-                <element signature="e#5110#5732#0" />
-                <element signature="e#5738#5812#0" />
-                <element signature="e#6509#6585#0" />
-                <element signature="e#6509#7297#0" />
-                <element signature="e#7303#7397#0" />
-                <element signature="e#7303#8730#0" />
-                <element signature="e#8736#8848#0" />
-                <element signature="e#8736#10577#0" />
-                <element signature="e#10583#10654#0" />
-                <element signature="e#10583#11220#0" />
-                <element signature="e#11226#11357#0" />
-                <element signature="e#11226#12600#0" />
-                <element signature="e#12606#12685#0" />
-                <element signature="e#12606#13468#0" />
-                <element signature="e#13474#13544#0" />
-                <element signature="e#13474#14131#0" />
-                <element signature="e#14137#14203#0" />
-                <element signature="e#14137#14774#0" />
-                <element signature="e#14780#14851#0" />
-                <element signature="e#14780#15446#0" />
-                <element signature="e#15452#15529#0" />
-                <element signature="e#15452#16110#0" />
-                <element signature="e#16116#16163#0" />
-                <element signature="e#16331#16376#0" />
-                <element signature="e#16536#16615#0" />
-                <element signature="e#16536#17247#0" />
-                <element signature="e#17253#17297#0" />
-                <element signature="e#17253#17580#0" />
-                <element signature="e#17586#17665#0" />
-                <element signature="e#17586#18300#0" />
-                <element signature="e#18306#18351#0" />
-                <element signature="e#18527#18604#0" />
-                <element signature="e#18527#19203#0" />
-                <element signature="e#19209#19254#0" />
-                <element signature="e#19406#19491#0" />
-                <element signature="e#19406#20129#0" />
-                <element signature="e#20135#20210#0" />
-                <element signature="e#20135#20901#0" />
-                <element signature="e#20907#20985#0" />
-                <element signature="e#20907#21564#0" />
-                <element signature="e#21625#21688#0" />
-                <element signature="e#21625#22195#0" />
-                <element signature="e#21570#22140#0" />
-                <element signature="e#22146#22819#0" />
+                <element signature="e#1670#1739#0" />
+                <element signature="e#1670#2428#0" />
+                <element signature="e#2434#2497#0" />
+                <element signature="e#2434#3177#0" />
+                <element signature="e#3183#3252#0" />
+                <element signature="e#3183#3884#0" />
+                <element signature="e#3890#3962#0" />
+                <element signature="e#3890#4457#0" />
+                <element signature="e#4463#4528#0" />
+                <element signature="e#4463#5176#0" />
+                <element signature="e#5182#5256#0" />
+                <element signature="e#5182#5804#0" />
+                <element signature="e#5810#5884#0" />
+                <element signature="e#5810#6575#0" />
+                <element signature="e#6581#6657#0" />
+                <element signature="e#6581#7369#0" />
+                <element signature="e#7375#7469#0" />
+                <element signature="e#7375#8802#0" />
+                <element signature="e#8808#8920#0" />
+                <element signature="e#8808#10649#0" />
+                <element signature="e#10655#10726#0" />
+                <element signature="e#10655#11292#0" />
+                <element signature="e#11298#11429#0" />
+                <element signature="e#11298#12672#0" />
+                <element signature="e#12678#12757#0" />
+                <element signature="e#12678#13540#0" />
+                <element signature="e#13546#13616#0" />
+                <element signature="e#13546#14203#0" />
+                <element signature="e#14209#14275#0" />
+                <element signature="e#14209#14846#0" />
+                <element signature="e#14852#14923#0" />
+                <element signature="e#14852#15518#0" />
+                <element signature="e#15524#15601#0" />
+                <element signature="e#15524#16182#0" />
+                <element signature="e#16188#16235#0" />
+                <element signature="e#16403#16448#0" />
+                <element signature="e#16608#16687#0" />
+                <element signature="e#16608#17319#0" />
+                <element signature="e#17325#17369#0" />
+                <element signature="e#17325#17652#0" />
+                <element signature="e#17658#17737#0" />
+                <element signature="e#17658#18372#0" />
+                <element signature="e#18378#18423#0" />
+                <element signature="e#18599#18676#0" />
+                <element signature="e#18599#19275#0" />
+                <element signature="e#19281#19326#0" />
+                <element signature="e#19478#19563#0" />
+                <element signature="e#19478#20201#0" />
+                <element signature="e#20207#20282#0" />
+                <element signature="e#20207#20973#0" />
+                <element signature="e#20979#21057#0" />
+                <element signature="e#20979#21691#0" />
+                <element signature="e#22022#22592#0" />
+                <element signature="e#22598#23271#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -177,8 +191,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/FabulousDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/ExhibitsMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/Exhibits.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" />
       </list>
     </option>
@@ -199,7 +217,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
-    <option name="width" value="979" />
+    <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectId" id="1R2wNbUKpxWo5SZpQ3o81j6npCn" />
@@ -226,26 +244,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -453,7 +457,11 @@
       <workItem from="1571714590050" duration="1217000" />
       <workItem from="1571715830991" duration="5966000" />
       <workItem from="1571805878273" duration="23000" />
-      <workItem from="1571805916375" duration="9999000" />
+      <workItem from="1571805916375" duration="13658000" />
+      <workItem from="1571881169514" duration="7496000" />
+      <workItem from="1571965966244" duration="597000" />
+      <workItem from="1571967012470" duration="11164000" />
+      <workItem from="1572070318863" duration="8185000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -490,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1570685031525</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="数据库更新，新增API">
+      <created>1571817333643</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571817333643</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10022000" />
+    <option name="totallyTimeSpent" value="41123000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -509,18 +524,17 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985207" visible="true" weight="0.21983914" />
+      <window_info id="Structure" order="1" sideWeight="0.50147927" side_tool="true" weight="0.22050938" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.56657225" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43342775" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -533,6 +547,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -588,12 +603,10 @@
     <MESSAGE value="静态资源访问，web头文件更改" />
     <MESSAGE value="静态资源访问，web顶部代码更改" />
     <MESSAGE value="2019.10.10" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019.10.10" />
+    <MESSAGE value="数据库更新，新增API" />
+    <option name="LAST_COMMIT_MESSAGE" value="数据库更新，新增API" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/lang/Exception.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -608,107 +621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="167" column="59" lean-forward="true" selection-start-line="167" selection-start-column="59" selection-end-line="167" selection-end-column="59" />
-          <folding>
-            <element signature="n#sql#0;n#mapper#0;n#!!top" />
-            <element signature="n#sql#1;n#mapper#0;n#!!top" />
-            <element signature="n#sql#2;n#mapper#0;n#!!top" />
-            <element signature="n#select#0;n#mapper#0;n#!!top" />
-            <element signature="n#select#1;n#mapper#0;n#!!top" />
-            <element signature="n#delete#0;n#mapper#0;n#!!top" />
-            <element signature="n#delete#1;n#mapper#0;n#!!top" />
-            <element signature="n#insert#0;n#mapper#0;n#!!top" />
-            <element signature="n#insert#1;n#mapper#0;n#!!top" />
-            <element signature="n#select#2;n#mapper#0;n#!!top" />
-            <element signature="e#5#521#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/ExhibitionAreaMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/Exhibits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="184" column="39" selection-start-line="184" selection-start-column="33" selection-end-line="184" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="709" selection-start-line="709" selection-end-line="709" />
-          <folding>
-            <element signature="e#1598#1667#0" />
-            <element signature="e#1598#2356#0" />
-            <element signature="e#2362#2425#0" />
-            <element signature="e#3111#3180#0" />
-            <element signature="e#3111#3812#0" />
-            <element signature="e#3818#3890#0" />
-            <element signature="e#3818#4385#0" />
-            <element signature="e#4391#4456#0" />
-            <element signature="e#4391#5104#0" />
-            <element signature="e#5110#5184#0" />
-            <element signature="e#5110#5732#0" />
-            <element signature="e#5738#5812#0" />
-            <element signature="e#6509#6585#0" />
-            <element signature="e#6509#7297#0" />
-            <element signature="e#7303#7397#0" />
-            <element signature="e#7303#8730#0" />
-            <element signature="e#8736#8848#0" />
-            <element signature="e#8736#10577#0" />
-            <element signature="e#10583#10654#0" />
-            <element signature="e#10583#11220#0" />
-            <element signature="e#11226#11357#0" />
-            <element signature="e#11226#12600#0" />
-            <element signature="e#12606#12685#0" />
-            <element signature="e#12606#13468#0" />
-            <element signature="e#13474#13544#0" />
-            <element signature="e#13474#14131#0" />
-            <element signature="e#14137#14203#0" />
-            <element signature="e#14137#14774#0" />
-            <element signature="e#14780#14851#0" />
-            <element signature="e#14780#15446#0" />
-            <element signature="e#15452#15529#0" />
-            <element signature="e#15452#16110#0" />
-            <element signature="e#16116#16163#0" />
-            <element signature="e#16331#16376#0" />
-            <element signature="e#16536#16615#0" />
-            <element signature="e#16536#17247#0" />
-            <element signature="e#17253#17297#0" />
-            <element signature="e#17253#17580#0" />
-            <element signature="e#17586#17665#0" />
-            <element signature="e#17586#18300#0" />
-            <element signature="e#18306#18351#0" />
-            <element signature="e#18527#18604#0" />
-            <element signature="e#18527#19203#0" />
-            <element signature="e#19209#19254#0" />
-            <element signature="e#19406#19491#0" />
-            <element signature="e#19406#20129#0" />
-            <element signature="e#20135#20210#0" />
-            <element signature="e#20135#20901#0" />
-            <element signature="e#20907#20985#0" />
-            <element signature="e#20907#21564#0" />
-            <element signature="e#21625#21688#0" />
-            <element signature="e#21625#22195#0" />
-            <element signature="e#21570#22140#0" />
-            <element signature="e#22146#22819#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,6 +638,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ScenicDetailsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7809">
+          <caret line="473" column="11" selection-start-line="473" selection-start-column="11" selection-end-line="473" selection-end-column="11" />
+          <folding>
+            <element signature="e#19296#19297#0" expanded="true" />
+            <element signature="e#19379#19380#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -729,10 +684,173 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/FabulousDetailsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/ExhibitsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="method#or#1;class#ExhibitsExample#0" />
+            <element signature="method#createCriteria#0;class#ExhibitsExample#0" />
+            <element signature="method#createCriteriaInternal#0;class#ExhibitsExample#0" />
+            <element signature="method#clear#0;class#ExhibitsExample#0" />
+            <element signature="class#GeneratedCriteria#0;class#ExhibitsExample#0" />
+            <element signature="class#Criteria#0;class#ExhibitsExample#0" />
+            <element signature="class#Criterion#0;class#ExhibitsExample#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicPic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicPicExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="955">
+          <caret line="184" column="33" selection-start-line="184" selection-start-column="33" selection-end-line="184" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/FabulousDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/FabulousDetailsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="n#sql#0;n#mapper#0;n#!!top" />
+            <element signature="n#sql#1;n#mapper#0;n#!!top" />
+            <element signature="n#sql#2;n#mapper#0;n#!!top" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="n#delete#1;n#mapper#0;n#!!top" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" />
+            <element signature="n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#select#2;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" />
+            <element signature="n#update#2;n#mapper#0;n#!!top" />
+            <element signature="n#update#3;n#mapper#0;n#!!top" />
+            <element signature="n#select#3;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/Exhibits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="53" />
+          <folding>
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        <state relative-caret-position="219">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="686" column="29" lean-forward="true" selection-start-line="686" selection-start-column="29" selection-end-line="686" selection-end-column="29" />
+          <folding>
+            <element signature="e#1670#1739#0" />
+            <element signature="e#1670#2428#0" />
+            <element signature="e#2434#2497#0" />
+            <element signature="e#2434#3177#0" />
+            <element signature="e#3183#3252#0" />
+            <element signature="e#3183#3884#0" />
+            <element signature="e#3890#3962#0" />
+            <element signature="e#3890#4457#0" />
+            <element signature="e#4463#4528#0" />
+            <element signature="e#4463#5176#0" />
+            <element signature="e#5182#5256#0" />
+            <element signature="e#5182#5804#0" />
+            <element signature="e#5810#5884#0" />
+            <element signature="e#5810#6575#0" />
+            <element signature="e#6581#6657#0" />
+            <element signature="e#6581#7369#0" />
+            <element signature="e#7375#7469#0" />
+            <element signature="e#7375#8802#0" />
+            <element signature="e#8808#8920#0" />
+            <element signature="e#8808#10649#0" />
+            <element signature="e#10655#10726#0" />
+            <element signature="e#10655#11292#0" />
+            <element signature="e#11298#11429#0" />
+            <element signature="e#11298#12672#0" />
+            <element signature="e#12678#12757#0" />
+            <element signature="e#12678#13540#0" />
+            <element signature="e#13546#13616#0" />
+            <element signature="e#13546#14203#0" />
+            <element signature="e#14209#14275#0" />
+            <element signature="e#14209#14846#0" />
+            <element signature="e#14852#14923#0" />
+            <element signature="e#14852#15518#0" />
+            <element signature="e#15524#15601#0" />
+            <element signature="e#15524#16182#0" />
+            <element signature="e#16188#16235#0" />
+            <element signature="e#16403#16448#0" />
+            <element signature="e#16608#16687#0" />
+            <element signature="e#16608#17319#0" />
+            <element signature="e#17325#17369#0" />
+            <element signature="e#17325#17652#0" />
+            <element signature="e#17658#17737#0" />
+            <element signature="e#17658#18372#0" />
+            <element signature="e#18378#18423#0" />
+            <element signature="e#18599#18676#0" />
+            <element signature="e#18599#19275#0" />
+            <element signature="e#19281#19326#0" />
+            <element signature="e#19478#19563#0" />
+            <element signature="e#19478#20201#0" />
+            <element signature="e#20207#20282#0" />
+            <element signature="e#20207#20973#0" />
+            <element signature="e#20979#21057#0" />
+            <element signature="e#20979#21691#0" />
+            <element signature="e#22022#22592#0" />
+            <element signature="e#22598#23271#0" />
+          </folding>
         </state>
       </provider>
     </entry>

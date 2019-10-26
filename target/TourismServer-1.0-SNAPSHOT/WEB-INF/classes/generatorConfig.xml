@@ -71,6 +71,7 @@
         <table tableName="tbl_exhibits_comment" domainObjectName="ExhibitsComment"/>
         <table tableName="tbl_contacts" domainObjectName="Contacts"/>
         <table tableName="tbl_passenger" domainObjectName="Passenger"/>
+        <table tableName="tbl_fabulous_details" domainObjectName="FabulousDetails"/>
     </context>
 
 </generatorConfiguration>

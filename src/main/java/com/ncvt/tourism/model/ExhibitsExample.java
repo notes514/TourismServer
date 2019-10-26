@@ -503,66 +503,6 @@ public class ExhibitsExample {
             addCriterion("exhibits_author not between", value1, value2, "exhibitsAuthor");
             return (Criteria) this;
         }
-
-        public Criteria andExhibitsPraisePointsIsNull() {
-            addCriterion("exhibits_praise_points is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsIsNotNull() {
-            addCriterion("exhibits_praise_points is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsEqualTo(Integer value) {
-            addCriterion("exhibits_praise_points =", value, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsNotEqualTo(Integer value) {
-            addCriterion("exhibits_praise_points <>", value, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsGreaterThan(Integer value) {
-            addCriterion("exhibits_praise_points >", value, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsGreaterThanOrEqualTo(Integer value) {
-            addCriterion("exhibits_praise_points >=", value, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsLessThan(Integer value) {
-            addCriterion("exhibits_praise_points <", value, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsLessThanOrEqualTo(Integer value) {
-            addCriterion("exhibits_praise_points <=", value, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsIn(List<Integer> values) {
-            addCriterion("exhibits_praise_points in", values, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsNotIn(List<Integer> values) {
-            addCriterion("exhibits_praise_points not in", values, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsBetween(Integer value1, Integer value2) {
-            addCriterion("exhibits_praise_points between", value1, value2, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andExhibitsPraisePointsNotBetween(Integer value1, Integer value2) {
-            addCriterion("exhibits_praise_points not between", value1, value2, "exhibitsPraisePoints");
-            return (Criteria) this;
-        }
     }
 
     public static class Criteria extends GeneratedCriteria {

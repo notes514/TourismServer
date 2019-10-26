@@ -3,7 +3,7 @@
 <mapper namespace="com.ncvt.tourism.mapper.ScenicPicMapper">
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.ScenicPic">
     <id column="scenic_pic_id" jdbcType="INTEGER" property="scenicPicId" />
-    <result column="scenic_details_id" jdbcType="INTEGER" property="scenicDetailsId" />
+    <result column="scenic_spot_id" jdbcType="INTEGER" property="scenicSpotId" />
     <result column="scenic_pic_url" jdbcType="VARCHAR" property="scenicPicUrl" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    scenic_pic_id, scenic_details_id, scenic_pic_url
+    scenic_pic_id, scenic_spot_id, scenic_pic_url
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ScenicPicExample" resultMap="BaseResultMap">
     select
@@ -98,9 +98,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.ScenicPic">
-    insert into tbl_scenic_pic (scenic_pic_id, scenic_details_id, scenic_pic_url
+    insert into tbl_scenic_pic (scenic_pic_id, scenic_spot_id, scenic_pic_url
       )
-    values (#{scenicPicId,jdbcType=INTEGER}, #{scenicDetailsId,jdbcType=INTEGER}, #{scenicPicUrl,jdbcType=VARCHAR}
+    values (#{scenicPicId,jdbcType=INTEGER}, #{scenicSpotId,jdbcType=INTEGER}, #{scenicPicUrl,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ScenicPic">
@@ -109,8 +109,8 @@
       <if test="scenicPicId != null">
         scenic_pic_id,
       </if>
-      <if test="scenicDetailsId != null">
-        scenic_details_id,
+      <if test="scenicSpotId != null">
+        scenic_spot_id,
       </if>
       <if test="scenicPicUrl != null">
         scenic_pic_url,
@@ -120,8 +120,8 @@
       <if test="scenicPicId != null">
         #{scenicPicId,jdbcType=INTEGER},
       </if>
-      <if test="scenicDetailsId != null">
-        #{scenicDetailsId,jdbcType=INTEGER},
+      <if test="scenicSpotId != null">
+        #{scenicSpotId,jdbcType=INTEGER},
       </if>
       <if test="scenicPicUrl != null">
         #{scenicPicUrl,jdbcType=VARCHAR},
@@ -140,8 +140,8 @@
       <if test="record.scenicPicId != null">
         scenic_pic_id = #{record.scenicPicId,jdbcType=INTEGER},
       </if>
-      <if test="record.scenicDetailsId != null">
-        scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
+      <if test="record.scenicSpotId != null">
+        scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
       </if>
       <if test="record.scenicPicUrl != null">
         scenic_pic_url = #{record.scenicPicUrl,jdbcType=VARCHAR},
@@ -154,7 +154,7 @@
   <update id="updateByExample" parameterType="map">
     update tbl_scenic_pic
     set scenic_pic_id = #{record.scenicPicId,jdbcType=INTEGER},
-      scenic_details_id = #{record.scenicDetailsId,jdbcType=INTEGER},
+      scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
       scenic_pic_url = #{record.scenicPicUrl,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -163,8 +163,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.ScenicPic">
     update tbl_scenic_pic
     <set>
-      <if test="scenicDetailsId != null">
-        scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
+      <if test="scenicSpotId != null">
+        scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
       </if>
       <if test="scenicPicUrl != null">
         scenic_pic_url = #{scenicPicUrl,jdbcType=VARCHAR},
@@ -174,7 +174,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ScenicPic">
     update tbl_scenic_pic
-    set scenic_details_id = #{scenicDetailsId,jdbcType=INTEGER},
+    set scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER},
       scenic_pic_url = #{scenicPicUrl,jdbcType=VARCHAR}
     where scenic_pic_id = #{scenicPicId,jdbcType=INTEGER}
   </update>

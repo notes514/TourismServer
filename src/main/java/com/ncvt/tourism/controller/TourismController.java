@@ -44,6 +44,8 @@ public class TourismController {
     private ExhibitsPicMapper exhibitsPicMapper;
     @Autowired
     private ExhibitsCommentMapper exhibitsCommentMapper;
+    @Autowired
+    private FabulousDetailsMapper fabulousDetailsMapper;
 
     /**
      * 用户进行登录
@@ -677,33 +679,68 @@ public class TourismController {
         return map;
     }
 
+
     /**
-     * 点赞展品
+     * 用户根据展品进行点赞，用户不能指定的展品进行多次点赞
+     * 只能多个用户对指定的展品进行点赞
+     * @param userId 用户编号
      * @param exhibitsId 展品编号
-     * @return 返回结果
+     * @return
      */
-    @RequestMapping("/praiseTheExhibits")
-    public Map<String, Object> praiseTheExhibits(int exhibitsId) {
+    @RequestMapping("addFabulousDetails")
+    public Map<String, Object> addFabulousDetails(int userId, int exhibitsId) {
         Map<String, Object> map = new HashMap<>();
-        if (exhibitsMapper.selectByPrimaryKey(exhibitsId) == null) {
+        User user = userMapper.selectByPrimaryKey(userId);
+        Exhibits exhibits = exhibitsMapper.selectByPrimaryKey(exhibitsId);
+        if (user == null) {
             map.put(RESULT, "F");
-            map.put(TIPS, "找不到该展品！");
+            map.put(TIPS, "请先登录！");
             return map;
         }
-        try {
-            Exhibits exhibits = exhibitsMapper.selectByPrimaryKey(exhibitsId);
-            int current = exhibits.getExhibitsPraisePoints();
-            exhibits.setExhibitsPraisePoints(current+1);
-            exhibitsMapper.updateByPrimaryKeySelective(exhibits);
-        } catch (Exception e) {
+        if (exhibits == null) {
             map.put(RESULT, "F");
-            map.put(TIPS, "点赞失败！");
+            map.put(TIPS, "没有该展品！");
+            return map;
+        }
+        FabulousDetails fabulousDetails = new FabulousDetails();
+        //查询点赞表的所有数据
+        List<FabulousDetails> fabulousList = fabulousDetailsMapper.selectByExample(null);
+        for (FabulousDetails details : fabulousList) {
+            if (details.getUserId() == userId && details.getExhibitsId() == exhibitsId) {
+                map.put(RESULT, "F");
+                map.put(TIPS, "该用户已经对该展品进行点赞！");
+                return map;
+            }
+        }
+        try { //捕获异常
+            //设置指定用户进行点赞
+            fabulousDetails.setUserId(userId);
+            //设置用户点赞的展品编号
+            fabulousDetails.setExhibitsId(exhibitsId);
+            //设置状态
+            fabulousDetails.setFlag(1);
+            //添加点赞数量
+            fabulousDetails.setFabulousNumber(1);
+            //插入数据
+            fabulousDetailsMapper.insertSelective(fabulousDetails);
+            //更新数据表
+            fabulousDetailsMapper.updateByPrimaryKey(fabulousDetails);
+        } catch (Exception e) {
+            map.put(RESULT, "S");
+            map.put(TIPS, "添加失败！");
             return map;
         }
         map.put(RESULT, "S");
         map.put(TIPS, "点赞成功！");
         return map;
     }
+
+
+
+
+
+
+
 
 
     //以下是测试添加数据方法

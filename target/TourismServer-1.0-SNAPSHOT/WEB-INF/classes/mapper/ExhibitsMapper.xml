@@ -8,8 +8,18 @@
     <result column="exhibits_video_url" jdbcType="VARCHAR" property="exhibitsVideoUrl" />
     <result column="exhibits_information" jdbcType="VARCHAR" property="exhibitsInformation" />
     <result column="exhibits_author" jdbcType="VARCHAR" property="exhibitsAuthor" />
-    <result column="exhibits_praise_points" jdbcType="INTEGER" property="exhibitsPraisePoints" />
+    <collection property="fabulousDetailsList" ofType="com.ncvt.tourism.model.FabulousDetails"
+                select="getFabulousDetailsList" column="exhibits_id"/>
   </resultMap>
+
+  <resultMap id="FabulousDetailsMap" type="com.ncvt.tourism.model.FabulousDetails">
+    <id column="fabulous_details_id" jdbcType="INTEGER" property="fabulousDetailsId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="exhibits_id" jdbcType="INTEGER" property="exhibitsId" />
+    <result column="fabulous_number" jdbcType="INTEGER" property="fabulousNumber" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+  </resultMap>
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -70,7 +80,7 @@
   </sql>
   <sql id="Base_Column_List">
     exhibits_id, exhibition_area_id, exhibits_name, exhibits_video_url, exhibits_information, 
-    exhibits_author, exhibits_praise_points
+    exhibits_author
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ExhibitsExample" resultMap="BaseResultMap">
     select
@@ -105,10 +115,10 @@
   <insert id="insert" parameterType="com.ncvt.tourism.model.Exhibits">
     insert into tbl_exhibits (exhibits_id, exhibition_area_id, exhibits_name, 
       exhibits_video_url, exhibits_information, 
-      exhibits_author, exhibits_praise_points)
+      exhibits_author)
     values (#{exhibitsId,jdbcType=INTEGER}, #{exhibitionAreaId,jdbcType=INTEGER}, #{exhibitsName,jdbcType=VARCHAR}, 
       #{exhibitsVideoUrl,jdbcType=VARCHAR}, #{exhibitsInformation,jdbcType=VARCHAR}, 
-      #{exhibitsAuthor,jdbcType=VARCHAR}, #{exhibitsPraisePoints,jdbcType=INTEGER})
+      #{exhibitsAuthor,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Exhibits">
     insert into tbl_exhibits
@@ -131,9 +141,6 @@
       <if test="exhibitsAuthor != null">
         exhibits_author,
       </if>
-      <if test="exhibitsPraisePoints != null">
-        exhibits_praise_points,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="exhibitsId != null">
@@ -153,9 +160,6 @@
       </if>
       <if test="exhibitsAuthor != null">
         #{exhibitsAuthor,jdbcType=VARCHAR},
-      </if>
-      <if test="exhibitsPraisePoints != null">
-        #{exhibitsPraisePoints,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -186,9 +190,6 @@
       <if test="record.exhibitsAuthor != null">
         exhibits_author = #{record.exhibitsAuthor,jdbcType=VARCHAR},
       </if>
-      <if test="record.exhibitsPraisePoints != null">
-        exhibits_praise_points = #{record.exhibitsPraisePoints,jdbcType=INTEGER},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -201,8 +202,7 @@
       exhibits_name = #{record.exhibitsName,jdbcType=VARCHAR},
       exhibits_video_url = #{record.exhibitsVideoUrl,jdbcType=VARCHAR},
       exhibits_information = #{record.exhibitsInformation,jdbcType=VARCHAR},
-      exhibits_author = #{record.exhibitsAuthor,jdbcType=VARCHAR},
-      exhibits_praise_points = #{record.exhibitsPraisePoints,jdbcType=INTEGER}
+      exhibits_author = #{record.exhibitsAuthor,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -225,9 +225,6 @@
       <if test="exhibitsAuthor != null">
         exhibits_author = #{exhibitsAuthor,jdbcType=VARCHAR},
       </if>
-      <if test="exhibitsPraisePoints != null">
-        exhibits_praise_points = #{exhibitsPraisePoints,jdbcType=INTEGER},
-      </if>
     </set>
     where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
   </update>
@@ -237,8 +234,12 @@
       exhibits_name = #{exhibitsName,jdbcType=VARCHAR},
       exhibits_video_url = #{exhibitsVideoUrl,jdbcType=VARCHAR},
       exhibits_information = #{exhibitsInformation,jdbcType=VARCHAR},
-      exhibits_author = #{exhibitsAuthor,jdbcType=VARCHAR},
-      exhibits_praise_points = #{exhibitsPraisePoints,jdbcType=INTEGER}
+      exhibits_author = #{exhibitsAuthor,jdbcType=VARCHAR}
     where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
   </update>
+
+  <select id="getFabulousDetailsList" parameterType="com.ncvt.tourism.model.FabulousDetails" resultMap="FabulousDetailsMap">
+    select * from tbl_fabulous_details where exhibits_id=#{id}
+  </select>
+
 </mapper>

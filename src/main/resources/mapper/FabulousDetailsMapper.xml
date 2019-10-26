@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ncvt.tourism.mapper.ExhibitsCommentMapper">
-  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.ExhibitsComment">
-    <id column="exhibits_comment_id" jdbcType="INTEGER" property="exhibitsCommentId" />
+<mapper namespace="com.ncvt.tourism.mapper.FabulousDetailsMapper">
+  <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.FabulousDetails">
+    <id column="fabulous_details_id" jdbcType="INTEGER" property="fabulousDetailsId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="exhibits_id" jdbcType="INTEGER" property="exhibitsId" />
-    <result column="exhibits_comment_content" jdbcType="VARCHAR" property="exhibitsCommentContent" />
-    <result column="comment_praise_points" jdbcType="INTEGER" property="commentPraisePoints" />
+    <result column="fabulous_number" jdbcType="INTEGER" property="fabulousNumber" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,15 +67,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    exhibits_comment_id, user_id, exhibits_id, exhibits_comment_content, comment_praise_points
+    fabulous_details_id, user_id, exhibits_id, fabulous_number, flag
   </sql>
-  <select id="selectByExample" parameterType="com.ncvt.tourism.model.ExhibitsCommentExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.ncvt.tourism.model.FabulousDetailsExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from tbl_exhibits_comment
+    from tbl_fabulous_details
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,32 +86,30 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from tbl_exhibits_comment
-    where exhibits_comment_id = #{exhibitsCommentId,jdbcType=INTEGER}
+    from tbl_fabulous_details
+    where fabulous_details_id = #{fabulousDetailsId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from tbl_exhibits_comment
-    where exhibits_comment_id = #{exhibitsCommentId,jdbcType=INTEGER}
+    delete from tbl_fabulous_details
+    where fabulous_details_id = #{fabulousDetailsId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.ExhibitsCommentExample">
-    delete from tbl_exhibits_comment
+  <delete id="deleteByExample" parameterType="com.ncvt.tourism.model.FabulousDetailsExample">
+    delete from tbl_fabulous_details
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.ncvt.tourism.model.ExhibitsComment">
-    insert into tbl_exhibits_comment (exhibits_comment_id, user_id, exhibits_id, 
-      exhibits_comment_content, comment_praise_points
-      )
-    values (#{exhibitsCommentId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{exhibitsId,jdbcType=INTEGER}, 
-      #{exhibitsCommentContent,jdbcType=VARCHAR}, #{commentPraisePoints,jdbcType=INTEGER}
-      )
+  <insert id="insert" parameterType="com.ncvt.tourism.model.FabulousDetails">
+    insert into tbl_fabulous_details (fabulous_details_id, user_id, exhibits_id, 
+      fabulous_number, flag)
+    values (#{fabulousDetailsId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{exhibitsId,jdbcType=INTEGER}, 
+      #{fabulousNumber,jdbcType=INTEGER}, #{flag,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ExhibitsComment">
-    insert into tbl_exhibits_comment
+  <insert id="insertSelective" parameterType="com.ncvt.tourism.model.FabulousDetails">
+    insert into tbl_fabulous_details
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="exhibitsCommentId != null">
-        exhibits_comment_id,
+      <if test="fabulousDetailsId != null">
+        fabulous_details_id,
       </if>
       <if test="userId != null">
         user_id,
@@ -119,16 +117,16 @@
       <if test="exhibitsId != null">
         exhibits_id,
       </if>
-      <if test="exhibitsCommentContent != null">
-        exhibits_comment_content,
+      <if test="fabulousNumber != null">
+        fabulous_number,
       </if>
-      <if test="commentPraisePoints != null">
-        comment_praise_points,
+      <if test="flag != null">
+        flag,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="exhibitsCommentId != null">
-        #{exhibitsCommentId,jdbcType=INTEGER},
+      <if test="fabulousDetailsId != null">
+        #{fabulousDetailsId,jdbcType=INTEGER},
       </if>
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
@@ -136,25 +134,25 @@
       <if test="exhibitsId != null">
         #{exhibitsId,jdbcType=INTEGER},
       </if>
-      <if test="exhibitsCommentContent != null">
-        #{exhibitsCommentContent,jdbcType=VARCHAR},
+      <if test="fabulousNumber != null">
+        #{fabulousNumber,jdbcType=INTEGER},
       </if>
-      <if test="commentPraisePoints != null">
-        #{commentPraisePoints,jdbcType=INTEGER},
+      <if test="flag != null">
+        #{flag,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.ncvt.tourism.model.ExhibitsCommentExample" resultType="java.lang.Long">
-    select count(*) from tbl_exhibits_comment
+  <select id="countByExample" parameterType="com.ncvt.tourism.model.FabulousDetailsExample" resultType="java.lang.Long">
+    select count(*) from tbl_fabulous_details
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update tbl_exhibits_comment
+    update tbl_fabulous_details
     <set>
-      <if test="record.exhibitsCommentId != null">
-        exhibits_comment_id = #{record.exhibitsCommentId,jdbcType=INTEGER},
+      <if test="record.fabulousDetailsId != null">
+        fabulous_details_id = #{record.fabulousDetailsId,jdbcType=INTEGER},
       </if>
       <if test="record.userId != null">
         user_id = #{record.userId,jdbcType=INTEGER},
@@ -162,11 +160,11 @@
       <if test="record.exhibitsId != null">
         exhibits_id = #{record.exhibitsId,jdbcType=INTEGER},
       </if>
-      <if test="record.exhibitsCommentContent != null">
-        exhibits_comment_content = #{record.exhibitsCommentContent,jdbcType=VARCHAR},
+      <if test="record.fabulousNumber != null">
+        fabulous_number = #{record.fabulousNumber,jdbcType=INTEGER},
       </if>
-      <if test="record.commentPraisePoints != null">
-        comment_praise_points = #{record.commentPraisePoints,jdbcType=INTEGER},
+      <if test="record.flag != null">
+        flag = #{record.flag,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -174,18 +172,18 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update tbl_exhibits_comment
-    set exhibits_comment_id = #{record.exhibitsCommentId,jdbcType=INTEGER},
+    update tbl_fabulous_details
+    set fabulous_details_id = #{record.fabulousDetailsId,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       exhibits_id = #{record.exhibitsId,jdbcType=INTEGER},
-      exhibits_comment_content = #{record.exhibitsCommentContent,jdbcType=VARCHAR},
-      comment_praise_points = #{record.commentPraisePoints,jdbcType=INTEGER}
+      fabulous_number = #{record.fabulousNumber,jdbcType=INTEGER},
+      flag = #{record.flag,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.ExhibitsComment">
-    update tbl_exhibits_comment
+  <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.FabulousDetails">
+    update tbl_fabulous_details
     <set>
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
@@ -193,21 +191,21 @@
       <if test="exhibitsId != null">
         exhibits_id = #{exhibitsId,jdbcType=INTEGER},
       </if>
-      <if test="exhibitsCommentContent != null">
-        exhibits_comment_content = #{exhibitsCommentContent,jdbcType=VARCHAR},
+      <if test="fabulousNumber != null">
+        fabulous_number = #{fabulousNumber,jdbcType=INTEGER},
       </if>
-      <if test="commentPraisePoints != null">
-        comment_praise_points = #{commentPraisePoints,jdbcType=INTEGER},
+      <if test="flag != null">
+        flag = #{flag,jdbcType=INTEGER},
       </if>
     </set>
-    where exhibits_comment_id = #{exhibitsCommentId,jdbcType=INTEGER}
+    where fabulous_details_id = #{fabulousDetailsId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ExhibitsComment">
-    update tbl_exhibits_comment
+  <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.FabulousDetails">
+    update tbl_fabulous_details
     set user_id = #{userId,jdbcType=INTEGER},
       exhibits_id = #{exhibitsId,jdbcType=INTEGER},
-      exhibits_comment_content = #{exhibitsCommentContent,jdbcType=VARCHAR},
-      comment_praise_points = #{commentPraisePoints,jdbcType=INTEGER}
-    where exhibits_comment_id = #{exhibitsCommentId,jdbcType=INTEGER}
+      fabulous_number = #{fabulousNumber,jdbcType=INTEGER},
+      flag = #{flag,jdbcType=INTEGER}
+    where fabulous_details_id = #{fabulousDetailsId,jdbcType=INTEGER}
   </update>
 </mapper>

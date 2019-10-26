@@ -3,14 +3,14 @@ package com.ncvt.tourism.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExhibitsCommentExample {
+public class FabulousDetailsExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public ExhibitsCommentExample() {
+    public FabulousDetailsExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -104,63 +104,63 @@ public class ExhibitsCommentExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andExhibitsCommentIdIsNull() {
-            addCriterion("exhibits_comment_id is null");
+        public Criteria andFabulousDetailsIdIsNull() {
+            addCriterion("fabulous_details_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdIsNotNull() {
-            addCriterion("exhibits_comment_id is not null");
+        public Criteria andFabulousDetailsIdIsNotNull() {
+            addCriterion("fabulous_details_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdEqualTo(Integer value) {
-            addCriterion("exhibits_comment_id =", value, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdEqualTo(Integer value) {
+            addCriterion("fabulous_details_id =", value, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdNotEqualTo(Integer value) {
-            addCriterion("exhibits_comment_id <>", value, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdNotEqualTo(Integer value) {
+            addCriterion("fabulous_details_id <>", value, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdGreaterThan(Integer value) {
-            addCriterion("exhibits_comment_id >", value, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdGreaterThan(Integer value) {
+            addCriterion("fabulous_details_id >", value, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("exhibits_comment_id >=", value, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("fabulous_details_id >=", value, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdLessThan(Integer value) {
-            addCriterion("exhibits_comment_id <", value, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdLessThan(Integer value) {
+            addCriterion("fabulous_details_id <", value, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdLessThanOrEqualTo(Integer value) {
-            addCriterion("exhibits_comment_id <=", value, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdLessThanOrEqualTo(Integer value) {
+            addCriterion("fabulous_details_id <=", value, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdIn(List<Integer> values) {
-            addCriterion("exhibits_comment_id in", values, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdIn(List<Integer> values) {
+            addCriterion("fabulous_details_id in", values, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdNotIn(List<Integer> values) {
-            addCriterion("exhibits_comment_id not in", values, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdNotIn(List<Integer> values) {
+            addCriterion("fabulous_details_id not in", values, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdBetween(Integer value1, Integer value2) {
-            addCriterion("exhibits_comment_id between", value1, value2, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdBetween(Integer value1, Integer value2) {
+            addCriterion("fabulous_details_id between", value1, value2, "fabulousDetailsId");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("exhibits_comment_id not between", value1, value2, "exhibitsCommentId");
+        public Criteria andFabulousDetailsIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("fabulous_details_id not between", value1, value2, "fabulousDetailsId");
             return (Criteria) this;
         }
 
@@ -284,133 +284,123 @@ public class ExhibitsCommentExample {
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentIsNull() {
-            addCriterion("exhibits_comment_content is null");
+        public Criteria andFabulousNumberIsNull() {
+            addCriterion("fabulous_number is null");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentIsNotNull() {
-            addCriterion("exhibits_comment_content is not null");
+        public Criteria andFabulousNumberIsNotNull() {
+            addCriterion("fabulous_number is not null");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentEqualTo(String value) {
-            addCriterion("exhibits_comment_content =", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberEqualTo(Integer value) {
+            addCriterion("fabulous_number =", value, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentNotEqualTo(String value) {
-            addCriterion("exhibits_comment_content <>", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberNotEqualTo(Integer value) {
+            addCriterion("fabulous_number <>", value, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentGreaterThan(String value) {
-            addCriterion("exhibits_comment_content >", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberGreaterThan(Integer value) {
+            addCriterion("fabulous_number >", value, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentGreaterThanOrEqualTo(String value) {
-            addCriterion("exhibits_comment_content >=", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("fabulous_number >=", value, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentLessThan(String value) {
-            addCriterion("exhibits_comment_content <", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberLessThan(Integer value) {
+            addCriterion("fabulous_number <", value, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentLessThanOrEqualTo(String value) {
-            addCriterion("exhibits_comment_content <=", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberLessThanOrEqualTo(Integer value) {
+            addCriterion("fabulous_number <=", value, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentLike(String value) {
-            addCriterion("exhibits_comment_content like", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberIn(List<Integer> values) {
+            addCriterion("fabulous_number in", values, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentNotLike(String value) {
-            addCriterion("exhibits_comment_content not like", value, "exhibitsCommentContent");
+        public Criteria andFabulousNumberNotIn(List<Integer> values) {
+            addCriterion("fabulous_number not in", values, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentIn(List<String> values) {
-            addCriterion("exhibits_comment_content in", values, "exhibitsCommentContent");
+        public Criteria andFabulousNumberBetween(Integer value1, Integer value2) {
+            addCriterion("fabulous_number between", value1, value2, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentNotIn(List<String> values) {
-            addCriterion("exhibits_comment_content not in", values, "exhibitsCommentContent");
+        public Criteria andFabulousNumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("fabulous_number not between", value1, value2, "fabulousNumber");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentBetween(String value1, String value2) {
-            addCriterion("exhibits_comment_content between", value1, value2, "exhibitsCommentContent");
+        public Criteria andFlagIsNull() {
+            addCriterion("flag is null");
             return (Criteria) this;
         }
 
-        public Criteria andExhibitsCommentContentNotBetween(String value1, String value2) {
-            addCriterion("exhibits_comment_content not between", value1, value2, "exhibitsCommentContent");
+        public Criteria andFlagIsNotNull() {
+            addCriterion("flag is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsIsNull() {
-            addCriterion("comment_praise_points is null");
+        public Criteria andFlagEqualTo(Integer value) {
+            addCriterion("flag =", value, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsIsNotNull() {
-            addCriterion("comment_praise_points is not null");
+        public Criteria andFlagNotEqualTo(Integer value) {
+            addCriterion("flag <>", value, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsEqualTo(Integer value) {
-            addCriterion("comment_praise_points =", value, "commentPraisePoints");
+        public Criteria andFlagGreaterThan(Integer value) {
+            addCriterion("flag >", value, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsNotEqualTo(Integer value) {
-            addCriterion("comment_praise_points <>", value, "commentPraisePoints");
+        public Criteria andFlagGreaterThanOrEqualTo(Integer value) {
+            addCriterion("flag >=", value, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsGreaterThan(Integer value) {
-            addCriterion("comment_praise_points >", value, "commentPraisePoints");
+        public Criteria andFlagLessThan(Integer value) {
+            addCriterion("flag <", value, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsGreaterThanOrEqualTo(Integer value) {
-            addCriterion("comment_praise_points >=", value, "commentPraisePoints");
+        public Criteria andFlagLessThanOrEqualTo(Integer value) {
+            addCriterion("flag <=", value, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsLessThan(Integer value) {
-            addCriterion("comment_praise_points <", value, "commentPraisePoints");
+        public Criteria andFlagIn(List<Integer> values) {
+            addCriterion("flag in", values, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsLessThanOrEqualTo(Integer value) {
-            addCriterion("comment_praise_points <=", value, "commentPraisePoints");
+        public Criteria andFlagNotIn(List<Integer> values) {
+            addCriterion("flag not in", values, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsIn(List<Integer> values) {
-            addCriterion("comment_praise_points in", values, "commentPraisePoints");
+        public Criteria andFlagBetween(Integer value1, Integer value2) {
+            addCriterion("flag between", value1, value2, "flag");
             return (Criteria) this;
         }
 
-        public Criteria andCommentPraisePointsNotIn(List<Integer> values) {
-            addCriterion("comment_praise_points not in", values, "commentPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentPraisePointsBetween(Integer value1, Integer value2) {
-            addCriterion("comment_praise_points between", value1, value2, "commentPraisePoints");
-            return (Criteria) this;
-        }
-
-        public Criteria andCommentPraisePointsNotBetween(Integer value1, Integer value2) {
-            addCriterion("comment_praise_points not between", value1, value2, "commentPraisePoints");
+        public Criteria andFlagNotBetween(Integer value1, Integer value2) {
+            addCriterion("flag not between", value1, value2, "flag");
             return (Criteria) this;
         }
     }

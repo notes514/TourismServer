@@ -3,6 +3,7 @@
 <mapper namespace="com.ncvt.tourism.mapper.ExhibitsCommentMapper">
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.ExhibitsComment">
     <id column="exhibits_comment_id" jdbcType="INTEGER" property="exhibitsCommentId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="exhibits_id" jdbcType="INTEGER" property="exhibitsId" />
     <result column="exhibits_comment_content" jdbcType="VARCHAR" property="exhibitsCommentContent" />
     <result column="comment_praise_points" jdbcType="INTEGER" property="commentPraisePoints" />
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    exhibits_comment_id, exhibits_id, exhibits_comment_content, comment_praise_points
+    exhibits_comment_id, user_id, exhibits_id, exhibits_comment_content, comment_praise_points
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ExhibitsCommentExample" resultMap="BaseResultMap">
     select
@@ -99,16 +100,21 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.ExhibitsComment">
-    insert into tbl_exhibits_comment (exhibits_comment_id, exhibits_id, exhibits_comment_content, 
-      comment_praise_points)
-    values (#{exhibitsCommentId,jdbcType=INTEGER}, #{exhibitsId,jdbcType=INTEGER}, #{exhibitsCommentContent,jdbcType=VARCHAR}, 
-      #{commentPraisePoints,jdbcType=INTEGER})
+    insert into tbl_exhibits_comment (exhibits_comment_id, user_id, exhibits_id, 
+      exhibits_comment_content, comment_praise_points
+      )
+    values (#{exhibitsCommentId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{exhibitsId,jdbcType=INTEGER}, 
+      #{exhibitsCommentContent,jdbcType=VARCHAR}, #{commentPraisePoints,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ExhibitsComment">
     insert into tbl_exhibits_comment
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="exhibitsCommentId != null">
         exhibits_comment_id,
+      </if>
+      <if test="userId != null">
+        user_id,
       </if>
       <if test="exhibitsId != null">
         exhibits_id,
@@ -123,6 +129,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="exhibitsCommentId != null">
         #{exhibitsCommentId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="exhibitsId != null">
         #{exhibitsId,jdbcType=INTEGER},
@@ -147,6 +156,9 @@
       <if test="record.exhibitsCommentId != null">
         exhibits_comment_id = #{record.exhibitsCommentId,jdbcType=INTEGER},
       </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
       <if test="record.exhibitsId != null">
         exhibits_id = #{record.exhibitsId,jdbcType=INTEGER},
       </if>
@@ -164,6 +176,7 @@
   <update id="updateByExample" parameterType="map">
     update tbl_exhibits_comment
     set exhibits_comment_id = #{record.exhibitsCommentId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
       exhibits_id = #{record.exhibitsId,jdbcType=INTEGER},
       exhibits_comment_content = #{record.exhibitsCommentContent,jdbcType=VARCHAR},
       comment_praise_points = #{record.commentPraisePoints,jdbcType=INTEGER}
@@ -174,6 +187,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.ExhibitsComment">
     update tbl_exhibits_comment
     <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
       <if test="exhibitsId != null">
         exhibits_id = #{exhibitsId,jdbcType=INTEGER},
       </if>
@@ -188,7 +204,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ExhibitsComment">
     update tbl_exhibits_comment
-    set exhibits_id = #{exhibitsId,jdbcType=INTEGER},
+    set user_id = #{userId,jdbcType=INTEGER},
+      exhibits_id = #{exhibitsId,jdbcType=INTEGER},
       exhibits_comment_content = #{exhibitsCommentContent,jdbcType=VARCHAR},
       comment_praise_points = #{commentPraisePoints,jdbcType=INTEGER}
     where exhibits_comment_id = #{exhibitsCommentId,jdbcType=INTEGER}
