@@ -435,52 +435,62 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateEqualTo(Date value) {
+        public Criteria andDepartDateEqualTo(String value) {
             addCriterion("depart_date =", value, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateNotEqualTo(Date value) {
+        public Criteria andDepartDateNotEqualTo(String value) {
             addCriterion("depart_date <>", value, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateGreaterThan(Date value) {
+        public Criteria andDepartDateGreaterThan(String value) {
             addCriterion("depart_date >", value, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateGreaterThanOrEqualTo(Date value) {
+        public Criteria andDepartDateGreaterThanOrEqualTo(String value) {
             addCriterion("depart_date >=", value, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateLessThan(Date value) {
+        public Criteria andDepartDateLessThan(String value) {
             addCriterion("depart_date <", value, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateLessThanOrEqualTo(Date value) {
+        public Criteria andDepartDateLessThanOrEqualTo(String value) {
             addCriterion("depart_date <=", value, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateIn(List<Date> values) {
+        public Criteria andDepartDateLike(String value) {
+            addCriterion("depart_date like", value, "departDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepartDateNotLike(String value) {
+            addCriterion("depart_date not like", value, "departDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDepartDateIn(List<String> values) {
             addCriterion("depart_date in", values, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateNotIn(List<Date> values) {
+        public Criteria andDepartDateNotIn(List<String> values) {
             addCriterion("depart_date not in", values, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateBetween(Date value1, Date value2) {
+        public Criteria andDepartDateBetween(String value1, String value2) {
             addCriterion("depart_date between", value1, value2, "departDate");
             return (Criteria) this;
         }
 
-        public Criteria andDepartDateNotBetween(Date value1, Date value2) {
+        public Criteria andDepartDateNotBetween(String value1, String value2) {
             addCriterion("depart_date not between", value1, value2, "departDate");
             return (Criteria) this;
         }

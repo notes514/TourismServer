@@ -7,7 +7,7 @@
     <result column="order_number" jdbcType="INTEGER" property="orderNumber" />
     <result column="order_state" jdbcType="INTEGER" property="orderState" />
     <result column="trip_mode" jdbcType="VARCHAR" property="tripMode" />
-    <result column="depart_date" jdbcType="TIMESTAMP" property="departDate" />
+    <result column="depart_date" jdbcType="VARCHAR" property="departDate" />
     <result column="depart_days" jdbcType="VARCHAR" property="departDays" />
     <result column="tirp_information" jdbcType="VARCHAR" property="tirpInformation" />
     <result column="order_price" jdbcType="DOUBLE" property="orderPrice" />
@@ -112,7 +112,7 @@
       depart_days, tirp_information, order_price, 
       order_date, supplier)
     values (#{orderId,jdbcType=INTEGER}, #{orderContent,jdbcType=VARCHAR}, #{orderNumber,jdbcType=INTEGER}, 
-      #{orderState,jdbcType=INTEGER}, #{tripMode,jdbcType=VARCHAR}, #{departDate,jdbcType=TIMESTAMP}, 
+      #{orderState,jdbcType=INTEGER}, #{tripMode,jdbcType=VARCHAR}, #{departDate,jdbcType=VARCHAR}, 
       #{departDays,jdbcType=VARCHAR}, #{tirpInformation,jdbcType=VARCHAR}, #{orderPrice,jdbcType=DOUBLE}, 
       #{orderDate,jdbcType=TIMESTAMP}, #{supplier,jdbcType=VARCHAR})
   </insert>
@@ -170,7 +170,7 @@
         #{tripMode,jdbcType=VARCHAR},
       </if>
       <if test="departDate != null">
-        #{departDate,jdbcType=TIMESTAMP},
+        #{departDate,jdbcType=VARCHAR},
       </if>
       <if test="departDays != null">
         #{departDays,jdbcType=VARCHAR},
@@ -214,7 +214,7 @@
         trip_mode = #{record.tripMode,jdbcType=VARCHAR},
       </if>
       <if test="record.departDate != null">
-        depart_date = #{record.departDate,jdbcType=TIMESTAMP},
+        depart_date = #{record.departDate,jdbcType=VARCHAR},
       </if>
       <if test="record.departDays != null">
         depart_days = #{record.departDays,jdbcType=VARCHAR},
@@ -243,7 +243,7 @@
       order_number = #{record.orderNumber,jdbcType=INTEGER},
       order_state = #{record.orderState,jdbcType=INTEGER},
       trip_mode = #{record.tripMode,jdbcType=VARCHAR},
-      depart_date = #{record.departDate,jdbcType=TIMESTAMP},
+      depart_date = #{record.departDate,jdbcType=VARCHAR},
       depart_days = #{record.departDays,jdbcType=VARCHAR},
       tirp_information = #{record.tirpInformation,jdbcType=VARCHAR},
       order_price = #{record.orderPrice,jdbcType=DOUBLE},
@@ -269,7 +269,7 @@
         trip_mode = #{tripMode,jdbcType=VARCHAR},
       </if>
       <if test="departDate != null">
-        depart_date = #{departDate,jdbcType=TIMESTAMP},
+        depart_date = #{departDate,jdbcType=VARCHAR},
       </if>
       <if test="departDays != null">
         depart_days = #{departDays,jdbcType=VARCHAR},
@@ -295,7 +295,7 @@
       order_number = #{orderNumber,jdbcType=INTEGER},
       order_state = #{orderState,jdbcType=INTEGER},
       trip_mode = #{tripMode,jdbcType=VARCHAR},
-      depart_date = #{departDate,jdbcType=TIMESTAMP},
+      depart_date = #{departDate,jdbcType=VARCHAR},
       depart_days = #{departDays,jdbcType=VARCHAR},
       tirp_information = #{tirpInformation,jdbcType=VARCHAR},
       order_price = #{orderPrice,jdbcType=DOUBLE},
