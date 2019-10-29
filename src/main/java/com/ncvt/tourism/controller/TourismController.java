@@ -16,6 +16,7 @@ public class TourismController {
     private static final String RESULT = "RESULT";      //返回结果
     private static final String ONE_DATA = "ONE_DETAIL";   //返回数据1
     private static final String TWO_DATA = "TWO_DETAIL";   //返回数据2
+    private static final String THREE_DATA = "THREE_DATA"; //返回数据3
     @Autowired
     private UserMapper userMapper;
     @Autowired
@@ -48,6 +49,10 @@ public class TourismController {
     private FabulousDetailsMapper fabulousDetailsMapper;
     @Autowired
     private ExhibitsCommentMapper ecmMapper;
+    @Autowired
+    private ContactsMapper contactsMapper;
+    @Autowired
+    private OrderMapper orderMapper;
 
     /**
      * 用户进行登录
@@ -528,7 +533,8 @@ public class TourismController {
     }
 
     /**
-     * 查询景区信息详情
+     * 通过景区编号查询景区信息详情
+     *
      * @param scenicSpotId 景区编号
      * @return 返回结果
      */
@@ -542,8 +548,12 @@ public class TourismController {
             return map;
         }
         map.put(RESULT, "S");
-        map.put(ONE_DATA, scenicDetailsMapper.selectByPrimaryKey(scenicSpotId));
-        map.put(TWO_DATA, scenicPicMapper.selectByPrimaryKey(details.getScenicDetailsId()));
+        map.put(ONE_DATA, scenicSpotMapper.selectByPrimaryKey(scenicSpotId));
+        map.put(TWO_DATA, scenicDetailsMapper.selectByPrimaryKey(scenicSpotId));
+        ScenicPicExample example = new ScenicPicExample();
+        //拼接查询
+        example.createCriteria().andScenicSpotIdEqualTo(scenicSpotId);
+        map.put(THREE_DATA, scenicPicMapper.selectByExample(example));
         return map;
     }
 
@@ -681,7 +691,6 @@ public class TourismController {
         return map;
     }
 
-
     /**
      * 用户根据展品进行点赞，用户不能指定的展品进行多次点赞
      * 只能多个用户对指定的展品进行点赞
@@ -737,16 +746,7 @@ public class TourismController {
         return map;
     }
 
-
-
-
-
-
-
-
-
     //以下是测试添加数据方法
-
     @RequestMapping("/addExhibits")
     public Map<String, Object> addScenicSpot(@RequestBody Exhibits exhibits) {
         Map<String, Object> map = new HashMap<>();
@@ -791,6 +791,183 @@ public class TourismController {
     @RequestMapping("queryAllExhibitsComments")
     public List<ExhibitsComment> queryAllExhibitsComments() {
         return ecmMapper.selectByExample(null);
+    }
+
+    /**
+     * 景区订单模块
+     * 生成联系人信息
+     * @param contacts
+     * @return
+     */
+    @RequestMapping("addByContacts")
+    public Map<String, Object> addByContacts(@RequestBody Contacts contacts) {
+        Map<String, Object> map = new HashMap<>();
+        try { //捕获异常
+            contactsMapper.insertSelective(contacts);
+            contactsMapper.updateByPrimaryKey(contacts);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "添加失败");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "添加成功");
+        return map;
+    }
+
+    /**
+     * 删除指定联系人信息
+     * @param contactsId
+     * @return
+     */
+    @RequestMapping("deleteByContacts")
+    public Map<String, Object> deleteByContacts(int contactsId) {
+        Map<String, Object> map = new HashMap<>();
+        Contacts contacts = contactsMapper.selectByPrimaryKey(contactsId);
+        if (contacts == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该联系人");
+            return map;
+        }
+        try { //捕获异常
+            contactsMapper.deleteByPrimaryKey(contactsId);
+            contactsMapper.updateByPrimaryKey(contacts);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "删除失败");
+            return map;
+        }
+        map.put(RESULT, "F");
+        map.put(TIPS, "删除成功");
+        return map;
+    }
+
+    /**
+     * 查询指定联系人信息
+     * @param contactsId
+     * @return
+     */
+    @RequestMapping("queryByContacts")
+    public Map<String, Object> queryByContacts(int contactsId) {
+        Map<String, Object> map = new HashMap<>();
+        Contacts contacts = contactsMapper.selectByPrimaryKey(contactsId);
+        if (contacts == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该联系人");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, contacts);
+        return map;
+    }
+
+    /**
+     * 订单管理模块
+     * 用户下单
+     * @param order
+     * @return
+     */
+    @RequestMapping("addByOrder")
+    public Map<String, Object> addByOrder(@RequestBody Order order) {
+        Map<String, Object> map = new HashMap<>();
+        TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+        try { //捕获异常
+            //设置下单日期为当前日期
+            order.setOrderDate(date);
+            orderMapper.insertSelective(order);
+            orderMapper.updateByPrimaryKey(order);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "添加失败");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "添加成功");
+        return map;
+    }
+
+    /**
+     * 订单管理模块
+     * 删除订单
+     * @param orderId
+     * @return
+     */
+    @RequestMapping("deleteByOrder")
+    public Map<String, Object> deleteByOrder(int orderId) {
+        Map<String, Object> map = new HashMap<>();
+        Order order = orderMapper.selectByPrimaryKey(orderId);
+        if (order == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该订单");
+            return map;
+        }
+        try { //捕获异常
+            orderMapper.deleteByPrimaryKey(orderId);
+            orderMapper.updateByPrimaryKey(order);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "删除失败");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "删除成功");
+        return map;
+    }
+
+    /**
+     * 订单管理模块
+     * 查询订单
+     * @param orderId
+     * @return
+     */
+    @RequestMapping("queryByOrder")
+    public Map<String, Object> queryByOrder(int userId, int orderId) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有登录，请先登录");
+            return map;
+        }
+        Order order = orderMapper.selectByPrimaryKey(orderId);
+        if (order == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该订单");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, order);
+        return map;
+    }
+
+    /**
+     * 订单管理模块
+     * 修改订单状态 根据订单状态来来获取景区订单的状态信息
+     * @param orderId
+     * @return
+     */
+    @RequestMapping("updateByOrderState")
+    public Map<String, Object> updateByOrderState(int orderId, int orderState) {
+        Map<String, Object> map = new HashMap<>();
+        Order order = orderMapper.selectByPrimaryKey(orderId);
+        if (order == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该订单");
+            return map;
+        }
+        try { //捕获异常
+            order.setOrderState(orderState);
+            orderMapper.updateByPrimaryKey(order);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "修改订单状态成功失败");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "修改订单状态成功");
+        return map;
     }
 
 }
