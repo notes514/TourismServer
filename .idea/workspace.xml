@@ -53,6 +53,9 @@
       <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/ExhibitsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ExhibitsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,6 +63,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -76,7 +82,8 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="TourismServer" />
@@ -327,10 +334,15 @@
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="tourismserver" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ShopServer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -342,9 +354,13 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper" />
       <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\banner" />
       <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images" />
       <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\spot" />
@@ -352,6 +368,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper" />
       <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\video" />
       <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images" />
     </key>
@@ -539,6 +556,13 @@
       <workItem from="1572418571155" duration="653000" />
       <workItem from="1572427083608" duration="2290000" />
       <workItem from="1572486707067" duration="4398000" />
+      <workItem from="1572232228154" duration="5118000" />
+      <workItem from="1572274057197" duration="1583000" />
+      <workItem from="1572312323278" duration="4460000" />
+      <workItem from="1572335892205" duration="1326000" />
+      <workItem from="1572416000465" duration="609000" />
+      <workItem from="1572426187670" duration="4923000" />
+      <workItem from="1572483612209" duration="3918000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -595,6 +619,14 @@
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1572256027733</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00008" summary="新增联系人，订单API，更新详情API">
+      <created>1572357664318</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572357664318</updated>
     </task>
     <option name="localTasksCounter" value="9" />
     <servers />
@@ -658,20 +690,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -991,5 +1010,7 @@
         </state>
       </provider>
     </entry>
+    <MESSAGE value="新增联系人，订单API，更新详情API" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增联系人，订单API，更新详情API" />
   </component>
 </project>
