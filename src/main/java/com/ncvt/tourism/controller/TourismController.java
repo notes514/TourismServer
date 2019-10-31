@@ -558,6 +558,26 @@ public class TourismController {
     }
 
     /**
+     * 通过景区详情编号查询景区详情信息
+     *
+     * @param scenicDetailsId 景区编号
+     * @return
+     */
+    @RequestMapping("queryByScenicDetails")
+    public Map<String, Object> queryByScenicDetails(int scenicDetailsId) {
+        Map<String, Object> map = new HashMap<>();
+        ScenicDetails scenicDetails = scenicDetailsMapper.selectByPrimaryKey(scenicDetailsId);
+        if (scenicDetails == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该详情内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, scenicDetails);
+        return map;
+    }
+
+    /**
      * 查询地区编号对应景区
      * @return
      */
@@ -944,6 +964,32 @@ public class TourismController {
 
     /**
      * 订单管理模块
+     * 查询全部订单
+     * @param userId
+     * @return
+     */
+    @RequestMapping("queryAllOrder")
+    public Map<String, Object> queryAllOrder(int userId) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有登录，请先登录");
+            return map;
+        }
+        List<Order> orderList = orderMapper.selectByExample(null);
+        if (orderList.size() < 1) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "暂无订单");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, orderList);
+        return map;
+    }
+
+    /**
+     * 订单管理模块
      * 修改订单状态 根据订单状态来来获取景区订单的状态信息
      * @param orderId
      * @return
@@ -967,6 +1013,44 @@ public class TourismController {
         }
         map.put(RESULT, "S");
         map.put(TIPS, "修改订单状态成功");
+        return map;
+    }
+
+    /**
+     * 订单管理模块
+     * 根据指定用户和订单状态来来获取景区订单的列表信息
+     * @param userId 用户比那好
+     * @param orderState 订单状态
+     * @return
+     */
+    @RequestMapping("queryByOrderState")
+    public Map<String, Object> queryByOrderState(int userId, int orderState) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有登录，请先登录");
+            return map;
+        }
+        List<Order> orderList = orderMapper.selectByExample(null);
+        if (orderList.size() < 1) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "暂无订单");
+            return map;
+        }
+        List<Order> sOrderList = new ArrayList<>();
+        for (Order order : orderList) {
+            if (order.getOrderState() == orderState) {
+                sOrderList.add(order);
+            }
+        }
+        if (sOrderList.size() < 1) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "暂无订单");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, sOrderList);
         return map;
     }
 
