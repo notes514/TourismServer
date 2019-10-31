@@ -72,6 +72,7 @@
         <table tableName="tbl_contacts" domainObjectName="Contacts"/>
         <table tableName="tbl_passenger" domainObjectName="Passenger"/>
         <table tableName="tbl_fabulous_details" domainObjectName="FabulousDetails"/>
+        <table tableName="tbl_trip" domainObjectName="Trip"/>
     </context>
 
 </generatorConfiguration>

@@ -503,6 +503,76 @@ public class ExhibitsExample {
             addCriterion("exhibits_author not between", value1, value2, "exhibitsAuthor");
             return (Criteria) this;
         }
+
+        public Criteria andCellPhoneNumberIsNull() {
+            addCriterion("cell_phone_number is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberIsNotNull() {
+            addCriterion("cell_phone_number is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberEqualTo(String value) {
+            addCriterion("cell_phone_number =", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberNotEqualTo(String value) {
+            addCriterion("cell_phone_number <>", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberGreaterThan(String value) {
+            addCriterion("cell_phone_number >", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberGreaterThanOrEqualTo(String value) {
+            addCriterion("cell_phone_number >=", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberLessThan(String value) {
+            addCriterion("cell_phone_number <", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberLessThanOrEqualTo(String value) {
+            addCriterion("cell_phone_number <=", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberLike(String value) {
+            addCriterion("cell_phone_number like", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberNotLike(String value) {
+            addCriterion("cell_phone_number not like", value, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberIn(List<String> values) {
+            addCriterion("cell_phone_number in", values, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberNotIn(List<String> values) {
+            addCriterion("cell_phone_number not in", values, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberBetween(String value1, String value2) {
+            addCriterion("cell_phone_number between", value1, value2, "cellPhoneNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andCellPhoneNumberNotBetween(String value1, String value2) {
+            addCriterion("cell_phone_number not between", value1, value2, "cellPhoneNumber");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
