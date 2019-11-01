@@ -766,53 +766,6 @@ public class TourismController {
         return map;
     }
 
-    //以下是测试添加数据方法
-    @RequestMapping("/addExhibits")
-    public Map<String, Object> addScenicSpot(@RequestBody Exhibits exhibits) {
-        Map<String, Object> map = new HashMap<>();
-        try { //异常处理（捕获异常）
-            //插入数据
-            exhibitsMapper.insertSelective(exhibits);
-            //更新数据
-            exhibitsMapper.updateByPrimaryKeySelective(exhibits);
-        } catch (Exception e) {
-            map.put(RESULT, "F");
-            map.put(TIPS, "添加失败!");
-            return map;
-        }
-        map.put(RESULT, "S");
-        map.put(TIPS, "添加成功!");
-        return map;
-    }
-
-    @RequestMapping("addExhibitionArea")
-    public Map<String, Object> addExhibitionArea(@RequestBody ExhibitionArea exhibitionArea){
-        Map<String, Object> map = new HashMap<>();
-        try { //异常处理（捕获异常）
-            //插入数据
-            exhibitionAreaMapper.insertSelective(exhibitionArea);
-            //更新数据
-//            exhibitsMapper.updateByPrimaryKey(exhibits);
-            exhibitionAreaMapper.updateByPrimaryKeySelective(exhibitionArea);
-        } catch (Exception e) {
-            map.put(RESULT, "F");
-            map.put(TIPS, "添加失败!");
-            return map;
-        }
-        map.put(RESULT, "S");
-        map.put(TIPS, "添加成功!");
-        return map;
-    }
-
-    /**
-     * 查询全部展评评论
-     * @return
-     */
-    @RequestMapping("queryAllExhibitsComments")
-    public List<ExhibitsComment> queryAllExhibitsComments() {
-        return ecmMapper.selectByExample(null);
-    }
-
     /**
      * 景区订单模块
      * 生成联系人信息

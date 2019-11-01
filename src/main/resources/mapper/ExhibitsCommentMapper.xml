@@ -7,7 +7,26 @@
     <result column="exhibits_id" jdbcType="INTEGER" property="exhibitsId" />
     <result column="exhibits_comment_content" jdbcType="VARCHAR" property="exhibitsCommentContent" />
     <result column="comment_praise_points" jdbcType="INTEGER" property="commentPraisePoints" />
+    <collection property="userInfo" ofType="com.ncvt.tourism.model.User" select="getUserInfo" column="user_id"/>
   </resultMap>
+
+  <resultMap id="UserMap" type="com.ncvt.tourism.model.User">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_sex" jdbcType="VARCHAR" property="userSex" />
+    <result column="user_age" jdbcType="INTEGER" property="userAge" />
+    <result column="user_tellphone" jdbcType="VARCHAR" property="userTellphone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="user_idcard" jdbcType="VARCHAR" property="userIdcard" />
+    <result column="user_birthday" jdbcType="TIMESTAMP" property="userBirthday" />
+    <result column="nagai_addr" jdbcType="VARCHAR" property="nagaiAddr" />
+    <result column="user_pic_url" jdbcType="VARCHAR" property="userPicUrl" />
+    <result column="user_account_name" jdbcType="VARCHAR" property="userAccountName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_money" jdbcType="DOUBLE" property="userMoney" />
+    <result column="user_time" jdbcType="TIMESTAMP" property="userTime" />
+  </resultMap>
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -210,4 +229,8 @@
       comment_praise_points = #{commentPraisePoints,jdbcType=INTEGER}
     where exhibits_comment_id = #{exhibitsCommentId,jdbcType=INTEGER}
   </update>
+
+  <select id="getUserInfo" parameterType="com.ncvt.tourism.model.User" resultMap="UserMap">
+    select * from tbl_user where user_id=#{id}
+  </select>
 </mapper>
