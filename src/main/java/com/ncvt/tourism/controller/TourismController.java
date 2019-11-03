@@ -53,6 +53,8 @@ public class TourismController {
     private ContactsMapper contactsMapper;
     @Autowired
     private OrderMapper orderMapper;
+    @Autowired
+    private TripMapper tripMapper;
 
     /**
      * 用户进行登录
@@ -988,7 +990,13 @@ public class TourismController {
         List<Order> orderList = orderMapper.selectByExample(null);
         if (orderList.size() < 1) {
             map.put(RESULT, "F");
-            map.put(TIPS, "暂无订单");
+            map.put(TIPS, "您还没有相关的订单");
+            return map;
+        }
+        //如果传入的是0 则直接返回全部订单数据 否则继续执行以下代码
+        if (orderState == 0) {
+            map.put(RESULT, "S");
+            map.put(ONE_DATA, orderList);
             return map;
         }
         List<Order> sOrderList = new ArrayList<>();
@@ -999,11 +1007,66 @@ public class TourismController {
         }
         if (sOrderList.size() < 1) {
             map.put(RESULT, "F");
-            map.put(TIPS, "暂无订单");
+            map.put(TIPS, "您还没有相关的订单");
             return map;
         }
         map.put(RESULT, "S");
         map.put(ONE_DATA, sOrderList);
+        return map;
+    }
+
+    /**
+     * 添加行程
+     *
+     * @param trip
+     * @return
+     */
+    @RequestMapping("addByTrips")
+    public Map<String, Object> addByTrips(@RequestBody Trip trip) {
+        Map<String, Object> map = new HashMap<>();
+        try { //捕获异常
+            //插入数据
+            tripMapper.insert(trip);
+            //更新数据
+            tripMapper.updateByPrimaryKey(trip);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "添加失败");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "添加成功");
+        return map;
+    }
+
+    /**
+     * 查询行程信息
+     * @param userId
+     * @return
+     */
+    @RequestMapping("queryAllTrips")
+    public Map<String, Object> queryAllTrips(int userId) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有登录，请先登录");
+            return map;
+        }
+        TripExample tripExample = new TripExample();
+        tripExample.createCriteria().andUserIdEqualTo(userId);
+        List<Trip> tripList = tripMapper.selectByExample(tripExample);
+        if (tripList.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有行程");
+            return map;
+        }
+        List<ScenicSpot> scenicSpotList = new ArrayList<>();
+        for (Trip trip : tripList) {
+            scenicSpotList.add(scenicSpotMapper.selectByPrimaryKey(trip.getScenicSpotId()));
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, scenicSpotList);
         return map;
     }
 
