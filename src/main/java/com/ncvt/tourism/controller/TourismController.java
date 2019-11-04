@@ -1088,4 +1088,52 @@ public class TourismController {
         return map;
     }
 
+    /**
+     * 模糊搜索
+     * @param pStr
+     * @return
+     */
+    @RequestMapping("searchArea")
+    public Map<String, Object> searchArea(String pStr) {
+        Map<String, Object> map = new HashMap<>();
+        if (pStr.length() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "请输入您要搜索的内容");
+            return map;
+        }
+        //查询所有地区
+        List<ScenicRegion> scenicRegionList = scenicRegionMapper.selectByExample(null);
+        //查询所有景区
+        List<ScenicSpot> scenicSpotList = scenicSpotMapper.selectByExample(null);
+        //存储地区集合
+        List<ScenicRegion> scenicRegions = new ArrayList<>();
+        //存储景区集合
+        List<ScenicSpot> scenicSpots = new ArrayList<>();
+        for (ScenicRegion region : scenicRegionList) {
+            if (region.getRegionName().contains(pStr)) scenicRegions.add(region);
+        }
+        //循环遍历景区
+        for (ScenicSpot spot : scenicSpotList) {
+            if (spot.getScenicSpotTheme().contains(pStr)) scenicSpots.add(spot);
+        }
+        String[] sList = new String[]{"国内游", "出境游", "自由行", "跟团游", "主题游", "周边游", "一日游", "定制游"};
+        //循环遍历出游方式
+        for (int i = 0; i < sList.length; i++) {
+            if (sList[i].contains(pStr)) {
+                for (ScenicSpot spot : scenicSpotList) {
+                    if (spot.getTravelMode() == i) scenicSpots.add(spot);
+                }
+            }
+        }
+        if (scenicRegions.size() == 0 && scenicSpots.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有您输入的查找内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, scenicRegions);
+        map.put(TWO_DATA, scenicSpots);
+        return map;
+    }
+
 }
