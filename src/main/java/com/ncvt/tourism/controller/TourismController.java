@@ -621,6 +621,25 @@ public class TourismController {
     }
 
     /**
+     * 查询对应展区
+     * @param exhibitionAreaId 展区编号
+     * @return 返回结果
+     */
+    @RequestMapping("queryExhibitionArea")
+    public Map<String, Object> queryExhibitionArea(int exhibitionAreaId) {
+        Map<String, Object> map = new HashMap<>();
+        ExhibitionArea exhibitionArea = exhibitionAreaMapper.selectByPrimaryKey(exhibitionAreaId);
+        if (exhibitionArea == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该详情内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, exhibitionArea);
+        return map;
+    }
+
+    /**
      * 查询展品信息详情
      * @param exhibitsId 展品编号
      * @return 返回结果
