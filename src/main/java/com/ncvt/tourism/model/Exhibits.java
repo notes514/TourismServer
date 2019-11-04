@@ -23,6 +23,16 @@ public class Exhibits {
 
     private List<FabulousDetails> fabulousDetailsList;
 
+    private List<ExhibitsPic> exhibitsPicList;
+
+    public List<ExhibitsPic> getExhibitsPicList() {
+        return exhibitsPicList;
+    }
+
+    public void setExhibitsPicList(List<ExhibitsPic> exhibitsPicList) {
+        this.exhibitsPicList = exhibitsPicList;
+    }
+
     public List<FabulousDetails> getFabulousDetailsList() {
         return fabulousDetailsList;
     }

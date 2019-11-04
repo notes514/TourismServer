@@ -655,7 +655,6 @@ public class TourismController {
         }
         map.put(RESULT, "S");
         map.put(ONE_DATA, exhibitsMapper.selectByPrimaryKey(exhibitsId));
-        map.put(TWO_DATA, exhibitsPicMapper.selectByPrimaryKey(exhibits.getExhibitsId()));
         return map;
     }
 
