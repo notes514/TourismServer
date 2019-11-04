@@ -5,19 +5,31 @@ public class ScenicSpot {
 
     private Integer regionId;
 
+    private String scenicSpotPicUrl;
+
     private String scenicSpotTheme;
 
-    private String scenicSpotPicUrl;
+    private Integer travelMode;
 
     private Double scenicSpotPrice;
 
-    private Integer travelMode;
+    private Double score;
+
+    private Integer numberOfTourists;
+
+    private Integer sold;
 
     private String startLand;
 
     private String endLand;
 
+    private String tourCity;
+
+    private String shop;
+
     private Integer scenicSpotState;
+
+    private String explain;
 
     private String scenicSpotDescribe;
 
@@ -37,6 +49,14 @@ public class ScenicSpot {
         this.regionId = regionId;
     }
 
+    public String getScenicSpotPicUrl() {
+        return scenicSpotPicUrl;
+    }
+
+    public void setScenicSpotPicUrl(String scenicSpotPicUrl) {
+        this.scenicSpotPicUrl = scenicSpotPicUrl;
+    }
+
     public String getScenicSpotTheme() {
         return scenicSpotTheme;
     }
@@ -45,12 +65,12 @@ public class ScenicSpot {
         this.scenicSpotTheme = scenicSpotTheme;
     }
 
-    public String getScenicSpotPicUrl() {
-        return scenicSpotPicUrl;
+    public Integer getTravelMode() {
+        return travelMode;
     }
 
-    public void setScenicSpotPicUrl(String scenicSpotPicUrl) {
-        this.scenicSpotPicUrl = scenicSpotPicUrl;
+    public void setTravelMode(Integer travelMode) {
+        this.travelMode = travelMode;
     }
 
     public Double getScenicSpotPrice() {
@@ -61,12 +81,28 @@ public class ScenicSpot {
         this.scenicSpotPrice = scenicSpotPrice;
     }
 
-    public Integer getTravelMode() {
-        return travelMode;
+    public Double getScore() {
+        return score;
     }
 
-    public void setTravelMode(Integer travelMode) {
-        this.travelMode = travelMode;
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public Integer getNumberOfTourists() {
+        return numberOfTourists;
+    }
+
+    public void setNumberOfTourists(Integer numberOfTourists) {
+        this.numberOfTourists = numberOfTourists;
+    }
+
+    public Integer getSold() {
+        return sold;
+    }
+
+    public void setSold(Integer sold) {
+        this.sold = sold;
     }
 
     public String getStartLand() {
@@ -85,12 +121,36 @@ public class ScenicSpot {
         this.endLand = endLand;
     }
 
+    public String getTourCity() {
+        return tourCity;
+    }
+
+    public void setTourCity(String tourCity) {
+        this.tourCity = tourCity;
+    }
+
+    public String getShop() {
+        return shop;
+    }
+
+    public void setShop(String shop) {
+        this.shop = shop;
+    }
+
     public Integer getScenicSpotState() {
         return scenicSpotState;
     }
 
     public void setScenicSpotState(Integer scenicSpotState) {
         this.scenicSpotState = scenicSpotState;
+    }
+
+    public String getExplain() {
+        return explain;
+    }
+
+    public void setExplain(String explain) {
+        this.explain = explain;
     }
 
     public String getScenicSpotDescribe() {

@@ -16,7 +16,7 @@
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/tourismdb?characterEncoding=utf8"
                         userId="root"
-                        password="rootroot"/>
+                        password="root"/>
         <!--
                true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型
                false：默认,

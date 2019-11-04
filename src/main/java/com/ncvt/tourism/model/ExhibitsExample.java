@@ -573,6 +573,146 @@ public class ExhibitsExample {
             addCriterion("cell_phone_number not between", value1, value2, "cellPhoneNumber");
             return (Criteria) this;
         }
+
+        public Criteria andGuidanceTeacherIsNull() {
+            addCriterion("guidance_teacher is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherIsNotNull() {
+            addCriterion("guidance_teacher is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherEqualTo(String value) {
+            addCriterion("guidance_teacher =", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherNotEqualTo(String value) {
+            addCriterion("guidance_teacher <>", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherGreaterThan(String value) {
+            addCriterion("guidance_teacher >", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherGreaterThanOrEqualTo(String value) {
+            addCriterion("guidance_teacher >=", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherLessThan(String value) {
+            addCriterion("guidance_teacher <", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherLessThanOrEqualTo(String value) {
+            addCriterion("guidance_teacher <=", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherLike(String value) {
+            addCriterion("guidance_teacher like", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherNotLike(String value) {
+            addCriterion("guidance_teacher not like", value, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherIn(List<String> values) {
+            addCriterion("guidance_teacher in", values, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherNotIn(List<String> values) {
+            addCriterion("guidance_teacher not in", values, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherBetween(String value1, String value2) {
+            addCriterion("guidance_teacher between", value1, value2, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andGuidanceTeacherNotBetween(String value1, String value2) {
+            addCriterion("guidance_teacher not between", value1, value2, "guidanceTeacher");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersIsNull() {
+            addCriterion("team_members is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersIsNotNull() {
+            addCriterion("team_members is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersEqualTo(String value) {
+            addCriterion("team_members =", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersNotEqualTo(String value) {
+            addCriterion("team_members <>", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersGreaterThan(String value) {
+            addCriterion("team_members >", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersGreaterThanOrEqualTo(String value) {
+            addCriterion("team_members >=", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersLessThan(String value) {
+            addCriterion("team_members <", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersLessThanOrEqualTo(String value) {
+            addCriterion("team_members <=", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersLike(String value) {
+            addCriterion("team_members like", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersNotLike(String value) {
+            addCriterion("team_members not like", value, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersIn(List<String> values) {
+            addCriterion("team_members in", values, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersNotIn(List<String> values) {
+            addCriterion("team_members not in", values, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersBetween(String value1, String value2) {
+            addCriterion("team_members between", value1, value2, "teamMembers");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeamMembersNotBetween(String value1, String value2) {
+            addCriterion("team_members not between", value1, value2, "teamMembers");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

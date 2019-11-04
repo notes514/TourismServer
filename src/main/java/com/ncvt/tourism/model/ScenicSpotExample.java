@@ -224,76 +224,6 @@ public class ScenicSpotExample {
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotThemeIsNull() {
-            addCriterion("scenic_spot_theme is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeIsNotNull() {
-            addCriterion("scenic_spot_theme is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeEqualTo(String value) {
-            addCriterion("scenic_spot_theme =", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeNotEqualTo(String value) {
-            addCriterion("scenic_spot_theme <>", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeGreaterThan(String value) {
-            addCriterion("scenic_spot_theme >", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeGreaterThanOrEqualTo(String value) {
-            addCriterion("scenic_spot_theme >=", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeLessThan(String value) {
-            addCriterion("scenic_spot_theme <", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeLessThanOrEqualTo(String value) {
-            addCriterion("scenic_spot_theme <=", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeLike(String value) {
-            addCriterion("scenic_spot_theme like", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeNotLike(String value) {
-            addCriterion("scenic_spot_theme not like", value, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeIn(List<String> values) {
-            addCriterion("scenic_spot_theme in", values, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeNotIn(List<String> values) {
-            addCriterion("scenic_spot_theme not in", values, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeBetween(String value1, String value2) {
-            addCriterion("scenic_spot_theme between", value1, value2, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
-        public Criteria andScenicSpotThemeNotBetween(String value1, String value2) {
-            addCriterion("scenic_spot_theme not between", value1, value2, "scenicSpotTheme");
-            return (Criteria) this;
-        }
-
         public Criteria andScenicSpotPicUrlIsNull() {
             addCriterion("scenic_spot_pic_url is null");
             return (Criteria) this;
@@ -364,63 +294,73 @@ public class ScenicSpotExample {
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceIsNull() {
-            addCriterion("scenic_spot_price is null");
+        public Criteria andScenicSpotThemeIsNull() {
+            addCriterion("scenic_spot_theme is null");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceIsNotNull() {
-            addCriterion("scenic_spot_price is not null");
+        public Criteria andScenicSpotThemeIsNotNull() {
+            addCriterion("scenic_spot_theme is not null");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceEqualTo(Double value) {
-            addCriterion("scenic_spot_price =", value, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeEqualTo(String value) {
+            addCriterion("scenic_spot_theme =", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceNotEqualTo(Double value) {
-            addCriterion("scenic_spot_price <>", value, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeNotEqualTo(String value) {
+            addCriterion("scenic_spot_theme <>", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceGreaterThan(Double value) {
-            addCriterion("scenic_spot_price >", value, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeGreaterThan(String value) {
+            addCriterion("scenic_spot_theme >", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceGreaterThanOrEqualTo(Double value) {
-            addCriterion("scenic_spot_price >=", value, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeGreaterThanOrEqualTo(String value) {
+            addCriterion("scenic_spot_theme >=", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceLessThan(Double value) {
-            addCriterion("scenic_spot_price <", value, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeLessThan(String value) {
+            addCriterion("scenic_spot_theme <", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceLessThanOrEqualTo(Double value) {
-            addCriterion("scenic_spot_price <=", value, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeLessThanOrEqualTo(String value) {
+            addCriterion("scenic_spot_theme <=", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceIn(List<Double> values) {
-            addCriterion("scenic_spot_price in", values, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeLike(String value) {
+            addCriterion("scenic_spot_theme like", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceNotIn(List<Double> values) {
-            addCriterion("scenic_spot_price not in", values, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeNotLike(String value) {
+            addCriterion("scenic_spot_theme not like", value, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceBetween(Double value1, Double value2) {
-            addCriterion("scenic_spot_price between", value1, value2, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeIn(List<String> values) {
+            addCriterion("scenic_spot_theme in", values, "scenicSpotTheme");
             return (Criteria) this;
         }
 
-        public Criteria andScenicSpotPriceNotBetween(Double value1, Double value2) {
-            addCriterion("scenic_spot_price not between", value1, value2, "scenicSpotPrice");
+        public Criteria andScenicSpotThemeNotIn(List<String> values) {
+            addCriterion("scenic_spot_theme not in", values, "scenicSpotTheme");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotThemeBetween(String value1, String value2) {
+            addCriterion("scenic_spot_theme between", value1, value2, "scenicSpotTheme");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotThemeNotBetween(String value1, String value2) {
+            addCriterion("scenic_spot_theme not between", value1, value2, "scenicSpotTheme");
             return (Criteria) this;
         }
 
@@ -481,6 +421,246 @@ public class ScenicSpotExample {
 
         public Criteria andTravelModeNotBetween(Integer value1, Integer value2) {
             addCriterion("travel_mode not between", value1, value2, "travelMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceIsNull() {
+            addCriterion("scenic_spot_price is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceIsNotNull() {
+            addCriterion("scenic_spot_price is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceEqualTo(Double value) {
+            addCriterion("scenic_spot_price =", value, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceNotEqualTo(Double value) {
+            addCriterion("scenic_spot_price <>", value, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceGreaterThan(Double value) {
+            addCriterion("scenic_spot_price >", value, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceGreaterThanOrEqualTo(Double value) {
+            addCriterion("scenic_spot_price >=", value, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceLessThan(Double value) {
+            addCriterion("scenic_spot_price <", value, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceLessThanOrEqualTo(Double value) {
+            addCriterion("scenic_spot_price <=", value, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceIn(List<Double> values) {
+            addCriterion("scenic_spot_price in", values, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceNotIn(List<Double> values) {
+            addCriterion("scenic_spot_price not in", values, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceBetween(Double value1, Double value2) {
+            addCriterion("scenic_spot_price between", value1, value2, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotPriceNotBetween(Double value1, Double value2) {
+            addCriterion("scenic_spot_price not between", value1, value2, "scenicSpotPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreIsNull() {
+            addCriterion("score is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreIsNotNull() {
+            addCriterion("score is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreEqualTo(Double value) {
+            addCriterion("score =", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreNotEqualTo(Double value) {
+            addCriterion("score <>", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreGreaterThan(Double value) {
+            addCriterion("score >", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreGreaterThanOrEqualTo(Double value) {
+            addCriterion("score >=", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreLessThan(Double value) {
+            addCriterion("score <", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreLessThanOrEqualTo(Double value) {
+            addCriterion("score <=", value, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreIn(List<Double> values) {
+            addCriterion("score in", values, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreNotIn(List<Double> values) {
+            addCriterion("score not in", values, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreBetween(Double value1, Double value2) {
+            addCriterion("score between", value1, value2, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andScoreNotBetween(Double value1, Double value2) {
+            addCriterion("score not between", value1, value2, "score");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsIsNull() {
+            addCriterion("number_of_tourists is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsIsNotNull() {
+            addCriterion("number_of_tourists is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsEqualTo(Integer value) {
+            addCriterion("number_of_tourists =", value, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsNotEqualTo(Integer value) {
+            addCriterion("number_of_tourists <>", value, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsGreaterThan(Integer value) {
+            addCriterion("number_of_tourists >", value, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsGreaterThanOrEqualTo(Integer value) {
+            addCriterion("number_of_tourists >=", value, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsLessThan(Integer value) {
+            addCriterion("number_of_tourists <", value, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsLessThanOrEqualTo(Integer value) {
+            addCriterion("number_of_tourists <=", value, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsIn(List<Integer> values) {
+            addCriterion("number_of_tourists in", values, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsNotIn(List<Integer> values) {
+            addCriterion("number_of_tourists not in", values, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsBetween(Integer value1, Integer value2) {
+            addCriterion("number_of_tourists between", value1, value2, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andNumberOfTouristsNotBetween(Integer value1, Integer value2) {
+            addCriterion("number_of_tourists not between", value1, value2, "numberOfTourists");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldIsNull() {
+            addCriterion("sold is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldIsNotNull() {
+            addCriterion("sold is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldEqualTo(Integer value) {
+            addCriterion("sold =", value, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldNotEqualTo(Integer value) {
+            addCriterion("sold <>", value, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldGreaterThan(Integer value) {
+            addCriterion("sold >", value, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sold >=", value, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldLessThan(Integer value) {
+            addCriterion("sold <", value, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldLessThanOrEqualTo(Integer value) {
+            addCriterion("sold <=", value, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldIn(List<Integer> values) {
+            addCriterion("sold in", values, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldNotIn(List<Integer> values) {
+            addCriterion("sold not in", values, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldBetween(Integer value1, Integer value2) {
+            addCriterion("sold between", value1, value2, "sold");
+            return (Criteria) this;
+        }
+
+        public Criteria andSoldNotBetween(Integer value1, Integer value2) {
+            addCriterion("sold not between", value1, value2, "sold");
             return (Criteria) this;
         }
 
@@ -624,6 +804,146 @@ public class ScenicSpotExample {
             return (Criteria) this;
         }
 
+        public Criteria andTourCityIsNull() {
+            addCriterion("tour_city is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityIsNotNull() {
+            addCriterion("tour_city is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityEqualTo(String value) {
+            addCriterion("tour_city =", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityNotEqualTo(String value) {
+            addCriterion("tour_city <>", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityGreaterThan(String value) {
+            addCriterion("tour_city >", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityGreaterThanOrEqualTo(String value) {
+            addCriterion("tour_city >=", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityLessThan(String value) {
+            addCriterion("tour_city <", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityLessThanOrEqualTo(String value) {
+            addCriterion("tour_city <=", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityLike(String value) {
+            addCriterion("tour_city like", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityNotLike(String value) {
+            addCriterion("tour_city not like", value, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityIn(List<String> values) {
+            addCriterion("tour_city in", values, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityNotIn(List<String> values) {
+            addCriterion("tour_city not in", values, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityBetween(String value1, String value2) {
+            addCriterion("tour_city between", value1, value2, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andTourCityNotBetween(String value1, String value2) {
+            addCriterion("tour_city not between", value1, value2, "tourCity");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopIsNull() {
+            addCriterion("shop is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopIsNotNull() {
+            addCriterion("shop is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopEqualTo(String value) {
+            addCriterion("shop =", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopNotEqualTo(String value) {
+            addCriterion("shop <>", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopGreaterThan(String value) {
+            addCriterion("shop >", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopGreaterThanOrEqualTo(String value) {
+            addCriterion("shop >=", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopLessThan(String value) {
+            addCriterion("shop <", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopLessThanOrEqualTo(String value) {
+            addCriterion("shop <=", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopLike(String value) {
+            addCriterion("shop like", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopNotLike(String value) {
+            addCriterion("shop not like", value, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopIn(List<String> values) {
+            addCriterion("shop in", values, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopNotIn(List<String> values) {
+            addCriterion("shop not in", values, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopBetween(String value1, String value2) {
+            addCriterion("shop between", value1, value2, "shop");
+            return (Criteria) this;
+        }
+
+        public Criteria andShopNotBetween(String value1, String value2) {
+            addCriterion("shop not between", value1, value2, "shop");
+            return (Criteria) this;
+        }
+
         public Criteria andScenicSpotStateIsNull() {
             addCriterion("scenic_spot_state is null");
             return (Criteria) this;
@@ -681,6 +1001,76 @@ public class ScenicSpotExample {
 
         public Criteria andScenicSpotStateNotBetween(Integer value1, Integer value2) {
             addCriterion("scenic_spot_state not between", value1, value2, "scenicSpotState");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainIsNull() {
+            addCriterion("explain is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainIsNotNull() {
+            addCriterion("explain is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainEqualTo(String value) {
+            addCriterion("explain =", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainNotEqualTo(String value) {
+            addCriterion("explain <>", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainGreaterThan(String value) {
+            addCriterion("explain >", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainGreaterThanOrEqualTo(String value) {
+            addCriterion("explain >=", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainLessThan(String value) {
+            addCriterion("explain <", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainLessThanOrEqualTo(String value) {
+            addCriterion("explain <=", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainLike(String value) {
+            addCriterion("explain like", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainNotLike(String value) {
+            addCriterion("explain not like", value, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainIn(List<String> values) {
+            addCriterion("explain in", values, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainNotIn(List<String> values) {
+            addCriterion("explain not in", values, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainBetween(String value1, String value2) {
+            addCriterion("explain between", value1, value2, "explain");
+            return (Criteria) this;
+        }
+
+        public Criteria andExplainNotBetween(String value1, String value2) {
+            addCriterion("explain not between", value1, value2, "explain");
             return (Criteria) this;
         }
 

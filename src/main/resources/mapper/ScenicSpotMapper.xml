@@ -4,13 +4,19 @@
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.ScenicSpot">
     <id column="scenic_spot_id" jdbcType="INTEGER" property="scenicSpotId" />
     <result column="region_id" jdbcType="INTEGER" property="regionId" />
-    <result column="scenic_spot_theme" jdbcType="VARCHAR" property="scenicSpotTheme" />
     <result column="scenic_spot_pic_url" jdbcType="VARCHAR" property="scenicSpotPicUrl" />
-    <result column="scenic_spot_price" jdbcType="DOUBLE" property="scenicSpotPrice" />
+    <result column="scenic_spot_theme" jdbcType="VARCHAR" property="scenicSpotTheme" />
     <result column="travel_mode" jdbcType="INTEGER" property="travelMode" />
+    <result column="scenic_spot_price" jdbcType="DOUBLE" property="scenicSpotPrice" />
+    <result column="score" jdbcType="DOUBLE" property="score" />
+    <result column="number_of_tourists" jdbcType="INTEGER" property="numberOfTourists" />
+    <result column="sold" jdbcType="INTEGER" property="sold" />
     <result column="start_land" jdbcType="VARCHAR" property="startLand" />
     <result column="end_land" jdbcType="VARCHAR" property="endLand" />
+    <result column="tour_city" jdbcType="VARCHAR" property="tourCity" />
+    <result column="shop" jdbcType="VARCHAR" property="shop" />
     <result column="scenic_spot_state" jdbcType="INTEGER" property="scenicSpotState" />
+    <result column="explain" jdbcType="VARCHAR" property="explain" />
     <result column="scenic_spot_describe" jdbcType="VARCHAR" property="scenicSpotDescribe" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -72,8 +78,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    scenic_spot_id, region_id, scenic_spot_theme, scenic_spot_pic_url, scenic_spot_price, 
-    travel_mode, start_land, end_land, scenic_spot_state, scenic_spot_describe
+    scenic_spot_id, region_id, scenic_spot_pic_url, scenic_spot_theme, travel_mode, scenic_spot_price, 
+    score, number_of_tourists, sold, start_land, end_land, tour_city, shop, scenic_spot_state, 
+    explain, scenic_spot_describe
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ScenicSpotExample" resultMap="BaseResultMap">
     select
@@ -106,13 +113,17 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.ScenicSpot">
-    insert into tbl_scenic_spot (scenic_spot_id, region_id, scenic_spot_theme, 
-      scenic_spot_pic_url, scenic_spot_price, travel_mode, 
-      start_land, end_land, scenic_spot_state, 
+    insert into tbl_scenic_spot (scenic_spot_id, region_id, scenic_spot_pic_url, 
+      scenic_spot_theme, travel_mode, scenic_spot_price, 
+      score, number_of_tourists, sold, 
+      start_land, end_land, tour_city, 
+      shop, scenic_spot_state, explain, 
       scenic_spot_describe)
-    values (#{scenicSpotId,jdbcType=INTEGER}, #{regionId,jdbcType=INTEGER}, #{scenicSpotTheme,jdbcType=VARCHAR}, 
-      #{scenicSpotPicUrl,jdbcType=VARCHAR}, #{scenicSpotPrice,jdbcType=DOUBLE}, #{travelMode,jdbcType=INTEGER}, 
-      #{startLand,jdbcType=VARCHAR}, #{endLand,jdbcType=VARCHAR}, #{scenicSpotState,jdbcType=INTEGER}, 
+    values (#{scenicSpotId,jdbcType=INTEGER}, #{regionId,jdbcType=INTEGER}, #{scenicSpotPicUrl,jdbcType=VARCHAR}, 
+      #{scenicSpotTheme,jdbcType=VARCHAR}, #{travelMode,jdbcType=INTEGER}, #{scenicSpotPrice,jdbcType=DOUBLE}, 
+      #{score,jdbcType=DOUBLE}, #{numberOfTourists,jdbcType=INTEGER}, #{sold,jdbcType=INTEGER}, 
+      #{startLand,jdbcType=VARCHAR}, #{endLand,jdbcType=VARCHAR}, #{tourCity,jdbcType=VARCHAR}, 
+      #{shop,jdbcType=VARCHAR}, #{scenicSpotState,jdbcType=INTEGER}, #{explain,jdbcType=VARCHAR}, 
       #{scenicSpotDescribe,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ScenicSpot">
@@ -124,17 +135,26 @@
       <if test="regionId != null">
         region_id,
       </if>
+      <if test="scenicSpotPicUrl != null">
+        scenic_spot_pic_url,
+      </if>
       <if test="scenicSpotTheme != null">
         scenic_spot_theme,
       </if>
-      <if test="scenicSpotPicUrl != null">
-        scenic_spot_pic_url,
+      <if test="travelMode != null">
+        travel_mode,
       </if>
       <if test="scenicSpotPrice != null">
         scenic_spot_price,
       </if>
-      <if test="travelMode != null">
-        travel_mode,
+      <if test="score != null">
+        score,
+      </if>
+      <if test="numberOfTourists != null">
+        number_of_tourists,
+      </if>
+      <if test="sold != null">
+        sold,
       </if>
       <if test="startLand != null">
         start_land,
@@ -142,8 +162,17 @@
       <if test="endLand != null">
         end_land,
       </if>
+      <if test="tourCity != null">
+        tour_city,
+      </if>
+      <if test="shop != null">
+        shop,
+      </if>
       <if test="scenicSpotState != null">
         scenic_spot_state,
+      </if>
+      <if test="explain != null">
+        explain,
       </if>
       <if test="scenicSpotDescribe != null">
         scenic_spot_describe,
@@ -156,17 +185,26 @@
       <if test="regionId != null">
         #{regionId,jdbcType=INTEGER},
       </if>
+      <if test="scenicSpotPicUrl != null">
+        #{scenicSpotPicUrl,jdbcType=VARCHAR},
+      </if>
       <if test="scenicSpotTheme != null">
         #{scenicSpotTheme,jdbcType=VARCHAR},
       </if>
-      <if test="scenicSpotPicUrl != null">
-        #{scenicSpotPicUrl,jdbcType=VARCHAR},
+      <if test="travelMode != null">
+        #{travelMode,jdbcType=INTEGER},
       </if>
       <if test="scenicSpotPrice != null">
         #{scenicSpotPrice,jdbcType=DOUBLE},
       </if>
-      <if test="travelMode != null">
-        #{travelMode,jdbcType=INTEGER},
+      <if test="score != null">
+        #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="numberOfTourists != null">
+        #{numberOfTourists,jdbcType=INTEGER},
+      </if>
+      <if test="sold != null">
+        #{sold,jdbcType=INTEGER},
       </if>
       <if test="startLand != null">
         #{startLand,jdbcType=VARCHAR},
@@ -174,8 +212,17 @@
       <if test="endLand != null">
         #{endLand,jdbcType=VARCHAR},
       </if>
+      <if test="tourCity != null">
+        #{tourCity,jdbcType=VARCHAR},
+      </if>
+      <if test="shop != null">
+        #{shop,jdbcType=VARCHAR},
+      </if>
       <if test="scenicSpotState != null">
         #{scenicSpotState,jdbcType=INTEGER},
+      </if>
+      <if test="explain != null">
+        #{explain,jdbcType=VARCHAR},
       </if>
       <if test="scenicSpotDescribe != null">
         #{scenicSpotDescribe,jdbcType=VARCHAR},
@@ -197,17 +244,26 @@
       <if test="record.regionId != null">
         region_id = #{record.regionId,jdbcType=INTEGER},
       </if>
+      <if test="record.scenicSpotPicUrl != null">
+        scenic_spot_pic_url = #{record.scenicSpotPicUrl,jdbcType=VARCHAR},
+      </if>
       <if test="record.scenicSpotTheme != null">
         scenic_spot_theme = #{record.scenicSpotTheme,jdbcType=VARCHAR},
       </if>
-      <if test="record.scenicSpotPicUrl != null">
-        scenic_spot_pic_url = #{record.scenicSpotPicUrl,jdbcType=VARCHAR},
+      <if test="record.travelMode != null">
+        travel_mode = #{record.travelMode,jdbcType=INTEGER},
       </if>
       <if test="record.scenicSpotPrice != null">
         scenic_spot_price = #{record.scenicSpotPrice,jdbcType=DOUBLE},
       </if>
-      <if test="record.travelMode != null">
-        travel_mode = #{record.travelMode,jdbcType=INTEGER},
+      <if test="record.score != null">
+        score = #{record.score,jdbcType=DOUBLE},
+      </if>
+      <if test="record.numberOfTourists != null">
+        number_of_tourists = #{record.numberOfTourists,jdbcType=INTEGER},
+      </if>
+      <if test="record.sold != null">
+        sold = #{record.sold,jdbcType=INTEGER},
       </if>
       <if test="record.startLand != null">
         start_land = #{record.startLand,jdbcType=VARCHAR},
@@ -215,8 +271,17 @@
       <if test="record.endLand != null">
         end_land = #{record.endLand,jdbcType=VARCHAR},
       </if>
+      <if test="record.tourCity != null">
+        tour_city = #{record.tourCity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shop != null">
+        shop = #{record.shop,jdbcType=VARCHAR},
+      </if>
       <if test="record.scenicSpotState != null">
         scenic_spot_state = #{record.scenicSpotState,jdbcType=INTEGER},
+      </if>
+      <if test="record.explain != null">
+        explain = #{record.explain,jdbcType=VARCHAR},
       </if>
       <if test="record.scenicSpotDescribe != null">
         scenic_spot_describe = #{record.scenicSpotDescribe,jdbcType=VARCHAR},
@@ -230,13 +295,19 @@
     update tbl_scenic_spot
     set scenic_spot_id = #{record.scenicSpotId,jdbcType=INTEGER},
       region_id = #{record.regionId,jdbcType=INTEGER},
-      scenic_spot_theme = #{record.scenicSpotTheme,jdbcType=VARCHAR},
       scenic_spot_pic_url = #{record.scenicSpotPicUrl,jdbcType=VARCHAR},
-      scenic_spot_price = #{record.scenicSpotPrice,jdbcType=DOUBLE},
+      scenic_spot_theme = #{record.scenicSpotTheme,jdbcType=VARCHAR},
       travel_mode = #{record.travelMode,jdbcType=INTEGER},
+      scenic_spot_price = #{record.scenicSpotPrice,jdbcType=DOUBLE},
+      score = #{record.score,jdbcType=DOUBLE},
+      number_of_tourists = #{record.numberOfTourists,jdbcType=INTEGER},
+      sold = #{record.sold,jdbcType=INTEGER},
       start_land = #{record.startLand,jdbcType=VARCHAR},
       end_land = #{record.endLand,jdbcType=VARCHAR},
+      tour_city = #{record.tourCity,jdbcType=VARCHAR},
+      shop = #{record.shop,jdbcType=VARCHAR},
       scenic_spot_state = #{record.scenicSpotState,jdbcType=INTEGER},
+      explain = #{record.explain,jdbcType=VARCHAR},
       scenic_spot_describe = #{record.scenicSpotDescribe,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -248,17 +319,26 @@
       <if test="regionId != null">
         region_id = #{regionId,jdbcType=INTEGER},
       </if>
+      <if test="scenicSpotPicUrl != null">
+        scenic_spot_pic_url = #{scenicSpotPicUrl,jdbcType=VARCHAR},
+      </if>
       <if test="scenicSpotTheme != null">
         scenic_spot_theme = #{scenicSpotTheme,jdbcType=VARCHAR},
       </if>
-      <if test="scenicSpotPicUrl != null">
-        scenic_spot_pic_url = #{scenicSpotPicUrl,jdbcType=VARCHAR},
+      <if test="travelMode != null">
+        travel_mode = #{travelMode,jdbcType=INTEGER},
       </if>
       <if test="scenicSpotPrice != null">
         scenic_spot_price = #{scenicSpotPrice,jdbcType=DOUBLE},
       </if>
-      <if test="travelMode != null">
-        travel_mode = #{travelMode,jdbcType=INTEGER},
+      <if test="score != null">
+        score = #{score,jdbcType=DOUBLE},
+      </if>
+      <if test="numberOfTourists != null">
+        number_of_tourists = #{numberOfTourists,jdbcType=INTEGER},
+      </if>
+      <if test="sold != null">
+        sold = #{sold,jdbcType=INTEGER},
       </if>
       <if test="startLand != null">
         start_land = #{startLand,jdbcType=VARCHAR},
@@ -266,8 +346,17 @@
       <if test="endLand != null">
         end_land = #{endLand,jdbcType=VARCHAR},
       </if>
+      <if test="tourCity != null">
+        tour_city = #{tourCity,jdbcType=VARCHAR},
+      </if>
+      <if test="shop != null">
+        shop = #{shop,jdbcType=VARCHAR},
+      </if>
       <if test="scenicSpotState != null">
         scenic_spot_state = #{scenicSpotState,jdbcType=INTEGER},
+      </if>
+      <if test="explain != null">
+        explain = #{explain,jdbcType=VARCHAR},
       </if>
       <if test="scenicSpotDescribe != null">
         scenic_spot_describe = #{scenicSpotDescribe,jdbcType=VARCHAR},
@@ -278,13 +367,19 @@
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ScenicSpot">
     update tbl_scenic_spot
     set region_id = #{regionId,jdbcType=INTEGER},
-      scenic_spot_theme = #{scenicSpotTheme,jdbcType=VARCHAR},
       scenic_spot_pic_url = #{scenicSpotPicUrl,jdbcType=VARCHAR},
-      scenic_spot_price = #{scenicSpotPrice,jdbcType=DOUBLE},
+      scenic_spot_theme = #{scenicSpotTheme,jdbcType=VARCHAR},
       travel_mode = #{travelMode,jdbcType=INTEGER},
+      scenic_spot_price = #{scenicSpotPrice,jdbcType=DOUBLE},
+      score = #{score,jdbcType=DOUBLE},
+      number_of_tourists = #{numberOfTourists,jdbcType=INTEGER},
+      sold = #{sold,jdbcType=INTEGER},
       start_land = #{startLand,jdbcType=VARCHAR},
       end_land = #{endLand,jdbcType=VARCHAR},
+      tour_city = #{tourCity,jdbcType=VARCHAR},
+      shop = #{shop,jdbcType=VARCHAR},
       scenic_spot_state = #{scenicSpotState,jdbcType=INTEGER},
+      explain = #{explain,jdbcType=VARCHAR},
       scenic_spot_describe = #{scenicSpotDescribe,jdbcType=VARCHAR}
     where scenic_spot_id = #{scenicSpotId,jdbcType=INTEGER}
   </update>

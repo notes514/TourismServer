@@ -9,6 +9,8 @@
     <result column="exhibits_information" jdbcType="VARCHAR" property="exhibitsInformation" />
     <result column="exhibits_author" jdbcType="VARCHAR" property="exhibitsAuthor" />
     <result column="cell_phone_number" jdbcType="VARCHAR" property="cellPhoneNumber" />
+    <result column="guidance_teacher" jdbcType="VARCHAR" property="guidanceTeacher" />
+    <result column="team_members" jdbcType="VARCHAR" property="teamMembers" />
     <collection property="fabulousDetailsList" ofType="com.ncvt.tourism.model.FabulousDetails" select="getFabulousDetailsList" column="exhibits_id"/>
   </resultMap>
 
@@ -81,7 +83,7 @@
   </sql>
   <sql id="Base_Column_List">
     exhibits_id, exhibition_area_id, exhibits_name, exhibits_video_url, exhibits_information, 
-    exhibits_author, cell_phone_number
+    exhibits_author, cell_phone_number, guidance_teacher, team_members
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ExhibitsExample" resultMap="BaseResultMap">
     select
@@ -116,10 +118,12 @@
   <insert id="insert" parameterType="com.ncvt.tourism.model.Exhibits">
     insert into tbl_exhibits (exhibits_id, exhibition_area_id, exhibits_name, 
       exhibits_video_url, exhibits_information, 
-      exhibits_author, cell_phone_number)
+      exhibits_author, cell_phone_number, guidance_teacher, 
+      team_members)
     values (#{exhibitsId,jdbcType=INTEGER}, #{exhibitionAreaId,jdbcType=INTEGER}, #{exhibitsName,jdbcType=VARCHAR}, 
       #{exhibitsVideoUrl,jdbcType=VARCHAR}, #{exhibitsInformation,jdbcType=VARCHAR}, 
-      #{exhibitsAuthor,jdbcType=VARCHAR}, #{cellPhoneNumber,jdbcType=VARCHAR})
+      #{exhibitsAuthor,jdbcType=VARCHAR}, #{cellPhoneNumber,jdbcType=VARCHAR}, #{guidanceTeacher,jdbcType=VARCHAR}, 
+      #{teamMembers,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Exhibits">
     insert into tbl_exhibits
@@ -145,6 +149,12 @@
       <if test="cellPhoneNumber != null">
         cell_phone_number,
       </if>
+      <if test="guidanceTeacher != null">
+        guidance_teacher,
+      </if>
+      <if test="teamMembers != null">
+        team_members,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="exhibitsId != null">
@@ -167,6 +177,12 @@
       </if>
       <if test="cellPhoneNumber != null">
         #{cellPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="guidanceTeacher != null">
+        #{guidanceTeacher,jdbcType=VARCHAR},
+      </if>
+      <if test="teamMembers != null">
+        #{teamMembers,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -200,6 +216,12 @@
       <if test="record.cellPhoneNumber != null">
         cell_phone_number = #{record.cellPhoneNumber,jdbcType=VARCHAR},
       </if>
+      <if test="record.guidanceTeacher != null">
+        guidance_teacher = #{record.guidanceTeacher,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamMembers != null">
+        team_members = #{record.teamMembers,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -213,7 +235,9 @@
       exhibits_video_url = #{record.exhibitsVideoUrl,jdbcType=VARCHAR},
       exhibits_information = #{record.exhibitsInformation,jdbcType=VARCHAR},
       exhibits_author = #{record.exhibitsAuthor,jdbcType=VARCHAR},
-      cell_phone_number = #{record.cellPhoneNumber,jdbcType=VARCHAR}
+      cell_phone_number = #{record.cellPhoneNumber,jdbcType=VARCHAR},
+      guidance_teacher = #{record.guidanceTeacher,jdbcType=VARCHAR},
+      team_members = #{record.teamMembers,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -239,6 +263,12 @@
       <if test="cellPhoneNumber != null">
         cell_phone_number = #{cellPhoneNumber,jdbcType=VARCHAR},
       </if>
+      <if test="guidanceTeacher != null">
+        guidance_teacher = #{guidanceTeacher,jdbcType=VARCHAR},
+      </if>
+      <if test="teamMembers != null">
+        team_members = #{teamMembers,jdbcType=VARCHAR},
+      </if>
     </set>
     where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
   </update>
@@ -249,7 +279,9 @@
       exhibits_video_url = #{exhibitsVideoUrl,jdbcType=VARCHAR},
       exhibits_information = #{exhibitsInformation,jdbcType=VARCHAR},
       exhibits_author = #{exhibitsAuthor,jdbcType=VARCHAR},
-      cell_phone_number = #{cellPhoneNumber,jdbcType=VARCHAR}
+      cell_phone_number = #{cellPhoneNumber,jdbcType=VARCHAR},
+      guidance_teacher = #{guidanceTeacher,jdbcType=VARCHAR},
+      team_members = #{teamMembers,jdbcType=VARCHAR}
     where exhibits_id = #{exhibitsId,jdbcType=INTEGER}
   </update>
 
