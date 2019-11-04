@@ -13,11 +13,11 @@ public class ScenicSpot {
 
     private Double scenicSpotPrice;
 
-    private Double score;
+    private Double scenicSpotScore;
 
     private Integer numberOfTourists;
 
-    private Integer sold;
+    private Integer scenicSpotSold;
 
     private String startLand;
 
@@ -25,11 +25,11 @@ public class ScenicSpot {
 
     private String tourCity;
 
-    private String shop;
+    private String scenicSpotShop;
 
     private Integer scenicSpotState;
 
-    private String explain;
+    private String scenicSpotExplain;
 
     private String scenicSpotDescribe;
 
@@ -81,12 +81,12 @@ public class ScenicSpot {
         this.scenicSpotPrice = scenicSpotPrice;
     }
 
-    public Double getScore() {
-        return score;
+    public Double getScenicSpotScore() {
+        return scenicSpotScore;
     }
 
-    public void setScore(Double score) {
-        this.score = score;
+    public void setScenicSpotScore(Double scenicSpotScore) {
+        this.scenicSpotScore = scenicSpotScore;
     }
 
     public Integer getNumberOfTourists() {
@@ -97,12 +97,12 @@ public class ScenicSpot {
         this.numberOfTourists = numberOfTourists;
     }
 
-    public Integer getSold() {
-        return sold;
+    public Integer getScenicSpotSold() {
+        return scenicSpotSold;
     }
 
-    public void setSold(Integer sold) {
-        this.sold = sold;
+    public void setScenicSpotSold(Integer scenicSpotSold) {
+        this.scenicSpotSold = scenicSpotSold;
     }
 
     public String getStartLand() {
@@ -129,12 +129,12 @@ public class ScenicSpot {
         this.tourCity = tourCity;
     }
 
-    public String getShop() {
-        return shop;
+    public String getScenicSpotShop() {
+        return scenicSpotShop;
     }
 
-    public void setShop(String shop) {
-        this.shop = shop;
+    public void setScenicSpotShop(String scenicSpotShop) {
+        this.scenicSpotShop = scenicSpotShop;
     }
 
     public Integer getScenicSpotState() {
@@ -145,12 +145,12 @@ public class ScenicSpot {
         this.scenicSpotState = scenicSpotState;
     }
 
-    public String getExplain() {
-        return explain;
+    public String getScenicSpotExplain() {
+        return scenicSpotExplain;
     }
 
-    public void setExplain(String explain) {
-        this.explain = explain;
+    public void setScenicSpotExplain(String scenicSpotExplain) {
+        this.scenicSpotExplain = scenicSpotExplain;
     }
 
     public String getScenicSpotDescribe() {
