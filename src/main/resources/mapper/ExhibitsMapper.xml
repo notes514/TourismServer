@@ -13,6 +13,7 @@
     <result column="team_members" jdbcType="VARCHAR" property="teamMembers" />
     <collection property="fabulousDetailsList" ofType="com.ncvt.tourism.model.FabulousDetails" select="getFabulousDetailsList" column="exhibits_id"/>
     <collection property="exhibitsPicList" ofType="com.ncvt.tourism.model.ExhibitsPic" select="getExhibitsPicList" column="exhibits_id"/>
+    <collection property="exhibitsCommentList" ofType="com.ncvt.tourism.model.ExhibitsComment" select="getExhibitsCommentList" column="exhibits_id"/>
   </resultMap>
 
   <resultMap id="FabulousDetailsMap" type="com.ncvt.tourism.model.FabulousDetails" >
@@ -27,6 +28,14 @@
     <id column="exhibits_pic_id" jdbcType="INTEGER" property="exhibitsPicId" />
     <result column="exhibits_id" jdbcType="INTEGER" property="exhibitsId" />
     <result column="exhibits_pic_url" jdbcType="VARCHAR" property="exhibitsPicUrl" />
+  </resultMap>
+
+  <resultMap id="ExhibitsCommentMap" type="com.ncvt.tourism.model.ExhibitsComment">
+    <id column="exhibits_comment_id" jdbcType="INTEGER" property="exhibitsCommentId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="exhibits_id" jdbcType="INTEGER" property="exhibitsId" />
+    <result column="exhibits_comment_content" jdbcType="VARCHAR" property="exhibitsCommentContent" />
+    <result column="comment_praise_points" jdbcType="INTEGER" property="commentPraisePoints" />
   </resultMap>
 
   <sql id="Example_Where_Clause">
@@ -296,6 +305,9 @@
   </select>
   <select id="getExhibitsPicList" parameterType="com.ncvt.tourism.model.ExhibitsPic" resultMap="ExhibitsPicMap">
     select * from tbl_exhibits_pic where exhibits_id=#{id}
+  </select>
+  <select id="getExhibitsCommentList" parameterType="com.ncvt.tourism.model.ExhibitsComment" resultMap="ExhibitsCommentMap">
+    select * from tbl_exhibits_comment where exhibits_id=#{id}
   </select>
 
 </mapper>

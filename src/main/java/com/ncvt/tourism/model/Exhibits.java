@@ -25,6 +25,16 @@ public class Exhibits {
 
     private List<ExhibitsPic> exhibitsPicList;
 
+    private List<ExhibitsComment> exhibitsCommentList;
+
+    public List<ExhibitsComment> getExhibitsCommentList() {
+        return exhibitsCommentList;
+    }
+
+    public void setExhibitsCommentList(List<ExhibitsComment> exhibitsCommentList) {
+        this.exhibitsCommentList = exhibitsCommentList;
+    }
+
     public List<ExhibitsPic> getExhibitsPicList() {
         return exhibitsPicList;
     }
