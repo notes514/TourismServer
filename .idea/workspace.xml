@@ -23,6 +23,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ScenicSpotMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ScenicSpotMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -458,12 +463,21 @@
       <workItem from="1572687953393" duration="910000" />
       <workItem from="1572762020783" duration="1203000" />
       <workItem from="1572849325296" duration="1176000" />
+      <workItem from="1572918285591" duration="476000" />
+      <workItem from="1572957167531" duration="359000" />
+      <workItem from="1573002430406" duration="1086000" />
       <workItem from="1572918799949" duration="158000" />
       <workItem from="1572919270017" duration="6902000" />
       <workItem from="1573005216981" duration="7498000" />
       <workItem from="1573089179250" duration="3197000" />
       <workItem from="1573134677699" duration="637000" />
       <workItem from="1573189711887" duration="4968000" />
+      <workItem from="1573189711887" duration="2287000" />
+      <workItem from="1572919270017" duration="3365000" />
+      <workItem from="1573052494953" duration="1431000" />
+      <workItem from="1573089514001" duration="2082000" />
+      <workItem from="1573114365381" duration="1090000" />
+      <workItem from="1573169688394" duration="11650000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -1101,5 +1115,6 @@
         </state>
       </provider>
     </entry>
+    <option name="LAST_COMMIT_MESSAGE" value="2019.11.5更新API返回的数据" />
   </component>
 </project>
