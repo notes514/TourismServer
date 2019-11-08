@@ -787,6 +787,100 @@ public class TourismController {
     }
 
     /**
+     * 查询用户对展品点赞状态
+     * @param userId 用户编号
+     * @param exhibitsId 展品编号
+     * @return
+     */
+    @RequestMapping("queryFabulousDetailsFlag")
+    public Map<String, Object> queryFabulousDetailsFlag(int userId, int exhibitsId) {
+        Map<String, Object> map = new HashMap<>();
+        FabulousDetailsExample fabulousDetailsExample = new FabulousDetailsExample();
+        fabulousDetailsExample.createCriteria().andUserIdEqualTo(userId).andExhibitsIdEqualTo(exhibitsId);
+        List<FabulousDetails> fabulousDetailsList = fabulousDetailsMapper.selectByExample(fabulousDetailsExample);
+        User user = userMapper.selectByPrimaryKey(userId);
+        Exhibits exhibits = exhibitsMapper.selectByPrimaryKey(exhibitsId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "请先登录！");
+            return map;
+        }
+        if (exhibits == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该展品！");
+            return map;
+        }
+        if (fabulousDetailsList.size() == 0) {
+            map.put(RESULT, "S");
+            map.put(ONE_DATA,0);
+            return map;
+        }else {
+            map.put(RESULT, "S");
+            map.put(ONE_DATA,fabulousDetailsList.get(0).getFlag());
+            return map;
+        }
+    }
+
+    /**
+     * 对展品进行点赞或取消点赞
+     * @param userId 用户编号
+     * @param exhibitsId 展品编号
+     * @return
+     */
+    @RequestMapping("setFabulousDetailsFlag")
+    public Map<String, Object> setFabulousDetailsFlag(int userId, int exhibitsId) {
+        Map<String, Object> map = new HashMap<>();
+        FabulousDetailsExample fabulousDetailsExample = new FabulousDetailsExample();
+        fabulousDetailsExample.createCriteria().andUserIdEqualTo(userId).andExhibitsIdEqualTo(exhibitsId);
+        List<FabulousDetails> fabulousDetailsList = fabulousDetailsMapper.selectByExample(fabulousDetailsExample);
+        User user = userMapper.selectByPrimaryKey(userId);
+        Exhibits exhibits = exhibitsMapper.selectByPrimaryKey(exhibitsId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "请先登录！");
+            return map;
+        }
+        if (exhibits == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该展品！");
+            return map;
+        }
+        try {
+            if (fabulousDetailsList.size() == 0){
+                FabulousDetails fabulousDetails = new FabulousDetails();
+                fabulousDetails.setUserId(userId);
+                fabulousDetails.setExhibitsId(exhibitsId);
+                fabulousDetails.setFlag(1);
+                fabulousDetails.setFabulousNumber(1);
+                fabulousDetailsMapper.insertSelective(fabulousDetails);
+                fabulousDetailsMapper.updateByPrimaryKeySelective(fabulousDetails);
+                map.put(RESULT, "S");
+                map.put(ONE_DATA,fabulousDetails);
+                map.put(TIPS, "点赞成功！");
+                return map;
+            }else if (fabulousDetailsList.get(0).getFlag() == 0){
+                fabulousDetailsList.get(0).setFlag(1);
+                fabulousDetailsMapper.updateByPrimaryKeySelective(fabulousDetailsList.get(0));
+                map.put(RESULT, "S");
+                map.put(ONE_DATA,fabulousDetailsList);
+                map.put(TIPS, "点赞成功！");
+                return map;
+            }else {
+                fabulousDetailsList.get(0).setFlag(0);
+                fabulousDetailsMapper.updateByPrimaryKeySelective(fabulousDetailsList.get(0));
+                map.put(RESULT, "S");
+                map.put(ONE_DATA,fabulousDetailsList);
+                map.put(TIPS, "点赞取消！");
+                return map;
+            }
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "请求失败！");
+            return map;
+        }
+    }
+
+    /**
      * 景区订单模块
      * 生成联系人信息
      * @param contacts
