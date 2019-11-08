@@ -874,6 +874,66 @@ public class ScenicSpotExample {
             return (Criteria) this;
         }
 
+        public Criteria andScenicSpotNumberIsNull() {
+            addCriterion("scenic_spot_number is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberIsNotNull() {
+            addCriterion("scenic_spot_number is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberEqualTo(Integer value) {
+            addCriterion("scenic_spot_number =", value, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberNotEqualTo(Integer value) {
+            addCriterion("scenic_spot_number <>", value, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberGreaterThan(Integer value) {
+            addCriterion("scenic_spot_number >", value, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("scenic_spot_number >=", value, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberLessThan(Integer value) {
+            addCriterion("scenic_spot_number <", value, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberLessThanOrEqualTo(Integer value) {
+            addCriterion("scenic_spot_number <=", value, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberIn(List<Integer> values) {
+            addCriterion("scenic_spot_number in", values, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberNotIn(List<Integer> values) {
+            addCriterion("scenic_spot_number not in", values, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberBetween(Integer value1, Integer value2) {
+            addCriterion("scenic_spot_number between", value1, value2, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andScenicSpotNumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("scenic_spot_number not between", value1, value2, "scenicSpotNumber");
+            return (Criteria) this;
+        }
+
         public Criteria andScenicSpotShopIsNull() {
             addCriterion("scenic_spot_shop is null");
             return (Criteria) this;

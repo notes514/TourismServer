@@ -303,6 +303,76 @@ public class ExhibitionAreaExample {
             addCriterion("exhibition_area_address not between", value1, value2, "exhibitionAreaAddress");
             return (Criteria) this;
         }
+
+        public Criteria andExhibitionAreaPicIsNull() {
+            addCriterion("exhibition_area_pic is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicIsNotNull() {
+            addCriterion("exhibition_area_pic is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicEqualTo(String value) {
+            addCriterion("exhibition_area_pic =", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicNotEqualTo(String value) {
+            addCriterion("exhibition_area_pic <>", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicGreaterThan(String value) {
+            addCriterion("exhibition_area_pic >", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicGreaterThanOrEqualTo(String value) {
+            addCriterion("exhibition_area_pic >=", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicLessThan(String value) {
+            addCriterion("exhibition_area_pic <", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicLessThanOrEqualTo(String value) {
+            addCriterion("exhibition_area_pic <=", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicLike(String value) {
+            addCriterion("exhibition_area_pic like", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicNotLike(String value) {
+            addCriterion("exhibition_area_pic not like", value, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicIn(List<String> values) {
+            addCriterion("exhibition_area_pic in", values, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicNotIn(List<String> values) {
+            addCriterion("exhibition_area_pic not in", values, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicBetween(String value1, String value2) {
+            addCriterion("exhibition_area_pic between", value1, value2, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
+
+        public Criteria andExhibitionAreaPicNotBetween(String value1, String value2) {
+            addCriterion("exhibition_area_pic not between", value1, value2, "exhibitionAreaPic");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

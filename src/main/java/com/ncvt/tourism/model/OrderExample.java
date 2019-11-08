@@ -295,6 +295,66 @@ public class OrderExample {
             return (Criteria) this;
         }
 
+        public Criteria andPassengerNumberIsNull() {
+            addCriterion("passenger_number is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberIsNotNull() {
+            addCriterion("passenger_number is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberEqualTo(Integer value) {
+            addCriterion("passenger_number =", value, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberNotEqualTo(Integer value) {
+            addCriterion("passenger_number <>", value, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberGreaterThan(Integer value) {
+            addCriterion("passenger_number >", value, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("passenger_number >=", value, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberLessThan(Integer value) {
+            addCriterion("passenger_number <", value, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberLessThanOrEqualTo(Integer value) {
+            addCriterion("passenger_number <=", value, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberIn(List<Integer> values) {
+            addCriterion("passenger_number in", values, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberNotIn(List<Integer> values) {
+            addCriterion("passenger_number not in", values, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberBetween(Integer value1, Integer value2) {
+            addCriterion("passenger_number between", value1, value2, "passengerNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPassengerNumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("passenger_number not between", value1, value2, "passengerNumber");
+            return (Criteria) this;
+        }
+
         public Criteria andOrderStateIsNull() {
             addCriterion("order_state is null");
             return (Criteria) this;
@@ -752,6 +812,66 @@ public class OrderExample {
 
         public Criteria andOrderDateNotBetween(Date value1, Date value2) {
             addCriterion("order_date not between", value1, value2, "orderDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceIsNull() {
+            addCriterion("room_difference is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceIsNotNull() {
+            addCriterion("room_difference is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceEqualTo(Integer value) {
+            addCriterion("room_difference =", value, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceNotEqualTo(Integer value) {
+            addCriterion("room_difference <>", value, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceGreaterThan(Integer value) {
+            addCriterion("room_difference >", value, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceGreaterThanOrEqualTo(Integer value) {
+            addCriterion("room_difference >=", value, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceLessThan(Integer value) {
+            addCriterion("room_difference <", value, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceLessThanOrEqualTo(Integer value) {
+            addCriterion("room_difference <=", value, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceIn(List<Integer> values) {
+            addCriterion("room_difference in", values, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceNotIn(List<Integer> values) {
+            addCriterion("room_difference not in", values, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceBetween(Integer value1, Integer value2) {
+            addCriterion("room_difference between", value1, value2, "roomDifference");
+            return (Criteria) this;
+        }
+
+        public Criteria andRoomDifferenceNotBetween(Integer value1, Integer value2) {
+            addCriterion("room_difference not between", value1, value2, "roomDifference");
             return (Criteria) this;
         }
 

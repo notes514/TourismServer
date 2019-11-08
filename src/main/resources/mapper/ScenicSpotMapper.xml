@@ -14,6 +14,7 @@
     <result column="start_land" jdbcType="VARCHAR" property="startLand" />
     <result column="end_land" jdbcType="VARCHAR" property="endLand" />
     <result column="tour_city" jdbcType="VARCHAR" property="tourCity" />
+    <result column="scenic_spot_number" jdbcType="INTEGER" property="scenicSpotNumber" />
     <result column="scenic_spot_shop" jdbcType="VARCHAR" property="scenicSpotShop" />
     <result column="scenic_spot_state" jdbcType="INTEGER" property="scenicSpotState" />
     <result column="scenic_spot_explain" jdbcType="VARCHAR" property="scenicSpotExplain" />
@@ -80,7 +81,7 @@
   <sql id="Base_Column_List">
     scenic_spot_id, region_id, scenic_spot_pic_url, scenic_spot_theme, travel_mode, scenic_spot_price, 
     scenic_spot_score, number_of_tourists, scenic_spot_sold, start_land, end_land, tour_city, 
-    scenic_spot_shop, scenic_spot_state, scenic_spot_explain, scenic_spot_describe
+    scenic_spot_number, scenic_spot_shop, scenic_spot_state, scenic_spot_explain, scenic_spot_describe
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ScenicSpotExample" resultMap="BaseResultMap">
     select
@@ -117,14 +118,14 @@
       scenic_spot_theme, travel_mode, scenic_spot_price, 
       scenic_spot_score, number_of_tourists, scenic_spot_sold, 
       start_land, end_land, tour_city, 
-      scenic_spot_shop, scenic_spot_state, scenic_spot_explain, 
-      scenic_spot_describe)
+      scenic_spot_number, scenic_spot_shop, scenic_spot_state, 
+      scenic_spot_explain, scenic_spot_describe)
     values (#{scenicSpotId,jdbcType=INTEGER}, #{regionId,jdbcType=INTEGER}, #{scenicSpotPicUrl,jdbcType=VARCHAR}, 
       #{scenicSpotTheme,jdbcType=VARCHAR}, #{travelMode,jdbcType=INTEGER}, #{scenicSpotPrice,jdbcType=DOUBLE}, 
       #{scenicSpotScore,jdbcType=DOUBLE}, #{numberOfTourists,jdbcType=INTEGER}, #{scenicSpotSold,jdbcType=INTEGER}, 
       #{startLand,jdbcType=VARCHAR}, #{endLand,jdbcType=VARCHAR}, #{tourCity,jdbcType=VARCHAR}, 
-      #{scenicSpotShop,jdbcType=VARCHAR}, #{scenicSpotState,jdbcType=INTEGER}, #{scenicSpotExplain,jdbcType=VARCHAR}, 
-      #{scenicSpotDescribe,jdbcType=VARCHAR})
+      #{scenicSpotNumber,jdbcType=INTEGER}, #{scenicSpotShop,jdbcType=VARCHAR}, #{scenicSpotState,jdbcType=INTEGER}, 
+      #{scenicSpotExplain,jdbcType=VARCHAR}, #{scenicSpotDescribe,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ScenicSpot">
     insert into tbl_scenic_spot
@@ -164,6 +165,9 @@
       </if>
       <if test="tourCity != null">
         tour_city,
+      </if>
+      <if test="scenicSpotNumber != null">
+        scenic_spot_number,
       </if>
       <if test="scenicSpotShop != null">
         scenic_spot_shop,
@@ -214,6 +218,9 @@
       </if>
       <if test="tourCity != null">
         #{tourCity,jdbcType=VARCHAR},
+      </if>
+      <if test="scenicSpotNumber != null">
+        #{scenicSpotNumber,jdbcType=INTEGER},
       </if>
       <if test="scenicSpotShop != null">
         #{scenicSpotShop,jdbcType=VARCHAR},
@@ -274,6 +281,9 @@
       <if test="record.tourCity != null">
         tour_city = #{record.tourCity,jdbcType=VARCHAR},
       </if>
+      <if test="record.scenicSpotNumber != null">
+        scenic_spot_number = #{record.scenicSpotNumber,jdbcType=INTEGER},
+      </if>
       <if test="record.scenicSpotShop != null">
         scenic_spot_shop = #{record.scenicSpotShop,jdbcType=VARCHAR},
       </if>
@@ -305,6 +315,7 @@
       start_land = #{record.startLand,jdbcType=VARCHAR},
       end_land = #{record.endLand,jdbcType=VARCHAR},
       tour_city = #{record.tourCity,jdbcType=VARCHAR},
+      scenic_spot_number = #{record.scenicSpotNumber,jdbcType=INTEGER},
       scenic_spot_shop = #{record.scenicSpotShop,jdbcType=VARCHAR},
       scenic_spot_state = #{record.scenicSpotState,jdbcType=INTEGER},
       scenic_spot_explain = #{record.scenicSpotExplain,jdbcType=VARCHAR},
@@ -349,6 +360,9 @@
       <if test="tourCity != null">
         tour_city = #{tourCity,jdbcType=VARCHAR},
       </if>
+      <if test="scenicSpotNumber != null">
+        scenic_spot_number = #{scenicSpotNumber,jdbcType=INTEGER},
+      </if>
       <if test="scenicSpotShop != null">
         scenic_spot_shop = #{scenicSpotShop,jdbcType=VARCHAR},
       </if>
@@ -377,6 +391,7 @@
       start_land = #{startLand,jdbcType=VARCHAR},
       end_land = #{endLand,jdbcType=VARCHAR},
       tour_city = #{tourCity,jdbcType=VARCHAR},
+      scenic_spot_number = #{scenicSpotNumber,jdbcType=INTEGER},
       scenic_spot_shop = #{scenicSpotShop,jdbcType=VARCHAR},
       scenic_spot_state = #{scenicSpotState,jdbcType=INTEGER},
       scenic_spot_explain = #{scenicSpotExplain,jdbcType=VARCHAR},

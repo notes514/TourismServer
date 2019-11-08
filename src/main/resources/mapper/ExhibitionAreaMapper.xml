@@ -5,6 +5,7 @@
     <id column="exhibition_area_id" jdbcType="INTEGER" property="exhibitionAreaId" />
     <result column="exhibition_area_name" jdbcType="VARCHAR" property="exhibitionAreaName" />
     <result column="exhibition_area_address" jdbcType="VARCHAR" property="exhibitionAreaAddress" />
+    <result column="exhibition_area_pic" jdbcType="VARCHAR" property="exhibitionAreaPic" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    exhibition_area_id, exhibition_area_name, exhibition_area_address
+    exhibition_area_id, exhibition_area_name, exhibition_area_address, exhibition_area_pic
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ExhibitionAreaExample" resultMap="BaseResultMap">
     select
@@ -99,9 +100,11 @@
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.ExhibitionArea">
     insert into tbl_exhibition_area (exhibition_area_id, exhibition_area_name, 
-      exhibition_area_address)
+      exhibition_area_address, exhibition_area_pic
+      )
     values (#{exhibitionAreaId,jdbcType=INTEGER}, #{exhibitionAreaName,jdbcType=VARCHAR}, 
-      #{exhibitionAreaAddress,jdbcType=VARCHAR})
+      #{exhibitionAreaAddress,jdbcType=VARCHAR}, #{exhibitionAreaPic,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.ExhibitionArea">
     insert into tbl_exhibition_area
@@ -115,6 +118,9 @@
       <if test="exhibitionAreaAddress != null">
         exhibition_area_address,
       </if>
+      <if test="exhibitionAreaPic != null">
+        exhibition_area_pic,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="exhibitionAreaId != null">
@@ -125,6 +131,9 @@
       </if>
       <if test="exhibitionAreaAddress != null">
         #{exhibitionAreaAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="exhibitionAreaPic != null">
+        #{exhibitionAreaPic,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -146,6 +155,9 @@
       <if test="record.exhibitionAreaAddress != null">
         exhibition_area_address = #{record.exhibitionAreaAddress,jdbcType=VARCHAR},
       </if>
+      <if test="record.exhibitionAreaPic != null">
+        exhibition_area_pic = #{record.exhibitionAreaPic,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -155,7 +167,8 @@
     update tbl_exhibition_area
     set exhibition_area_id = #{record.exhibitionAreaId,jdbcType=INTEGER},
       exhibition_area_name = #{record.exhibitionAreaName,jdbcType=VARCHAR},
-      exhibition_area_address = #{record.exhibitionAreaAddress,jdbcType=VARCHAR}
+      exhibition_area_address = #{record.exhibitionAreaAddress,jdbcType=VARCHAR},
+      exhibition_area_pic = #{record.exhibitionAreaPic,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -169,13 +182,17 @@
       <if test="exhibitionAreaAddress != null">
         exhibition_area_address = #{exhibitionAreaAddress,jdbcType=VARCHAR},
       </if>
+      <if test="exhibitionAreaPic != null">
+        exhibition_area_pic = #{exhibitionAreaPic,jdbcType=VARCHAR},
+      </if>
     </set>
     where exhibition_area_id = #{exhibitionAreaId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.ExhibitionArea">
     update tbl_exhibition_area
     set exhibition_area_name = #{exhibitionAreaName,jdbcType=VARCHAR},
-      exhibition_area_address = #{exhibitionAreaAddress,jdbcType=VARCHAR}
+      exhibition_area_address = #{exhibitionAreaAddress,jdbcType=VARCHAR},
+      exhibition_area_pic = #{exhibitionAreaPic,jdbcType=VARCHAR}
     where exhibition_area_id = #{exhibitionAreaId,jdbcType=INTEGER}
   </update>
 </mapper>
