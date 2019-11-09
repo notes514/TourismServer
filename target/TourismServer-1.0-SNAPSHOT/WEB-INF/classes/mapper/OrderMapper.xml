@@ -5,6 +5,7 @@
     <id column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="order_content" jdbcType="VARCHAR" property="orderContent" />
     <result column="order_number" jdbcType="INTEGER" property="orderNumber" />
+    <result column="passenger_number" jdbcType="INTEGER" property="passengerNumber" />
     <result column="order_state" jdbcType="INTEGER" property="orderState" />
     <result column="trip_mode" jdbcType="VARCHAR" property="tripMode" />
     <result column="depart_date" jdbcType="VARCHAR" property="departDate" />
@@ -12,6 +13,7 @@
     <result column="tirp_information" jdbcType="VARCHAR" property="tirpInformation" />
     <result column="order_price" jdbcType="DOUBLE" property="orderPrice" />
     <result column="order_date" jdbcType="TIMESTAMP" property="orderDate" />
+    <result column="room_difference" jdbcType="INTEGER" property="roomDifference" />
     <result column="supplier" jdbcType="VARCHAR" property="supplier" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -73,8 +75,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    order_id, order_content, order_number, order_state, trip_mode, depart_date, depart_days, 
-    tirp_information, order_price, order_date, supplier
+    order_id, order_content, order_number, passenger_number, order_state, trip_mode, 
+    depart_date, depart_days, tirp_information, order_price, order_date, room_difference, 
+    supplier
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.OrderExample" resultMap="BaseResultMap">
     select
@@ -108,13 +111,15 @@
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.Order">
     insert into tbl_order (order_id, order_content, order_number, 
-      order_state, trip_mode, depart_date, 
-      depart_days, tirp_information, order_price, 
-      order_date, supplier)
+      passenger_number, order_state, trip_mode, 
+      depart_date, depart_days, tirp_information, 
+      order_price, order_date, room_difference, 
+      supplier)
     values (#{orderId,jdbcType=INTEGER}, #{orderContent,jdbcType=VARCHAR}, #{orderNumber,jdbcType=INTEGER}, 
-      #{orderState,jdbcType=INTEGER}, #{tripMode,jdbcType=VARCHAR}, #{departDate,jdbcType=VARCHAR}, 
-      #{departDays,jdbcType=VARCHAR}, #{tirpInformation,jdbcType=VARCHAR}, #{orderPrice,jdbcType=DOUBLE}, 
-      #{orderDate,jdbcType=TIMESTAMP}, #{supplier,jdbcType=VARCHAR})
+      #{passengerNumber,jdbcType=INTEGER}, #{orderState,jdbcType=INTEGER}, #{tripMode,jdbcType=VARCHAR}, 
+      #{departDate,jdbcType=VARCHAR}, #{departDays,jdbcType=VARCHAR}, #{tirpInformation,jdbcType=VARCHAR}, 
+      #{orderPrice,jdbcType=DOUBLE}, #{orderDate,jdbcType=TIMESTAMP}, #{roomDifference,jdbcType=INTEGER}, 
+      #{supplier,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Order">
     insert into tbl_order
@@ -127,6 +132,9 @@
       </if>
       <if test="orderNumber != null">
         order_number,
+      </if>
+      <if test="passengerNumber != null">
+        passenger_number,
       </if>
       <if test="orderState != null">
         order_state,
@@ -149,6 +157,9 @@
       <if test="orderDate != null">
         order_date,
       </if>
+      <if test="roomDifference != null">
+        room_difference,
+      </if>
       <if test="supplier != null">
         supplier,
       </if>
@@ -162,6 +173,9 @@
       </if>
       <if test="orderNumber != null">
         #{orderNumber,jdbcType=INTEGER},
+      </if>
+      <if test="passengerNumber != null">
+        #{passengerNumber,jdbcType=INTEGER},
       </if>
       <if test="orderState != null">
         #{orderState,jdbcType=INTEGER},
@@ -183,6 +197,9 @@
       </if>
       <if test="orderDate != null">
         #{orderDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roomDifference != null">
+        #{roomDifference,jdbcType=INTEGER},
       </if>
       <if test="supplier != null">
         #{supplier,jdbcType=VARCHAR},
@@ -207,6 +224,9 @@
       <if test="record.orderNumber != null">
         order_number = #{record.orderNumber,jdbcType=INTEGER},
       </if>
+      <if test="record.passengerNumber != null">
+        passenger_number = #{record.passengerNumber,jdbcType=INTEGER},
+      </if>
       <if test="record.orderState != null">
         order_state = #{record.orderState,jdbcType=INTEGER},
       </if>
@@ -228,6 +248,9 @@
       <if test="record.orderDate != null">
         order_date = #{record.orderDate,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.roomDifference != null">
+        room_difference = #{record.roomDifference,jdbcType=INTEGER},
+      </if>
       <if test="record.supplier != null">
         supplier = #{record.supplier,jdbcType=VARCHAR},
       </if>
@@ -241,6 +264,7 @@
     set order_id = #{record.orderId,jdbcType=INTEGER},
       order_content = #{record.orderContent,jdbcType=VARCHAR},
       order_number = #{record.orderNumber,jdbcType=INTEGER},
+      passenger_number = #{record.passengerNumber,jdbcType=INTEGER},
       order_state = #{record.orderState,jdbcType=INTEGER},
       trip_mode = #{record.tripMode,jdbcType=VARCHAR},
       depart_date = #{record.departDate,jdbcType=VARCHAR},
@@ -248,6 +272,7 @@
       tirp_information = #{record.tirpInformation,jdbcType=VARCHAR},
       order_price = #{record.orderPrice,jdbcType=DOUBLE},
       order_date = #{record.orderDate,jdbcType=TIMESTAMP},
+      room_difference = #{record.roomDifference,jdbcType=INTEGER},
       supplier = #{record.supplier,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -261,6 +286,9 @@
       </if>
       <if test="orderNumber != null">
         order_number = #{orderNumber,jdbcType=INTEGER},
+      </if>
+      <if test="passengerNumber != null">
+        passenger_number = #{passengerNumber,jdbcType=INTEGER},
       </if>
       <if test="orderState != null">
         order_state = #{orderState,jdbcType=INTEGER},
@@ -283,6 +311,9 @@
       <if test="orderDate != null">
         order_date = #{orderDate,jdbcType=TIMESTAMP},
       </if>
+      <if test="roomDifference != null">
+        room_difference = #{roomDifference,jdbcType=INTEGER},
+      </if>
       <if test="supplier != null">
         supplier = #{supplier,jdbcType=VARCHAR},
       </if>
@@ -293,6 +324,7 @@
     update tbl_order
     set order_content = #{orderContent,jdbcType=VARCHAR},
       order_number = #{orderNumber,jdbcType=INTEGER},
+      passenger_number = #{passengerNumber,jdbcType=INTEGER},
       order_state = #{orderState,jdbcType=INTEGER},
       trip_mode = #{tripMode,jdbcType=VARCHAR},
       depart_date = #{departDate,jdbcType=VARCHAR},
@@ -300,6 +332,7 @@
       tirp_information = #{tirpInformation,jdbcType=VARCHAR},
       order_price = #{orderPrice,jdbcType=DOUBLE},
       order_date = #{orderDate,jdbcType=TIMESTAMP},
+      room_difference = #{roomDifference,jdbcType=INTEGER},
       supplier = #{supplier,jdbcType=VARCHAR}
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>

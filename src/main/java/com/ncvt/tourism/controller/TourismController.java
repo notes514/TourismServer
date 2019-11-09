@@ -867,14 +867,14 @@ public class TourismController {
                 fabulousDetailsList.get(0).setFlag(1);
                 fabulousDetailsMapper.updateByPrimaryKeySelective(fabulousDetailsList.get(0));
                 map.put(RESULT, "S");
-                map.put(ONE_DATA,fabulousDetailsList);
+                map.put(ONE_DATA,fabulousDetailsList.get(0));
                 map.put(TIPS, "点赞成功！");
                 return map;
             }else {
                 fabulousDetailsList.get(0).setFlag(0);
                 fabulousDetailsMapper.updateByPrimaryKeySelective(fabulousDetailsList.get(0));
                 map.put(RESULT, "S");
-                map.put(ONE_DATA,fabulousDetailsList);
+                map.put(ONE_DATA,fabulousDetailsList.get(0));
                 map.put(TIPS, "点赞取消！");
                 return map;
             }
