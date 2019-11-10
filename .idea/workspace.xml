@@ -9,42 +9,8 @@
     <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionAreaExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ExhibitionAreaExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/OrderExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/OrderExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/OrderExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/OrderExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/OrderExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/OrderExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpotExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpotExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpotExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpotExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpotExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/model/ScenicSpotExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ExhibitionAreaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ExhibitionAreaMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ScenicSpotMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/mapper/ScenicSpotMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionAreaExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionAreaExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ExhibitionAreaExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/OrderExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/OrderExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/OrderExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/OrderExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/OrderExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/OrderExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpotExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpotExample$Criteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpotExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpotExample$Criterion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpotExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/model/ScenicSpotExample$GeneratedCriteria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ExhibitionAreaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ExhibitionAreaMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ScenicSpotMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ScenicSpotMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,28 +47,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="835" column="82" lean-forward="true" selection-start-line="835" selection-start-column="82" selection-end-line="835" selection-end-column="82" />
+            <state relative-caret-position="324">
+              <caret line="648" lean-forward="true" selection-start-line="648" selection-end-line="648" />
               <folding>
                 <element signature="e#16811#16812#0" expanded="true" />
                 <element signature="e#16874#16875#0" expanded="true" />
                 <element signature="e#17018#17019#0" expanded="true" />
                 <element signature="e#17079#17080#0" expanded="true" />
-                <element signature="e#19823#19824#0" expanded="true" />
-                <element signature="e#19888#19889#0" expanded="true" />
-                <element signature="e#21215#21216#0" expanded="true" />
-                <element signature="e#21274#21275#0" expanded="true" />
+                <element signature="e#26687#29203#0" />
                 <element signature="e#44296#45994#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -195,15 +149,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tourism" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tourism" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
@@ -478,7 +423,7 @@
       <workItem from="1573089514001" duration="2082000" />
       <workItem from="1573114365381" duration="1090000" />
       <workItem from="1573169688394" duration="11650000" />
-      <workItem from="1573264415596" duration="2319000" />
+      <workItem from="1573264415596" duration="10763000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -585,11 +530,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573198829419</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2019.11.9 更新API">
+      <created>1573267568977</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1573267568977</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115267000" />
+    <option name="totallyTimeSpent" value="123711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,10 +554,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.26407507" />
-      <window_info id="Structure" order="1" sideWeight="0.5028329" side_tool="true" weight="0.22252011" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4957507" visible="true" weight="0.24463807" />
+      <window_info id="Structure" order="1" sideWeight="0.5042493" side_tool="true" weight="0.24463807" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -695,7 +646,8 @@
     <MESSAGE value="2019.11.5更新API返回的数据" />
     <MESSAGE value="新增查询点赞，用户点赞API" />
     <MESSAGE value="2019.11.8 更新数据库" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019.11.8 更新数据库" />
+    <MESSAGE value="2019.11.9 更新API" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019.11.9 更新API" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/FabulousDetailsMapper.xml">
@@ -1022,17 +974,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="835" column="82" lean-forward="true" selection-start-line="835" selection-start-column="82" selection-end-line="835" selection-end-column="82" />
+        <state relative-caret-position="324">
+          <caret line="648" lean-forward="true" selection-start-line="648" selection-end-line="648" />
           <folding>
             <element signature="e#16811#16812#0" expanded="true" />
             <element signature="e#16874#16875#0" expanded="true" />
             <element signature="e#17018#17019#0" expanded="true" />
             <element signature="e#17079#17080#0" expanded="true" />
-            <element signature="e#19823#19824#0" expanded="true" />
-            <element signature="e#19888#19889#0" expanded="true" />
-            <element signature="e#21215#21216#0" expanded="true" />
-            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#26687#29203#0" />
             <element signature="e#44296#45994#0" />
           </folding>
         </state>

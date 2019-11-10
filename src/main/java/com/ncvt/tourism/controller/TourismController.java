@@ -621,8 +621,11 @@ public class TourismController {
      * @return 返回结果
      */
     @RequestMapping("queryAllExhibitionArea")
-    public List<ExhibitionArea> queryAllExhibitionArea() {
-        return exhibitionAreaMapper.selectByExample(null);
+    public Map<String, Object> queryAllExhibitionArea() {
+        Map<String, Object> map = new HashMap<>();
+        map.put(RESULT, "S");
+        map.put(ONE_DATA,exhibitionAreaMapper.selectByExample(null));
+        return map;
     }
 
     /**
@@ -668,8 +671,11 @@ public class TourismController {
      * @return 返回结果
      */
     @RequestMapping("queryAllExhibits")
-    public List<Exhibits> queryAllExhibits() {
-        return exhibitsMapper.selectByExample(null);
+    public Map<String, Object> queryAllExhibits() {
+        Map<String, Object> map = new HashMap<>();
+        map.put(RESULT, "S");
+        map.put(ONE_DATA,exhibitsMapper.selectByExample(null));
+        return map;
     }
 
     /**
