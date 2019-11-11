@@ -1482,4 +1482,34 @@ public class TourismController {
         return map;
     }
 
+    /**
+     * 查询景区类型内容
+     * @param type 类型
+     * @return
+     */
+    @RequestMapping("queryRomanticTypeScenicSpot")
+    public Map<String, Object> queryRomanticTypeScenicSpot(String type) {
+        Map<String, Object> map = new HashMap<>();
+        List<ScenicSpot> scenicSpotList = scenicSpotMapper.selectByExample(null);
+        if (scenicSpotList.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "无景区内容");
+            return map;
+        }
+        List<ScenicSpot> scenicSpotList1 = new ArrayList<>();
+        for (ScenicSpot spot : scenicSpotList) {
+            if (spot.getScenicSpotDescribe().equals(type)) {
+                scenicSpotList1.add(spot);
+            }
+        }
+        if (scenicSpotList1.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "无该景区类型内容");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, scenicSpotList1);
+        return map;
+    }
+
 }
