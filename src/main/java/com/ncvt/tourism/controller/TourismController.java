@@ -1512,4 +1512,46 @@ public class TourismController {
         return map;
     }
 
+    /**
+     * 订单支付
+     * @param userId
+     * @param orderId
+     * @param price
+     * @return
+     */
+    @RequestMapping("orderPayment")
+    public Map<String, Object> orderPayment(int userId, int orderId) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "无该用户");
+            return map;
+        }
+        Order order = orderMapper.selectByPrimaryKey(orderId);
+        if (order == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "无该订单");
+            return map;
+        }
+        Double uMoney = user.getUserMoney();
+        Double oMoney = order.getOrderPrice();
+        try {
+            //对用户账户进行扣款
+            user.setUserMoney(uMoney - oMoney);
+            //修改订单状态
+            order.setOrderState(2);
+            //更新数据
+            userMapper.updateByPrimaryKey(user);
+            orderMapper.updateByPrimaryKey(order);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "扣款失败");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "支付成功");
+        return map;
+    }
+
 }

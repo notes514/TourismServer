@@ -6,152 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/deng.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/depth.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/adly.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/cs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/dalian.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/faguo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/medf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/mlxy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/ruishi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/tgmg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/tuerqi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/xjp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/xxl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/region/yidali.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/romantic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/37.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/38.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/39.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/41.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/42.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/43.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/44.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/45.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/46.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/47.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/48.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/49.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/50.jpg" afterDir="false" />
+    <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="新增景区类型内容api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/aomen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/aomen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/beihai.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/beihai.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/beijing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/beijing.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/changsha.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/changsha.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/dongguan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/dongguan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/guilin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/guilin.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/hangzhou.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/hangzhou.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/humen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/humen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/liuzhou.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/liuzhou.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/nanjing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/nanjing.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/nanning.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/nanning.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/sanya.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/sanya.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/shanghai.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/shanghai.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/shenzhen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/shenzhen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/wuxi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/wuxi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/xianggang.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/xianggang.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/yueyang.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/yueyang.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/region/zhangjiajie.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/region/zhangjiajie.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/28.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/31.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/36.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/spot/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/spot/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/aomen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/aomen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/beihai.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/beihai.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/beijing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/beijing.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/changsha.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/changsha.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/dongguan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/dongguan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/guilin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/guilin.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/hangzhou.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/hangzhou.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/humen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/humen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/liuzhou.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/liuzhou.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/nanjing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/nanjing.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/nanning.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/nanning.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/sanya.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/sanya.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/shanghai.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/shanghai.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/shenzhen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/shenzhen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/wuxi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/wuxi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/xianggang.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/xianggang.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/yueyang.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/yueyang.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/zhangjiajie.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/region/zhangjiajie.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/28.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/31.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/36.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/images/spot/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -474,7 +331,8 @@
       <workItem from="1573348794326" duration="2292000" />
       <workItem from="1573372641450" duration="292000" />
       <workItem from="1573264415596" duration="10763000" />
-      <workItem from="1573439740986" duration="1816000" />
+      <workItem from="1573439740986" duration="3106000" />
+      <workItem from="1573519327175" duration="703000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -588,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573267568977</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="新增景区类型内容api">
+      <created>1573450557513</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1573450557513</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -652,6 +517,7 @@
     <MESSAGE value="新增查询点赞，用户点赞API" />
     <MESSAGE value="2019.11.8 更新数据库" />
     <MESSAGE value="2019.11.9 更新API" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019.11.9 更新API" />
+    <MESSAGE value="新增景区类型内容api" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增景区类型内容api" />
   </component>
 </project>
