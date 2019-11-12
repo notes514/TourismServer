@@ -2,8 +2,9 @@ package com.ncvt.tourism.mapper;
 
 import com.ncvt.tourism.model.AmountRecharge;
 import com.ncvt.tourism.model.AmountRechargeExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface AmountRechargeMapper {
     long countByExample(AmountRechargeExample example);

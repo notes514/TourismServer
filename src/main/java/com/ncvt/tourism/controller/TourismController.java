@@ -1516,7 +1516,6 @@ public class TourismController {
      * 订单支付
      * @param userId
      * @param orderId
-     * @param price
      * @return
      */
     @RequestMapping("orderPayment")
