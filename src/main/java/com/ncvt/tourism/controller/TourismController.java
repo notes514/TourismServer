@@ -365,34 +365,28 @@ public class TourismController {
     /**
      * 用户收藏
      * @param collection 收藏信息
-     * @param userId 用户编号
-     * @param scenicDetailsId 景区详情编号
      * @return
      */
     @RequestMapping("/userAddByCollection")
-    public Map<String, String> userAddByCollection(@RequestBody UserCollection collection, int userId, int scenicDetailsId) {
+    public Map<String, String> userAddByCollection(@RequestBody UserCollection collection) {
         Map<String, String> map = new HashMap<>();
-        User user = userMapper.selectByPrimaryKey(userId);
+        User user = userMapper.selectByPrimaryKey(collection.getUserId());
         if (user == null) { //如果为空则提示登录，否则直接跳过
             map.put(RESULT, "F");
             map.put(TIPS, "请先登录！");
             return map;
         }
-        ScenicDetails details = scenicDetailsMapper.selectByPrimaryKey(scenicDetailsId);
+        ScenicDetails details = scenicDetailsMapper.selectByPrimaryKey(collection.getScenicDetailsId());
         if (details == null) { //检测指定的景区是否为空
             map.put(RESULT, "F");
             map.put(TIPS, "没有该景区！");
             return map;
         }
         try { //异常处理（捕获异常）
-            //设置收藏的用户
-            collection.setUserId(userId);
-            //设置收藏的景区
-            collection.setScenicDetailsId(details.getScenicSpotId());
             //插入数据
-            collectionMapper.insertSelective(collection);
+            collectionMapper.insert(collection);
             //更新数据
-            collectionMapper.updateByPrimaryKeySelective(collection);
+            collectionMapper.updateByPrimaryKey(collection);
         } catch (Exception e) {
             map.put(RESULT, "F");
             map.put(TIPS, "添加失败！");
@@ -404,12 +398,12 @@ public class TourismController {
     }
 
     /**
-     * 查询用户收藏记录
-     * @param collection 收藏内容信息
-     * @return 返回结果
+     * 查询用户收藏信息
+     * @param userId 用户编号
+     * @return
      */
     @RequestMapping("/queryAllUserCollection")
-    public Map<String, Object> queryAllUserCollection(@RequestBody UserCollection collection, int userId) {
+    public Map<String, Object> queryAllUserCollection(int userId) {
         Map<String, Object> map = new HashMap<>();
         User user = userMapper.selectByPrimaryKey(userId);
         //true则提示未登录，false则下一步
@@ -418,14 +412,26 @@ public class TourismController {
             map.put(TIPS, "您还没有登录，请先登录！");
             return map;
         }
-        //true则提示暂无收藏，false则下一步
-        if (collectionMapper.selectByPrimaryKey(collection.getCollectionId()) == null) {
+        UserCollectionExample collectionExample = new UserCollectionExample();
+        collectionExample.createCriteria().andUserIdEqualTo(userId);
+        List<UserCollection> collectionList = collectionMapper.selectByExample(collectionExample);
+        if (collectionList.size() == 0) {
             map.put(RESULT, "F");
             map.put(TIPS, "暂无收藏！");
             return map;
         }
+        List<ScenicDetails> scenicDetailsList = new ArrayList<>();
+        for (UserCollection colle : collectionList) {
+            ScenicDetails scenicDetails = scenicDetailsMapper.selectByPrimaryKey(colle.getScenicDetailsId());
+            scenicDetailsList.add(scenicDetails);
+        }
+        List<ScenicSpot> scenicSpotList = new ArrayList<>();
+        for (ScenicDetails details : scenicDetailsList) {
+            ScenicSpot scenicSpot = scenicSpotMapper.selectByPrimaryKey(details.getScenicSpotId());
+            scenicSpotList.add(scenicSpot);
+        }
         map.put(RESULT, "S");
-        map.put(ONE_DATA, collectionMapper.selectByExample(null));
+        map.put(ONE_DATA, scenicSpotList);
         return map;
     }
 
@@ -915,7 +921,8 @@ public class TourismController {
             return map;
         }
         for (Contacts c : contactsList) {
-            if (!c.getContactsName().equals(contacts.getContactsName())) {
+            if (!c.getContactsName().equals(contacts.getContactsName()) &&
+                    !c.getCellPhoneNumber().equals(contacts.getCellPhoneNumber())) {
                 try { //捕获异常
                     contactsMapper.insertSelective(contacts);
                     contactsMapper.updateByPrimaryKey(contacts);
@@ -1293,7 +1300,7 @@ public class TourismController {
             map.put(TIPS, "您还没有相关的订单");
             return map;
         }
-        //获取所有订单数据集
+        //获取所有联系人数据集
         List<Contacts> contactsList = contactsMapper.selectByExample(null);
         if (contactsList.size() == 0) {
             map.put(RESULT, "F");
@@ -1335,25 +1342,39 @@ public class TourismController {
 
     /**
      * 添加行程
-     *
-     * @param trip
+     * @param trip 参数
      * @return
      */
     @RequestMapping("addByTrips")
     public Map<String, Object> addByTrips(@RequestBody Trip trip) {
         Map<String, Object> map = new HashMap<>();
-        try { //捕获异常
-            //插入数据
-            tripMapper.insert(trip);
-            //更新数据
-            tripMapper.updateByPrimaryKey(trip);
-        } catch (Exception e) {
-            map.put(RESULT, "F");
-            map.put(TIPS, "添加失败");
-            return map;
+        List<Trip> tripList = tripMapper.selectByExample(null);
+        boolean flag = false;
+        for (Trip trips: tripList) {
+            if (trip.getUserId().equals(trips.getUserId()) && trip.getScenicSpotId().equals(trips.getScenicSpotId())) {
+                flag = true;
+                break;
+            } else {
+                flag = false;
+            }
         }
-        map.put(RESULT, "S");
-        map.put(TIPS, "添加成功");
+        if(flag) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "该景区已在您的行程中！");
+        } else {
+            try { //捕获异常
+                //插入数据
+                tripMapper.insert(trip);
+                //更新数据
+                tripMapper.updateByPrimaryKey(trip);
+            } catch (Exception e) {
+                map.put(RESULT, "F");
+                map.put(TIPS, "添加失败");
+                return map;
+            }
+            map.put(RESULT, "S");
+            map.put(TIPS, "添加成功");
+        }
         return map;
     }
 
