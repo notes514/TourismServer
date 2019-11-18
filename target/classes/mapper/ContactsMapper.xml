@@ -3,6 +3,8 @@
 <mapper namespace="com.ncvt.tourism.mapper.ContactsMapper">
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Contacts">
     <id column="contacts_id" jdbcType="INTEGER" property="contactsId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="contacts_name" jdbcType="VARCHAR" property="contactsName" />
     <result column="cell_phone_number" jdbcType="VARCHAR" property="cellPhoneNumber" />
     <result column="qq_number" jdbcType="VARCHAR" property="qqNumber" />
@@ -68,7 +70,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    contacts_id, contacts_name, cell_phone_number, qq_number, wechat_number, remarks
+    contacts_id, user_id, order_id, contacts_name, cell_phone_number, qq_number, wechat_number, 
+    remarks
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.ContactsExample" resultMap="BaseResultMap">
     select
@@ -101,18 +104,24 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.Contacts">
-    insert into tbl_contacts (contacts_id, contacts_name, cell_phone_number, 
-      qq_number, wechat_number, remarks
-      )
-    values (#{contactsId,jdbcType=INTEGER}, #{contactsName,jdbcType=VARCHAR}, #{cellPhoneNumber,jdbcType=VARCHAR}, 
-      #{qqNumber,jdbcType=VARCHAR}, #{wechatNumber,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}
-      )
+    insert into tbl_contacts (contacts_id, user_id, order_id, 
+      contacts_name, cell_phone_number, qq_number, 
+      wechat_number, remarks)
+    values (#{contactsId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, 
+      #{contactsName,jdbcType=VARCHAR}, #{cellPhoneNumber,jdbcType=VARCHAR}, #{qqNumber,jdbcType=VARCHAR}, 
+      #{wechatNumber,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Contacts">
     insert into tbl_contacts
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="contactsId != null">
         contacts_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
       </if>
       <if test="contactsName != null">
         contacts_name,
@@ -133,6 +142,12 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="contactsId != null">
         #{contactsId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
       </if>
       <if test="contactsName != null">
         #{contactsName,jdbcType=VARCHAR},
@@ -163,6 +178,12 @@
       <if test="record.contactsId != null">
         contacts_id = #{record.contactsId,jdbcType=INTEGER},
       </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
       <if test="record.contactsName != null">
         contacts_name = #{record.contactsName,jdbcType=VARCHAR},
       </if>
@@ -186,6 +207,8 @@
   <update id="updateByExample" parameterType="map">
     update tbl_contacts
     set contacts_id = #{record.contactsId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
       contacts_name = #{record.contactsName,jdbcType=VARCHAR},
       cell_phone_number = #{record.cellPhoneNumber,jdbcType=VARCHAR},
       qq_number = #{record.qqNumber,jdbcType=VARCHAR},
@@ -198,6 +221,12 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Contacts">
     update tbl_contacts
     <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
       <if test="contactsName != null">
         contacts_name = #{contactsName,jdbcType=VARCHAR},
       </if>
@@ -218,7 +247,9 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Contacts">
     update tbl_contacts
-    set contacts_name = #{contactsName,jdbcType=VARCHAR},
+    set user_id = #{userId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      contacts_name = #{contactsName,jdbcType=VARCHAR},
       cell_phone_number = #{cellPhoneNumber,jdbcType=VARCHAR},
       qq_number = #{qqNumber,jdbcType=VARCHAR},
       wechat_number = #{wechatNumber,jdbcType=VARCHAR},

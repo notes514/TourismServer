@@ -3,6 +3,8 @@
 <mapper namespace="com.ncvt.tourism.mapper.PassengerMapper">
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Passenger">
     <id column="passenger_id" jdbcType="INTEGER" property="passengerId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="passenger_name" jdbcType="VARCHAR" property="passengerName" />
     <result column="passenger_type" jdbcType="VARCHAR" property="passengerType" />
     <result column="identity_card" jdbcType="VARCHAR" property="identityCard" />
@@ -66,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    passenger_id, passenger_name, passenger_type, identity_card
+    passenger_id, user_id, order_id, passenger_name, passenger_type, identity_card
   </sql>
   <select id="selectByExample" parameterType="com.ncvt.tourism.model.PassengerExample" resultMap="BaseResultMap">
     select
@@ -99,16 +101,24 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.Passenger">
-    insert into tbl_passenger (passenger_id, passenger_name, passenger_type, 
-      identity_card)
-    values (#{passengerId,jdbcType=INTEGER}, #{passengerName,jdbcType=VARCHAR}, #{passengerType,jdbcType=VARCHAR}, 
-      #{identityCard,jdbcType=VARCHAR})
+    insert into tbl_passenger (passenger_id, user_id, order_id, 
+      passenger_name, passenger_type, identity_card
+      )
+    values (#{passengerId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, 
+      #{passengerName,jdbcType=VARCHAR}, #{passengerType,jdbcType=VARCHAR}, #{identityCard,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Passenger">
     insert into tbl_passenger
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="passengerId != null">
         passenger_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
       </if>
       <if test="passengerName != null">
         passenger_name,
@@ -123,6 +133,12 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="passengerId != null">
         #{passengerId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
       </if>
       <if test="passengerName != null">
         #{passengerName,jdbcType=VARCHAR},
@@ -147,6 +163,12 @@
       <if test="record.passengerId != null">
         passenger_id = #{record.passengerId,jdbcType=INTEGER},
       </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
       <if test="record.passengerName != null">
         passenger_name = #{record.passengerName,jdbcType=VARCHAR},
       </if>
@@ -164,6 +186,8 @@
   <update id="updateByExample" parameterType="map">
     update tbl_passenger
     set passenger_id = #{record.passengerId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
       passenger_name = #{record.passengerName,jdbcType=VARCHAR},
       passenger_type = #{record.passengerType,jdbcType=VARCHAR},
       identity_card = #{record.identityCard,jdbcType=VARCHAR}
@@ -174,6 +198,12 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Passenger">
     update tbl_passenger
     <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
       <if test="passengerName != null">
         passenger_name = #{passengerName,jdbcType=VARCHAR},
       </if>
@@ -188,7 +218,9 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Passenger">
     update tbl_passenger
-    set passenger_name = #{passengerName,jdbcType=VARCHAR},
+    set user_id = #{userId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      passenger_name = #{passengerName,jdbcType=VARCHAR},
       passenger_type = #{passengerType,jdbcType=VARCHAR},
       identity_card = #{identityCard,jdbcType=VARCHAR}
     where passenger_id = #{passengerId,jdbcType=INTEGER}
