@@ -6,14 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/success.jpg" afterDir="false" />
+    <list default="true" id="2d6a1e15-6472-4d17-bec1-dc841b9377b9" name="Default Changelist" comment="2019.11.10 更新API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/AmountRechargeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper/AmountRechargeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ncvt/tourism/controller/TourismController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/TourismServer-1.0-SNAPSHOT/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +41,67 @@
   <component name="FavoritesManager">
     <favorites_list name="TourismServer" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+              <folding>
+                <element signature="e#16811#16812#0" expanded="true" />
+                <element signature="e#16874#16875#0" expanded="true" />
+                <element signature="e#17018#17019#0" expanded="true" />
+                <element signature="e#17079#17080#0" expanded="true" />
+                <element signature="e#29451#29529#0" />
+                <element signature="e#29451#30936#0" />
+                <element signature="e#30942#31010#0" />
+                <element signature="e#30942#31738#0" />
+                <element signature="e#31744#31812#0" />
+                <element signature="e#31744#32272#0" />
+                <element signature="e#32278#32341#0" />
+                <element signature="e#32278#33775#0" />
+                <element signature="e#33781#33848#0" />
+                <element signature="e#33781#34594#0" />
+                <element signature="e#34600#34667#0" />
+                <element signature="e#34600#35137#0" />
+                <element signature="e#35143#35208#0" />
+                <element signature="e#35143#35901#0" />
+                <element signature="e#35907#35979#0" />
+                <element signature="e#35907#36692#0" />
+                <element signature="e#36698#36772#0" />
+                <element signature="e#36698#37463#0" />
+                <element signature="e#37469#37543#0" />
+                <element signature="e#37469#38184#0" />
+                <element signature="e#38190#38265#0" />
+                <element signature="e#38190#38909#0" />
+                <element signature="e#38915#39011#0" />
+                <element signature="e#38915#39730#0" />
+                <element signature="e#39736#39865#0" />
+                <element signature="e#39736#41076#0" />
+                <element signature="e#41082#41162#0" />
+                <element signature="e#41082#42903#0" />
+                <element signature="e#42909#42973#0" />
+                <element signature="e#42909#43493#0" />
+                <element signature="e#43499#43560#0" />
+                <element signature="e#43499#44532#0" />
+                <element signature="e#44538#44595#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -59,6 +117,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+      </list>
+    </option>
+  </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
@@ -73,7 +138,65 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
   <component name="ProjectId" id="1R2wNbUKpxWo5SZpQ3o81j6npCn" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tourism" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TourismServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TourismServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -84,7 +207,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images/exhibitsPic" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -105,6 +228,25 @@
       <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits5" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits13" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits12" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits11" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits10" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits9" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits6" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits8" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits7" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits4" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits3" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits2" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitsPic\exhibits1" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\video\exhibitionArea3" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\video\exhibitionArea7" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\video\exhibitionArea1" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\video" />
+      <recent name="D:\IdeaProjects\TourismServer\src\main\webapp\images\exhibitionAreaPic" />
       <recent name="$PROJECT_DIR$/src/main/webapp/images" />
       <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
       <recent name="$PROJECT_DIR$/src/main/java/com/ncvt/tourism/mapper" />
@@ -336,8 +478,25 @@
       <workItem from="1573348794326" duration="2292000" />
       <workItem from="1573372641450" duration="292000" />
       <workItem from="1573264415596" duration="10763000" />
+      <workItem from="1573366563831" duration="985000" />
+      <workItem from="1573466095824" duration="2628000" />
+      <workItem from="1573482299266" duration="2092000" />
+      <workItem from="1573528809095" duration="1610000" />
+      <workItem from="1573714671378" duration="2204000" />
       <workItem from="1573439740986" duration="3106000" />
       <workItem from="1573519327175" duration="3677000" />
+      <workItem from="1573744405243" duration="706000" />
+      <workItem from="1573748915945" duration="675000" />
+      <workItem from="1573788861129" duration="1027000" />
+      <workItem from="1573791723167" duration="818000" />
+      <workItem from="1573792563036" duration="3197000" />
+      <workItem from="1573814335023" duration="2695000" />
+      <workItem from="1573820971984" duration="2922000" />
+      <workItem from="1573873322075" duration="10813000" />
+      <workItem from="1573971423212" duration="818000" />
+      <workItem from="1573974213763" duration="708000" />
+      <workItem from="1573988990355" duration="3659000" />
+      <workItem from="1574039013158" duration="1641000" />
     </task>
     <task id="LOCAL-00001" summary="初始提交">
       <created>1568869793479</created>
@@ -451,12 +610,12 @@
       <option name="project" value="LOCAL" />
       <updated>1573267568977</updated>
     </task>
-    <task id="LOCAL-00017" summary="新增景区类型内容api">
-      <created>1573450557513</created>
+    <task id="LOCAL-00017" summary="2019.11.10 更新API">
+      <created>1573366702414</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1573450557513</updated>
+      <updated>1573366702414</updated>
     </task>
     <task id="LOCAL-00018" summary="新增订单支付api">
       <created>1573545581620</created>
@@ -465,8 +624,11 @@
       <option name="project" value="LOCAL" />
       <updated>1573545581620</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="167698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -477,6 +639,45 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49008498" visible="true" weight="0.21648793" />
+      <window_info id="Structure" order="1" sideWeight="0.509915" side_tool="true" weight="0.20576407" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4036827" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -486,6 +687,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -531,6 +738,305 @@
     <MESSAGE value="2019.11.9 更新API" />
     <MESSAGE value="新增景区类型内容api" />
     <MESSAGE value="新增订单支付api" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增订单支付api" />
+    <MESSAGE value="2019.11.10 更新API" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019.11.10 更新API" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicSpotExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-460">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ScenicSpotMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding>
+            <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+            <element signature="n#sql#0;n#mapper#0;n#!!top" />
+            <element signature="n#sql#1;n#mapper#0;n#!!top" />
+            <element signature="n#sql#2;n#mapper#0;n#!!top" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="n#delete#1;n#mapper#0;n#!!top" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" />
+            <element signature="n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#select#2;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" />
+            <element signature="n#update#2;n#mapper#0;n#!!top" />
+            <element signature="n#update#3;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ExhibitsPicMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <element signature="n#sql#0;n#mapper#0;n#!!top" />
+            <element signature="n#sql#1;n#mapper#0;n#!!top" />
+            <element signature="n#sql#2;n#mapper#0;n#!!top" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" />
+            <element signature="n#delete#0;n#mapper#0;n#!!top" />
+            <element signature="n#delete#1;n#mapper#0;n#!!top" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" />
+            <element signature="n#insert#1;n#mapper#0;n#!!top" />
+            <element signature="n#select#2;n#mapper#0;n#!!top" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" />
+            <element signature="n#update#2;n#mapper#0;n#!!top" />
+            <element signature="n#update#3;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/yueyang.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/beihai.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/beijing.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/changsha.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/dongguan.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/guilin.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/hangzhou.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/humen.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/liuzhou.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/nanjing.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/nanning.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/shanghai.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/region/aomen.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/title.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/detailsPic/1.1.1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/banner/banner3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/banner/banner2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/banner/banner1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicRegion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitionArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitionAreaExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/Exhibits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-835">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ScenicSpot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ExhibitionAreaMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/model/ExhibitsComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ExhibitsCommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="231" selection-start-line="231" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ExhibitsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="301" selection-start-line="301" selection-end-line="301" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="184" column="39" selection-start-line="184" selection-start-column="39" selection-end-line="184" selection-end-column="39" />
+          <folding>
+            <element signature="n#properties#0;n#project#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/exhibits6/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/exhibits13/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/1.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/exhibits1/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/exhibits5/6.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/exhibits13/4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/exhibits3/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitsPic/exhibits2/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/exhibitionAreaPic/exhibition_area_2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/detailsPic/1.1.3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/spot/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/deng.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/depth.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/map.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/romantic.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/success.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ncvt/tourism/controller/TourismController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+          <folding>
+            <element signature="e#16811#16812#0" expanded="true" />
+            <element signature="e#16874#16875#0" expanded="true" />
+            <element signature="e#17018#17019#0" expanded="true" />
+            <element signature="e#17079#17080#0" expanded="true" />
+            <element signature="e#29451#29529#0" />
+            <element signature="e#29451#30936#0" />
+            <element signature="e#30942#31010#0" />
+            <element signature="e#30942#31738#0" />
+            <element signature="e#31744#31812#0" />
+            <element signature="e#31744#32272#0" />
+            <element signature="e#32278#32341#0" />
+            <element signature="e#32278#33775#0" />
+            <element signature="e#33781#33848#0" />
+            <element signature="e#33781#34594#0" />
+            <element signature="e#34600#34667#0" />
+            <element signature="e#34600#35137#0" />
+            <element signature="e#35143#35208#0" />
+            <element signature="e#35143#35901#0" />
+            <element signature="e#35907#35979#0" />
+            <element signature="e#35907#36692#0" />
+            <element signature="e#36698#36772#0" />
+            <element signature="e#36698#37463#0" />
+            <element signature="e#37469#37543#0" />
+            <element signature="e#37469#38184#0" />
+            <element signature="e#38190#38265#0" />
+            <element signature="e#38190#38909#0" />
+            <element signature="e#38915#39011#0" />
+            <element signature="e#38915#39730#0" />
+            <element signature="e#39736#39865#0" />
+            <element signature="e#39736#41076#0" />
+            <element signature="e#41082#41162#0" />
+            <element signature="e#41082#42903#0" />
+            <element signature="e#42909#42973#0" />
+            <element signature="e#42909#43493#0" />
+            <element signature="e#43499#43560#0" />
+            <element signature="e#43499#44532#0" />
+            <element signature="e#44538#44595#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
