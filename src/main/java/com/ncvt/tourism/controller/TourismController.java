@@ -1606,4 +1606,30 @@ public class TourismController {
         return map;
     }
 
+    /**
+     * 刷新随机返回8条数据
+     * @return
+     */
+    @RequestMapping("onRefresh")
+    public Map<String, Object> onRefresh() {
+        Map<String, Object> map = new HashMap<>();
+        List<ScenicSpot> scenicSpotList = scenicSpotMapper.selectByExample(null);
+        List<ScenicSpot> scenicSpotList1 = new ArrayList<>();
+        int max = scenicSpotList.size();
+        int min = 1;
+        //创建随机数对象
+        Random random = new Random();
+        for (int i = 0; i < 8; i++) {
+            scenicSpotList1.add(scenicSpotMapper.selectByPrimaryKey(random.nextInt(max - min) + min));
+        }
+        if (scenicSpotList1.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "景区数据为空!");
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "已为您更新8条内容");
+        map.put(ONE_DATA, scenicSpotList1);
+        return map;
+    }
+
 }
