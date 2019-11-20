@@ -70,16 +70,22 @@ public class TourismController {
     public Map<String, Object> login(@RequestBody User user) {
         Map<String, Object> map = new HashMap<>();
         UserExample example = new UserExample();
-        example.createCriteria().andUserAccountNameEqualTo(user.getUserAccountName()).andPasswordEqualTo(user.getPassword());
+        example.createCriteria().andUserAccountNameEqualTo(user.getUserAccountName());
         List<User> userList = userMapper.selectByExample(example);
         if (userList.size() > 0) {
+            //校验密码输入是否正确
+            if (!user.getPassword().equals(userList.get(0).getPassword())) {
+                map.put(RESULT, "F");
+                map.put(TIPS, "密码输入错误");
+                return map;
+            }
             map.put(RESULT, "S");
             map.put(TIPS, "登录成功！");
             map.put(ONE_DATA,userList.get(0));
             return map;
         } else {
             map.put(RESULT, "F");
-            map.put(TIPS, "登录失败！");
+            map.put(TIPS, "该用户不存在");
             return map;
         }
     }
@@ -906,40 +912,16 @@ public class TourismController {
     @RequestMapping("addByContacts")
     public Map<String, Object> addByContacts(@RequestBody Contacts contacts) {
         Map<String, Object> map = new HashMap<>();
-        List<Contacts> contactsList = contactsMapper.selectByExample(null);
-        if (contactsList.size() == 0) {
-            try { //捕获异常
-                contactsMapper.insertSelective(contacts);
-                contactsMapper.updateByPrimaryKey(contacts);
-            } catch (Exception e) {
-                map.put(RESULT, "F");
-                map.put(TIPS, "添加失败");
-                return map;
-            }
-            map.put(RESULT, "S");
-            map.put(TIPS, "添加成功");
+        try { //捕获异常
+            contactsMapper.insertSelective(contacts);
+            contactsMapper.updateByPrimaryKey(contacts);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "添加失败");
             return map;
         }
-        for (Contacts c : contactsList) {
-            if (!c.getContactsName().equals(contacts.getContactsName()) &&
-                    !c.getCellPhoneNumber().equals(contacts.getCellPhoneNumber())) {
-                try { //捕获异常
-                    contactsMapper.insertSelective(contacts);
-                    contactsMapper.updateByPrimaryKey(contacts);
-                } catch (Exception e) {
-                    map.put(RESULT, "F");
-                    map.put(TIPS, "添加失败");
-                    return map;
-                }
-                map.put(RESULT, "S");
-                map.put(TIPS, "添加成功");
-                break;
-            } else {
-                map.put(RESULT, "F");
-                map.put(TIPS, "该联系人已存在");
-                break;
-            }
-        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "添加成功");
         return map;
     }
 
@@ -972,20 +954,22 @@ public class TourismController {
 
     /**
      * 查询指定联系人信息
-     * @param contactsId
+     * @param orderId
      * @return
      */
     @RequestMapping("queryByContacts")
-    public Map<String, Object> queryByContacts(int contactsId) {
+    public Map<String, Object> queryByContacts(int orderId) {
         Map<String, Object> map = new HashMap<>();
-        Contacts contacts = contactsMapper.selectByPrimaryKey(contactsId);
-        if (contacts == null) {
+        ContactsExample contactsExample = new ContactsExample();
+        contactsExample.createCriteria().andOrderIdEqualTo(orderId);
+        List<Contacts> contactsList = contactsMapper.selectByExample(contactsExample);
+        if (contactsList.size() == 0) {
             map.put(RESULT, "F");
-            map.put(TIPS, "没有该联系人");
+            map.put(TIPS, "没有该订单联系人");
             return map;
         }
         map.put(RESULT, "S");
-        map.put(ONE_DATA, contacts);
+        map.put(ONE_DATA, contactsList);
         return map;
     }
 
@@ -997,39 +981,16 @@ public class TourismController {
     @RequestMapping("addByPassenger")
     public Map<String, Object> addByPassenger(@RequestBody Passenger passenger) {
         Map<String, Object> map = new HashMap<>();
-        List<Passenger> passengerList = passengerMapper.selectByExample(null);
-        if (passengerList.size() == 0) {
-            try { //捕获异常
-                passengerMapper.insertSelective(passenger);
-                passengerMapper.updateByPrimaryKey(passenger);
-            } catch (Exception e) {
-                map.put(RESULT, "F");
-                map.put(TIPS, "添加失败");
-                return map;
-            }
-            map.put(RESULT, "S");
-            map.put(TIPS, "添加成功");
+        try { //捕获异常
+            passengerMapper.insertSelective(passenger);
+            passengerMapper.updateByPrimaryKey(passenger);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "添加失败");
             return map;
         }
-        for (Passenger p : passengerList) {
-            if (!p.getIdentityCard().equals(passenger.getIdentityCard())) {
-                try { //捕获异常
-                    passengerMapper.insertSelective(passenger);
-                    passengerMapper.updateByPrimaryKey(passenger);
-                } catch (Exception e) {
-                    map.put(RESULT, "F");
-                    map.put(TIPS, "添加失败");
-                    return map;
-                }
-                map.put(RESULT, "S");
-                map.put(TIPS, "添加成功");
-                break;
-            } else {
-                map.put(RESULT, "F");
-                map.put(TIPS, "该出行人已存在，不能够再次添加");
-                break;
-            }
-        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "添加成功");
         return map;
     }
 
@@ -1062,20 +1023,22 @@ public class TourismController {
 
     /**
      * 查询出行人信息
-     * @param passengerId
+     * @param orderId 订单编号
      * @return
      */
     @RequestMapping("queryByPassenger")
-    public Map<String, Object> queryByPassenger(int passengerId) {
+    public Map<String, Object> queryByPassenger(int orderId) {
         Map<String, Object> map = new HashMap<>();
-        Passenger passenger = passengerMapper.selectByPrimaryKey(passengerId);
-        if (passenger == null) {
+        PassengerExample passengerExample = new PassengerExample();
+        passengerExample.createCriteria().andOrderIdEqualTo(orderId);
+        List<Passenger> passengerList = passengerMapper.selectByExample(passengerExample);
+        if (passengerList.size() == 0) {
             map.put(RESULT, "F");
-            map.put(TIPS, "无该出行人信息");
+            map.put(TIPS, "无该订单出行人信息");
             return map;
         }
         map.put(RESULT, "S");
-        map.put(ONE_DATA, passenger);
+        map.put(ONE_DATA, passengerList);
         return map;
     }
 
@@ -1284,10 +1247,9 @@ public class TourismController {
     }
 
     /**
-     * 订单管理模块
-     * 查询最新订单
-     * 查询联系人
-     * 查询出行人
+     * 查询订单、联系人、出行人信息
+     * @param contactsName
+     * @param identityCard
      * @return
      */
     @RequestMapping("queryNewestByOCP")
@@ -1341,12 +1303,82 @@ public class TourismController {
     }
 
     /**
+     * 查询最新订单
+     * @return
+     */
+    @RequestMapping("queryNewestOrder")
+    public Map<String, Object> queryNewestOrder(int userId) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有登录，请先登录");
+            return map;
+        }
+        //获取所有订单数据集
+        List<Order> orderList = orderMapper.selectByExample(null);
+        if (orderList.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有相关的订单");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(ONE_DATA, orderList.get(orderList.size()-1));
+        return map;
+    }
+
+    /**
+     * 查询最新订单
+     * @return
+     */
+    @RequestMapping("queryContactsAndPassenger")
+    public Map<String, Object> queryContactsAndPassenger(int userId, int orderId) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "您还没有登录，请先登录");
+            return map;
+        }
+        Order order = orderMapper.selectByPrimaryKey(orderId);
+        if (order == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "没有该订单");
+            return map;
+        }
+        ContactsExample contactsExample = new ContactsExample();
+        contactsExample.createCriteria().andOrderIdEqualTo(orderId);
+        List<Contacts> contactsList = contactsMapper.selectByExample(contactsExample);
+        if (contactsList.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "该订单联系人为空");
+            return map;
+        } else {
+            map.put(RESULT, "S");
+            map.put(ONE_DATA, contactsList);
+        }
+        PassengerExample passengerExample = new PassengerExample();
+        passengerExample.createCriteria().andOrderIdEqualTo(orderId);
+        List<Passenger> passengerList = passengerMapper.selectByExample(passengerExample);
+        if (passengerList.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "该订单出行人为空");
+            return map;
+        } else {
+            map.put(RESULT, "S");
+            map.put(TWO_DATA, passengerList);
+        }
+        return map;
+    }
+
+
+    /**
      * 添加行程
      * @param trip 参数
      * @return
      */
     @RequestMapping("addByTrips")
-    public Map<String, Object> addByTrips(@RequestBody Trip trip) {
+    public Map<String, Object> queByTrips(@RequestBody Trip trip) {
         Map<String, Object> map = new HashMap<>();
         List<Trip> tripList = tripMapper.selectByExample(null);
         boolean flag = false;
