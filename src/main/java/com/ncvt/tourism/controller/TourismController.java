@@ -1619,15 +1619,40 @@ public class TourismController {
         int min = 1;
         //创建随机数对象
         Random random = new Random();
+        for (int i = 0; i < 9; i++) {
+            scenicSpotList1.add(scenicSpotMapper.selectByPrimaryKey(random.nextInt(max - min) + min));
+        }
+        if (scenicSpotList1.size() == 0) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "刷新失败!");
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "已为您更新9条内容");
+        map.put(ONE_DATA, scenicSpotList1);
+        return map;
+    }
+
+    /**
+     * 上拉加载刷新
+     * @return
+     */
+    @RequestMapping("onFooterFinish")
+    public Map<String, Object> onFooterFinish() {
+        Map<String, Object> map = new HashMap<>();
+        List<ScenicSpot> scenicSpotList = scenicSpotMapper.selectByExample(null);
+        List<ScenicSpot> scenicSpotList1 = new ArrayList<>();
+        int max = scenicSpotList.size();
+        int min = 1;
+        //创建随机数对象
+        Random random = new Random();
         for (int i = 0; i < 8; i++) {
             scenicSpotList1.add(scenicSpotMapper.selectByPrimaryKey(random.nextInt(max - min) + min));
         }
         if (scenicSpotList1.size() == 0) {
             map.put(RESULT, "F");
-            map.put(TIPS, "景区数据为空!");
+            map.put(TIPS, "加载失败");
         }
         map.put(RESULT, "S");
-        map.put(TIPS, "已为您更新8条内容");
         map.put(ONE_DATA, scenicSpotList1);
         return map;
     }
