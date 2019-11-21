@@ -102,6 +102,7 @@ public class TourismController {
         Calendar calendar = Calendar.getInstance();
         Date date = calendar.getTime();
         try {
+            user.setUserMoney((double) 1000000);
             user.setUserTime(date);
             userMapper.insertSelective(user);
             userMapper.updateByPrimaryKeySelective(user);
@@ -127,12 +128,12 @@ public class TourismController {
         example.createCriteria().andUserAccountNameEqualTo(user.getUserAccountName());
         List<User> userList = userMapper.selectByExample(example);
         if (userList.size() > 0) {
-            map.put(RESULT, "S");
+            map.put(RESULT, "F");
             map.put(TIPS, "该用户名已被使用！");
             return map;
         } else {
-            map.put(RESULT, "F");
-            map.put(TIPS, "");
+            map.put(RESULT, "S");
+            map.put(TIPS, "可以创建");
             return map;
         }
     }
@@ -696,18 +697,31 @@ public class TourismController {
      * @return 返回结果
      */
     @RequestMapping("queryByExhibitionArea")
-    public Map<String, Object> queryByExhibitionArea(int exhibitionAreaId) {
+    public Map<String, Object> queryByExhibitionArea(int exhibitionAreaId, int page) {
         Map<String, Object> map = new HashMap<>();
         ExhibitsExample exhibitsExample = new ExhibitsExample();
         exhibitsExample.createCriteria().andExhibitionAreaIdEqualTo(exhibitionAreaId);
         List<Exhibits> exhibits = exhibitsMapper.selectByExample(exhibitsExample);
+
         if (exhibits == null) {
             map.put(RESULT, "F");
             map.put(TIPS, "没有该详情内容");
             return map;
         }
+        Collections.sort(exhibits, new Comparator<Exhibits>() {
+            @Override
+            public int compare(Exhibits exhibits, Exhibits t1) {
+                return t1.getLikeCount() - exhibits.getLikeCount();
+            }
+        });
         map.put(RESULT, "S");
-        map.put(ONE_DATA,exhibits);
+        List<Exhibits> exhibits2 = new ArrayList<>();
+        for (int i = page*5; i < page*5+5; i++) {
+            if (i<exhibits.size()){
+                exhibits2.add(exhibits.get(i));
+            }
+        }
+        map.put(ONE_DATA,exhibits2);
         return map;
     }
 
@@ -1584,6 +1598,53 @@ public class TourismController {
         if (order == null) {
             map.put(RESULT, "F");
             map.put(TIPS, "无该订单");
+            return map;
+        }
+        Double uMoney = user.getUserMoney();
+        Double oMoney = order.getOrderPrice();
+        try {
+            //对用户账户进行扣款
+            user.setUserMoney(uMoney - oMoney);
+            //修改订单状态
+            order.setOrderState(2);
+            //更新数据
+            userMapper.updateByPrimaryKey(user);
+            orderMapper.updateByPrimaryKey(order);
+        } catch (Exception e) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "扣款失败");
+            return map;
+        }
+        map.put(RESULT, "S");
+        map.put(TIPS, "支付成功");
+        return map;
+    }
+
+    /**
+     * 订单支付，使用密码支付
+     * @param userId
+     * @param orderId
+     * @param password
+     * @return
+     */
+    @RequestMapping("orderPaymentPassWord")
+    public Map<String, Object> orderPaymentPassWord(int userId, int orderId, String password) {
+        Map<String, Object> map = new HashMap<>();
+        User user = userMapper.selectByPrimaryKey(userId);
+        if (user == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "无该用户");
+            return map;
+        }
+        Order order = orderMapper.selectByPrimaryKey(orderId);
+        if (order == null) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "无该订单");
+            return map;
+        }
+        if (!password.equals("111111")) {
+            map.put(RESULT, "F");
+            map.put(TIPS, "密码输入错误，请重新输入");
             return map;
         }
         Double uMoney = user.getUserMoney();

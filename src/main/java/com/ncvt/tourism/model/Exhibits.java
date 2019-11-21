@@ -21,6 +21,23 @@ public class Exhibits {
 
     private String teamMembers;
 
+    private int likeCount;
+
+    public int getLikeCount() {
+        int sum = 0;
+        for (int i = 0; i < getFabulousDetailsList().size(); i++) {
+            if (getFabulousDetailsList().get(i).getFlag()==1){
+                sum++;
+            }
+        }
+        return sum;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+
     private List<FabulousDetails> fabulousDetailsList;
 
     private List<ExhibitsPic> exhibitsPicList;

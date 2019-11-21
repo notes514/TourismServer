@@ -3,6 +3,7 @@
 <mapper namespace="com.ncvt.tourism.mapper.OrderMapper">
   <resultMap id="BaseResultMap" type="com.ncvt.tourism.model.Order">
     <id column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="order_content" jdbcType="VARCHAR" property="orderContent" />
     <result column="order_number" jdbcType="INTEGER" property="orderNumber" />
     <result column="passenger_number" jdbcType="INTEGER" property="passengerNumber" />
@@ -75,7 +76,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    order_id, order_content, order_number, passenger_number, order_state, trip_mode, 
+    order_id, user_id, order_content, order_number, passenger_number, order_state, trip_mode, 
     depart_date, depart_days, tirp_information, order_price, order_date, room_difference, 
     supplier
   </sql>
@@ -110,22 +111,25 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.ncvt.tourism.model.Order">
-    insert into tbl_order (order_id, order_content, order_number, 
-      passenger_number, order_state, trip_mode, 
-      depart_date, depart_days, tirp_information, 
-      order_price, order_date, room_difference, 
-      supplier)
-    values (#{orderId,jdbcType=INTEGER}, #{orderContent,jdbcType=VARCHAR}, #{orderNumber,jdbcType=INTEGER}, 
-      #{passengerNumber,jdbcType=INTEGER}, #{orderState,jdbcType=INTEGER}, #{tripMode,jdbcType=VARCHAR}, 
-      #{departDate,jdbcType=VARCHAR}, #{departDays,jdbcType=VARCHAR}, #{tirpInformation,jdbcType=VARCHAR}, 
-      #{orderPrice,jdbcType=DOUBLE}, #{orderDate,jdbcType=TIMESTAMP}, #{roomDifference,jdbcType=INTEGER}, 
-      #{supplier,jdbcType=VARCHAR})
+    insert into tbl_order (order_id, user_id, order_content, 
+      order_number, passenger_number, order_state, 
+      trip_mode, depart_date, depart_days, 
+      tirp_information, order_price, order_date, 
+      room_difference, supplier)
+    values (#{orderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderContent,jdbcType=VARCHAR}, 
+      #{orderNumber,jdbcType=INTEGER}, #{passengerNumber,jdbcType=INTEGER}, #{orderState,jdbcType=INTEGER}, 
+      #{tripMode,jdbcType=VARCHAR}, #{departDate,jdbcType=VARCHAR}, #{departDays,jdbcType=VARCHAR}, 
+      #{tirpInformation,jdbcType=VARCHAR}, #{orderPrice,jdbcType=DOUBLE}, #{orderDate,jdbcType=TIMESTAMP}, 
+      #{roomDifference,jdbcType=INTEGER}, #{supplier,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ncvt.tourism.model.Order">
     insert into tbl_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
         order_id,
+      </if>
+      <if test="userId != null">
+        user_id,
       </if>
       <if test="orderContent != null">
         order_content,
@@ -167,6 +171,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
         #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="orderContent != null">
         #{orderContent,jdbcType=VARCHAR},
@@ -218,6 +225,9 @@
       <if test="record.orderId != null">
         order_id = #{record.orderId,jdbcType=INTEGER},
       </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
       <if test="record.orderContent != null">
         order_content = #{record.orderContent,jdbcType=VARCHAR},
       </if>
@@ -262,6 +272,7 @@
   <update id="updateByExample" parameterType="map">
     update tbl_order
     set order_id = #{record.orderId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
       order_content = #{record.orderContent,jdbcType=VARCHAR},
       order_number = #{record.orderNumber,jdbcType=INTEGER},
       passenger_number = #{record.passengerNumber,jdbcType=INTEGER},
@@ -281,6 +292,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.ncvt.tourism.model.Order">
     update tbl_order
     <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
       <if test="orderContent != null">
         order_content = #{orderContent,jdbcType=VARCHAR},
       </if>
@@ -322,7 +336,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ncvt.tourism.model.Order">
     update tbl_order
-    set order_content = #{orderContent,jdbcType=VARCHAR},
+    set user_id = #{userId,jdbcType=INTEGER},
+      order_content = #{orderContent,jdbcType=VARCHAR},
       order_number = #{orderNumber,jdbcType=INTEGER},
       passenger_number = #{passengerNumber,jdbcType=INTEGER},
       order_state = #{orderState,jdbcType=INTEGER},
