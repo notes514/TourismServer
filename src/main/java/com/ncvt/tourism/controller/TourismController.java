@@ -1232,7 +1232,9 @@ public class TourismController {
             map.put(TIPS, "您还没有登录，请先登录");
             return map;
         }
-        List<Order> orderList = orderMapper.selectByExample(null);
+        OrderExample example = new OrderExample();
+        example.createCriteria().andUserIdEqualTo(userId);
+        List<Order> orderList = orderMapper.selectByExample(example);
         if (orderList.size() < 1) {
             map.put(RESULT, "F");
             map.put(TIPS, "您还没有相关的订单");
